@@ -1,4 +1,4 @@
-# Approche Objet 
+# Approche Objet
 
 Ce cours présente la programmation orientée objet. 
 Il introduit avec précision tous les concepts OO et donne des bases solides en conception.
