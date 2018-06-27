@@ -5,9 +5,14 @@ public class Reference {
     private String name;
     private String description;
 
-    public Reference(String name, String description) {
+    public Reference(ReferenceId id, String name, String description) {
+        this.setReferenceId(id);
         this.setName(name);
         this.setDescription(description);
+    }
+
+    private void setReferenceId(ReferenceId id) {
+        this.id = id;
     }
 
     private void setName(String name) {
@@ -20,5 +25,13 @@ public class Reference {
 
     public String getName() {
         return this.name;
+    }
+
+    public ReferenceId getId() {
+        return this.id;
+    }
+
+    public String getDescription() {
+        return this.description;
     }
 }
