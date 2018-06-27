@@ -7,4 +7,5 @@ public interface ReferenceRepository {
     public void removeRerence(Reference reference);
     public Reference findReferenceById(ReferenceId id);
     public Set<Reference> findAllReferencesByName(String name);
+    public int size();
 }
