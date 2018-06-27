@@ -1,14 +1,14 @@
-package fr.ubordeaux.ao.references.infrastructure.persistence;
+package fr.ubordeaux.ao.productmanagement.infrastructure.persistence;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import fr.ubordeaux.ao.references.domain.model.Reference;
-import fr.ubordeaux.ao.references.domain.model.ReferencesException;
-import fr.ubordeaux.ao.references.domain.model.ReferenceId;
-import fr.ubordeaux.ao.references.domain.model.ReferenceRepository;
+import fr.ubordeaux.ao.productmanagement.domain.model.Reference;
+import fr.ubordeaux.ao.productmanagement.domain.model.ReferencesException;
+import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceRepository;
 
 public class InMemoryReferenceRepository implements ReferenceRepository {
 

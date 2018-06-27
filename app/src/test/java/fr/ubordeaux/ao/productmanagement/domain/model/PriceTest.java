@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.references.domain.model;
+package fr.ubordeaux.ao.productmanagement.domain.model;
 
 import static org.junit.Assert.*;
 

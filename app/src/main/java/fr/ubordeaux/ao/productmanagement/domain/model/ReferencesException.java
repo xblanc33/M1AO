@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.references.domain.model;
+package fr.ubordeaux.ao.productmanagement.domain.model;
 
 public class ReferencesException extends RuntimeException {
     private static final long serialVersionUID = 1L;
