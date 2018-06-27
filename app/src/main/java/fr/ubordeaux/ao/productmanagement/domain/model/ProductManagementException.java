@@ -1,9 +1,9 @@
 package fr.ubordeaux.ao.productmanagement.domain.model;
 
-public class ReferencesException extends RuntimeException {
+public class ProductManagementException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-	public ReferencesException(String msg) {
+	public ProductManagementException(String msg) {
         super(msg);
     }
 }

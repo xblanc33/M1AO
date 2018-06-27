@@ -17,7 +17,7 @@ public class PriceTest {
         try {
             Price price2 = new Price(1.345);
             assertTrue(false);
-        } catch (ReferencesException ex) {
+        } catch (ProductManagementException ex) {
             assertTrue(true);
         }
 

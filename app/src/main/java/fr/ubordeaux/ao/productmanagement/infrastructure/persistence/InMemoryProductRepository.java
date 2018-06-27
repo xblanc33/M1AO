@@ -7,7 +7,7 @@ import fr.ubordeaux.ao.productmanagement.domain.model.Price;
 import fr.ubordeaux.ao.productmanagement.domain.model.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferencesException;
+import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
 
 public class InMemoryProductRepository implements ProductRepository {
 
@@ -19,9 +19,9 @@ public class InMemoryProductRepository implements ProductRepository {
 
 	@Override
 	public void addProduct(ReferenceId referenceId, Price price) {
-		if (referenceId == null) throw new ReferencesException("Cannot add product with null as Reference id");
-		if (price == null) throw new ReferencesException("Cannot add product with null as price");
-		if (store.get(referenceId) != null) throw new ReferencesException("Cannot add product because there is already one");
+		if (referenceId == null) throw new ProductManagementException("Cannot add product with null as Reference id");
+		if (price == null) throw new ProductManagementException("Cannot add product with null as price");
+		if (store.get(referenceId) != null) throw new ProductManagementException("Cannot add product because there is already one");
 		
 		store.put(referenceId, new Product(referenceId, price));
 		
@@ -29,8 +29,8 @@ public class InMemoryProductRepository implements ProductRepository {
 
 	@Override
 	public void removeProduct(ReferenceId referenceId) {
-		if (referenceId == null) throw new ReferencesException("cannot remove null to ProductRepository");
-        if (store.get(referenceId) == null) throw new ReferencesException("cannot remove, no such id in the ProductRepository");
+		if (referenceId == null) throw new ProductManagementException("cannot remove null to ProductRepository");
+        if (store.get(referenceId) == null) throw new ProductManagementException("cannot remove, no such id in the ProductRepository");
 		store.remove(referenceId);
 	}
 
