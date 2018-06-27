@@ -2,6 +2,7 @@ package fr.ubordeaux.ao.references.infrastructure.persistence;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import fr.ubordeaux.ao.references.domain.model.Reference;
@@ -32,9 +33,9 @@ public class InMemoryReferenceRepository implements ReferenceRepository {
 	}
 
 	@Override
-	public Reference findReferenceById(ReferenceId id) {
+	public Optional<Reference> findReferenceById(ReferenceId id) {
         if (id == null) throw new ReferencesException("cannot find a null reference");
-        return store.get(id);
+        return Optional.ofNullable(store.get(id));
 	}
 
 	@Override
