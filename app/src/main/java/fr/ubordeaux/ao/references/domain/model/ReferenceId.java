@@ -3,7 +3,7 @@ package fr.ubordeaux.ao.references.domain.model;
 import java.util.UUID;
 
 public class ReferenceId {
-    UUID id;
+    private UUID id;
 
     public ReferenceId() {
         this.id = UUID.randomUUID();
