@@ -1,8 +1,10 @@
 package fr.ubordeaux.ao.productmanagement.infrastructure.persistence;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
@@ -14,8 +16,8 @@ import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
 
 public class InMemoryCatalog implements Catalog {
     private String name;
-    private HashMap<ReferenceId, Product> store;
-    private HashMap<String, Catalog> subCatalogs;
+    private Map<ReferenceId, Product> store;
+    private Map<String, Catalog> subCatalogs;
     private Catalog parentCatalog = null;
     
 
@@ -48,7 +50,13 @@ public class InMemoryCatalog implements Catalog {
 	@Override
 	public String getName() {
 		return this.name;
-	}
+    }
+    
+    @Override
+    public void addSubCatalog(Catalog sub) {
+        if (this.getSubCatalogNames().contains(sub.getName())) throw new ProductManagementException("cannot add subcatalog as name already exists");
+        subCatalogs.put(sub.getName(), sub);
+    }
 
 	@Override
 	public Set<String> getSubCatalogNames() {
@@ -82,21 +90,22 @@ public class InMemoryCatalog implements Catalog {
     @Override
 	public int allSize() {
         int size = this.ownSize();
-		subCatalogs.values().forEach(catalog -> {
-            size += catalog.allSize();
-        });;
+        Collection<Catalog> subCatalogs = this.subCatalogs.values();
+        for (Catalog catalog : subCatalogs) {
+            size = size + catalog.allSize();
+        }
         return size;
 	}
 
 	@Override
-	public Set<ReferenceId> getOwnReferenceIds(int from, int to) {
-        Set<ReferenceId> result = new HashSet<>();
-        Iterator<Product> referenceIdIterator = store.values().iterator();
+	public Set<Product> getOwnProducts(int from, int to) {
+        Set<Product> result = new HashSet<>();
+        Iterator<Product> productIterator = store.values().iterator();
         int index = 0;
-        while ((index < to) && referenceIdIterator.hasNext()) {
-            ReferenceId referenceId = referenceIdIterator.next().getReferenceId();
+        while ((index < to) && productIterator.hasNext()) {
+            Product product = productIterator.next();
             if (index >= from) {
-                result.add(referenceId);
+                result.add(product);
             }
             index++;
         }
@@ -104,10 +113,10 @@ public class InMemoryCatalog implements Catalog {
 	}
 
 	@Override
-	public Set<ReferenceId> getAllReferenceIds(int from, int to) {
-        Set<ReferenceId> result = this.getOwnReferenceIds(from, to);
-        subCatalogs.values().forEach(catalog -> {
-            result.addAll(catalog.getAllReferenceIds(from, to));
+	public Set<Product> getAllProducts(int from, int to) {
+        Set<Product> result = this.getOwnProducts(from, to);
+        subCatalogs.values().forEach(subCatalog -> {
+            result.addAll(subCatalog.getAllProducts(from, to));
         });
         return result;
     }

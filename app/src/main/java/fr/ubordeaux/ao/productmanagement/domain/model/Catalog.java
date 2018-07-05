@@ -6,6 +6,8 @@ import java.util.Set;
 public interface Catalog {
     public String getName();
 
+    public void addSubCatalog(Catalog sub);
+
     public Set<String> getSubCatalogNames();
 
     public Optional<Catalog> getSubCatalogByName(String name);
@@ -18,8 +20,8 @@ public interface Catalog {
 
     public int allSize();
 
-    public Set<ReferenceId> getOwnReferenceIds(int from, int to);
+    public Set<Product> getOwnProducts(int from, int to);
 
-    public Set<ReferenceId> getAllReferenceIds(int from, int to);
+    public Set<Product> getAllProducts(int from, int to);
 
 }
