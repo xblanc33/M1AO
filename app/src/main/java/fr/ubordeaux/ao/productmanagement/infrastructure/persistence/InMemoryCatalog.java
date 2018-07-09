@@ -8,14 +8,15 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.application.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.CatalogName;
 import fr.ubordeaux.ao.productmanagement.domain.model.Price;
 import fr.ubordeaux.ao.productmanagement.domain.model.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
 
 public class InMemoryCatalog implements Catalog {
-    private String name;
+    private CatalogName name;
     private Map<ReferenceId, Product> store;
     private Map<String, Catalog> subCatalogs;
     private Catalog parentCatalog = null;
@@ -28,7 +29,7 @@ public class InMemoryCatalog implements Catalog {
         subCatalogs = new HashMap<>();
     }
 
-    public InMemoryCatalog(String name, Catalog parent) {
+    public InMemoryCatalog(CatalogName name, Catalog parent) {
         this(name);
         this.setParentCatalog(parent);
     }
@@ -120,4 +121,19 @@ public class InMemoryCatalog implements Catalog {
         });
         return result;
     }
+
+	@Override
+	public CatalogName getName() {
+		return null;
+	}
+
+	@Override
+	public Set<Catalog> getSubCatalogs() {
+		return null;
+	}
+
+	@Override
+	public Catalog getParentCatalog() {
+		return null;
+	}
 }

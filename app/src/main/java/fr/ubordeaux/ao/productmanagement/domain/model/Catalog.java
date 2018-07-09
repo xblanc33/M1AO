@@ -1,20 +1,16 @@
 package fr.ubordeaux.ao.productmanagement.domain.model;
 
-import java.util.Optional;
 import java.util.Set;
 
+import fr.ubordeaux.ao.productmanagement.domain.model.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.model.Product;
+
 public interface Catalog {
-    public String getName();
+    public CatalogName getName();
 
-    public void addSubCatalog(Catalog sub);
+    public Set<Catalog> getSubCatalogs();
 
-    public Set<String> getSubCatalogNames();
-
-    public Optional<Catalog> getSubCatalogByName(String name);
-
-    public Optional<Catalog> getParentCatalog();
-
-    public void addProduct(ReferenceId referenceId, Price price);
+    public Catalog getParentCatalog();
 
     public int ownSize();
 

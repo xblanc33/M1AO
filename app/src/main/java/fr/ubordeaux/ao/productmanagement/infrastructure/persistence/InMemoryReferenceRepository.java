@@ -33,9 +33,10 @@ public class InMemoryReferenceRepository implements ReferenceRepository {
 	}
 
 	@Override
-	public Optional<Reference> findReferenceById(ReferenceId id) {
+	public Reference findReferenceById(ReferenceId id) {
         if (id == null) throw new ProductManagementException("cannot find a null reference");
-        return Optional.ofNullable(store.get(id));
+        if (! store.containsKey(id)) throw new ProductManagementException("Unknown reference");
+        return store.get(id);
 	}
 
 	@Override

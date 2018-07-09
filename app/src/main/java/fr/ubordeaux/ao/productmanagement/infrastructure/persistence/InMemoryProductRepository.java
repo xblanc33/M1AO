@@ -36,8 +36,9 @@ public class InMemoryProductRepository implements ProductRepository {
 	}
 
 	@Override
-	public Optional<Product> findProductByReferenceById(ReferenceId id) {
-		return Optional.ofNullable(store.get(id));
+	public Product findProductByReferenceById(ReferenceId id) {
+		if (! store.containsKey(id)) throw new ProductManagementException("Unknown reference");
+		return store.get(id);
 	}
 
 	@Override
