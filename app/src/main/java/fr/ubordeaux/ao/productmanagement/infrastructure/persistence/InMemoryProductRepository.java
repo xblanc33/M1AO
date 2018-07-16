@@ -2,7 +2,6 @@ package fr.ubordeaux.ao.productmanagement.infrastructure.persistence;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.Price;
 import fr.ubordeaux.ao.productmanagement.domain.model.Product;

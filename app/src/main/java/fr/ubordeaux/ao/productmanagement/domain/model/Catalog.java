@@ -10,8 +10,6 @@ public interface Catalog {
 
     public Set<Catalog> getSubCatalogs();
 
-    public Catalog getParentCatalog();
-
     public int ownSize();
 
     public int allSize();
