@@ -1,5 +1,7 @@
 package fr.ubordeaux.ao.productmanagement.domain.model;
 
+import java.util.Objects;
+
 public class KeyWord {
     private String value;
 
@@ -11,7 +13,24 @@ public class KeyWord {
         this.value = value;
     }
 
-    public boolean equals(KeyWord other) {
-        return this.value == other.value;
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof KeyWord) {
+            KeyWord otherkeyWord = (KeyWord)other;
+            boolean equals = this.value.compareTo(otherkeyWord.value)==0;
+			return equals;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

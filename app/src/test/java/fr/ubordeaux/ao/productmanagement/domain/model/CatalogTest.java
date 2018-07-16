@@ -7,16 +7,14 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.InMemoryCatalog;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
 
 public class CatalogTest {
     Catalog catalog;
-    InMemoryCatalog catalogImpl;
 
     @Before
     public void createCatalog() {
-        catalogImpl = new InMemoryCatalog(new CatalogName("root"));
-        catalog = catalogImpl;
+        catalog = new CatalogImpl(new CatalogName("root"));
     }
 
     @Test
@@ -24,8 +22,7 @@ public class CatalogTest {
         //final int MAX = 150000000;//150 Millions
         final int MAX = 50000;
         for (int i=0 ; i < MAX ; i++) {
-            ReferenceId referenceId = new ReferenceId();
-            catalogImpl.addProduct(referenceId, new Price(2));
+            catalog.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
         assertEquals(MAX, catalog.ownSize());
     }
@@ -34,16 +31,13 @@ public class CatalogTest {
     public void testSubCatalog() {
         final int MAX = 50000;
         for (int i=0 ; i < MAX ; i++) {
-            ReferenceId referenceId = new ReferenceId();
-            catalogImpl.addProduct(referenceId, new Price(2));
+            catalog.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
         
-        InMemoryCatalog subImpl = new InMemoryCatalog(new CatalogName("sub"));
-        Catalog sub = subImpl;
-        catalogImpl.addSubCatalog(sub);
+        Catalog sub = new CatalogImpl(new CatalogName("sub"));
+        catalog.addSubCatalog(sub);
         for (int i=0 ; i < MAX ; i++) {
-            ReferenceId referenceId = new ReferenceId();
-            subImpl.addProduct(referenceId, new Price(2));
+            sub.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
 
         assertEquals(MAX, sub.allSize());
@@ -54,8 +48,7 @@ public class CatalogTest {
     public void getOneHundredOwnProducts() {
         final int MAX = 1000;
         for (int i=0 ; i < MAX ; i++) {
-            ReferenceId referenceId = new ReferenceId();
-            catalogImpl.addProduct(referenceId, new Price(i));
+            catalog.addProduct(new Product(new ReferenceId(), new Price(i)));
         }
         Set<Product> products = catalog.getOwnProducts(10, 110);
         assertEquals(100, products.size());
@@ -65,16 +58,13 @@ public class CatalogTest {
     public void getOneHundredAllProducts() {
         final int MAX = 60;
         for (int i=0 ; i < MAX ; i++) {
-            ReferenceId referenceId = new ReferenceId();
-            catalogImpl.addProduct(referenceId, new Price(2));
+            catalog.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
         
-        InMemoryCatalog subImpl = new InMemoryCatalog(new CatalogName("sub"));
-        Catalog sub = subImpl;
-        catalogImpl.addSubCatalog(sub);
+        Catalog sub = new CatalogImpl(new CatalogName("sub"));
+        catalog.addSubCatalog(sub);
         for (int i=0 ; i < MAX ; i++) {
-            ReferenceId referenceId = new ReferenceId();
-            subImpl.addProduct(referenceId, new Price(2));
+            sub.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
         Set<Product> products = catalog.getAllProducts(10, 110);
         assertEquals(100, products.size());

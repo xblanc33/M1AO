@@ -1,6 +1,5 @@
-package fr.ubordeaux.ao.productmanagement.infrastructure.persistence;
+package fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -14,12 +13,12 @@ import fr.ubordeaux.ao.productmanagement.domain.model.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
 
-public class InMemoryCatalog implements Catalog {
+public class CatalogImpl implements Catalog {
     private CatalogName name;
     private Map<ReferenceId, Product> store;
     private Map<CatalogName, Catalog> subCatalogs;    
 
-    public InMemoryCatalog(CatalogName name) {
+    public CatalogImpl(CatalogName name) {
         this.setName(name);
         store = new HashMap<>();
         subCatalogs = new HashMap<>();
@@ -77,6 +76,7 @@ public class InMemoryCatalog implements Catalog {
         return Set.copyOf(this.subCatalogs.values());
     }
     
+    @Override
     public void addSubCatalog(Catalog sub) {
         for (Catalog subCatalog : this.getSubCatalogs()) {
             if (subCatalog.getName().equals(sub.getName())) throw new ProductManagementException("cannot add sub catalog with same name");
@@ -84,12 +84,11 @@ public class InMemoryCatalog implements Catalog {
         this.subCatalogs.put(sub.getName(), sub);
     }
     
-	public void addProduct(ReferenceId referenceId, Price price) {
-        if (referenceId == null) throw new ProductManagementException("cannot add product to category when id is null");
-        if (price == null) throw new ProductManagementException("cannot add product to category when price is null");
-        if (store.get(referenceId) != null) throw new ProductManagementException("cannot add product to category when id already exists");
-
-        store.put(referenceId, new Product(referenceId, price));
+    @Override
+	public void addProduct(Product product) {
+        if (product == null) throw new ProductManagementException("cannot add null product to catalog");
+        
+        store.put(product.getReferenceId(), product);
 	}
 
 }

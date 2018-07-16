@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.productmanagement.infrastructure.persistence;
+package fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -10,11 +10,11 @@ import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException
 import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceRepository;
 
-public class InMemoryReferenceRepository implements ReferenceRepository {
+public class ReferenceRepositoryImpl implements ReferenceRepository {
 
     private HashMap<ReferenceId,Reference> store;
 
-    public InMemoryReferenceRepository() {
+    public ReferenceRepositoryImpl() {
         store = new HashMap<>();
     }
 

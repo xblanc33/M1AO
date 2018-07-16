@@ -2,19 +2,17 @@ package fr.ubordeaux.ao.productmanagement.domain.model;
 
 import static org.junit.Assert.*;
 
-import java.util.Optional;
-
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.InMemoryReferenceRepository;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
 public class ReferenceRepositoryTest {
     ReferenceRepository repository;
 
     @Before
     public void createRepository() {
-        repository = new InMemoryReferenceRepository();
+        repository = new ReferenceRepositoryImpl();
     }
 
     @Test
