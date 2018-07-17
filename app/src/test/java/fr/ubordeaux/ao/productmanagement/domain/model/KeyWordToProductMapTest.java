@@ -7,6 +7,11 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWordToProductMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.KeyWord;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWordToProductMapImpl;
 
 public class KeyWordToProductMapTest {

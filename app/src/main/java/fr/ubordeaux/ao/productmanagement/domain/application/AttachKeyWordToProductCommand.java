@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.productmanagement.domain.application;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.KeyWord;
 
 public class AttachKeyWordToProductCommand {
     KeyWord keyword;

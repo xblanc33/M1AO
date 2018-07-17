@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.productmanagement.domain.application;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 
 public class CreateProductCommand {
     ReferenceId referenceId;

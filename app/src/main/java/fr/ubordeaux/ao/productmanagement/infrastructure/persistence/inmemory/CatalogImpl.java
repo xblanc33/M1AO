@@ -6,12 +6,13 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.Catalog;
-import fr.ubordeaux.ao.productmanagement.domain.model.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+
+
 
 public class CatalogImpl implements Catalog {
     private CatalogName name;

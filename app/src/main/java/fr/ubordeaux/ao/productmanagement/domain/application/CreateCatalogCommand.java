@@ -1,6 +1,6 @@
 package fr.ubordeaux.ao.productmanagement.domain.application;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
 
 public class CreateCatalogCommand {
     private CatalogName name;

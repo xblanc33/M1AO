@@ -1,9 +1,9 @@
-package fr.ubordeaux.ao.productmanagement.domain.model;
+package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 
 public interface Catalog {
     public CatalogName getName();

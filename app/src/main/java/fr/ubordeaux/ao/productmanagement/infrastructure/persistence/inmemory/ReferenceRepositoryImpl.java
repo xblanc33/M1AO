@@ -2,13 +2,12 @@ package fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceRepository;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 
 public class ReferenceRepositoryImpl implements ReferenceRepository {
 

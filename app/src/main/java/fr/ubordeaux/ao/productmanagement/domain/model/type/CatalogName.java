@@ -1,7 +1,9 @@
-package fr.ubordeaux.ao.productmanagement.domain.model;
+package fr.ubordeaux.ao.productmanagement.domain.model.type;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 
 public class CatalogName {
     private String value;

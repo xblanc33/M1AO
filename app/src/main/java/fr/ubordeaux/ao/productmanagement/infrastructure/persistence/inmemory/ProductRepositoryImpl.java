@@ -3,11 +3,13 @@ package fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory;
 import java.util.HashMap;
 import java.util.Map;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductRepository;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+
+
 
 public class ProductRepositoryImpl implements ProductRepository {
 

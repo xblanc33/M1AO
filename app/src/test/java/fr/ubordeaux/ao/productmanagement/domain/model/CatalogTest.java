@@ -7,6 +7,11 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
 
 public class CatalogTest {

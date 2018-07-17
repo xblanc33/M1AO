@@ -5,10 +5,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.KeyWordToProductMap;
-import fr.ubordeaux.ao.productmanagement.domain.model.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWordToProductMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.KeyWord;
+
 
 public class KeyWordToProductMapImpl implements KeyWordToProductMap {
     Map<KeyWord,Set<Product>> map;

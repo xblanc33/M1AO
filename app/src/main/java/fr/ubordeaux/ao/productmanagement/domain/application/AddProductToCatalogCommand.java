@@ -1,8 +1,8 @@
 package fr.ubordeaux.ao.productmanagement.domain.application;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
 
 public class AddProductToCatalogCommand {
     private Product product;

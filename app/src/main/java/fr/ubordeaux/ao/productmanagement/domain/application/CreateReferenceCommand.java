@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.productmanagement.domain.application;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 
 public class CreateReferenceCommand {
     private ReferenceId id;

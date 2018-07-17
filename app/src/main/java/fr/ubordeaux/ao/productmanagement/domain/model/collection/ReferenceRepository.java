@@ -1,6 +1,9 @@
-package fr.ubordeaux.ao.productmanagement.domain.model;
+package fr.ubordeaux.ao.productmanagement.domain.model.collection;
 
 import java.util.Set;
+
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 
 public interface ReferenceRepository {
     public void addReference(ReferenceId id, String name, String description);

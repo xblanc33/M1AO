@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
+import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
 public class ReferenceRepositoryTest {
