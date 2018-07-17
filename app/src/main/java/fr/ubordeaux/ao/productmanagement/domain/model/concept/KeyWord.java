@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.productmanagement.domain.model.type;
+package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
 import java.util.Objects;
 

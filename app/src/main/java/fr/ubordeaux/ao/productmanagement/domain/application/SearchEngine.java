@@ -2,10 +2,10 @@ package fr.ubordeaux.ao.productmanagement.domain.application;
 
 import java.util.Set;
 
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 
