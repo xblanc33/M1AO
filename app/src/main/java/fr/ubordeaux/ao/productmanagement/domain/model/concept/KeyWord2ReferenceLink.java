@@ -2,13 +2,13 @@ package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 
-public class KeyWordProductLink {
+public class KeyWord2ReferenceLink {
     private KeyWord keyword;
-    private Product product;
+    private Reference reference;
 
-    public KeyWordProductLink(KeyWord keyword, Product product) {
+    public KeyWord2ReferenceLink(KeyWord keyword, Reference reference) {
         this.setKeyWord(keyword);
-        this.setProduct(product);
+        this.setReference(reference);
     }
 
     private void setKeyWord(KeyWord keyword) {
@@ -16,17 +16,17 @@ public class KeyWordProductLink {
         this.keyword = keyword;
     }
 
-    private void setProduct(Product product) {
-        if (product == null) throw new ProductManagementException("cannot create link with null product");
-        this.product = product;
+    private void setReference(Reference reference) {
+        if (reference == null) throw new ProductManagementException("cannot create link with null product");
+        this.reference = reference;
     }
 
     public KeyWord getKeyWord() {
         return this.keyword;
     }
 
-    public Product getProduct() {
-        return this.product;
+    public Reference getReference() {
+        return this.reference;
     }
     
 }
