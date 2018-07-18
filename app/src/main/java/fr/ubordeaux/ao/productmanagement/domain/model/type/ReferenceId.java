@@ -1,5 +1,6 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.type;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class ReferenceId {
@@ -11,5 +12,21 @@ public class ReferenceId {
 
     public ReferenceId(String uuid) {
         this.id = UUID.fromString(uuid);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (! (other instanceof ReferenceId)) return false;
+        return this.id == ((ReferenceId)other).id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return this.id.toString();
     }
 }

@@ -1,5 +1,7 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.type;
 
+import java.util.Objects;
+
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 
 public class Price {
@@ -25,5 +27,21 @@ public class Price {
 
     public double getPrice() {
         return this.price;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (! (other instanceof Price)) return false;
+        return this.price == ((Price)other).price;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(price);
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.price);
     }
 }

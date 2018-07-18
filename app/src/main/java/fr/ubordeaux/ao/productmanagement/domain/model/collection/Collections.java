@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.productmanagement.domain.model.service;
+package fr.ubordeaux.ao.productmanagement.domain.model.collection;
 
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
@@ -6,7 +6,7 @@ import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductReposito
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Catalog;
 
-public abstract class Factory {
+public abstract class Collections {
     public abstract ProductRepository getProductRepositorySingleton();
 
     public abstract ReferenceRepository getReferenceRepositorySingleton();

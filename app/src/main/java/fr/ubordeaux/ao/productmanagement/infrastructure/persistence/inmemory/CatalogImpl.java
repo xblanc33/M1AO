@@ -73,13 +73,28 @@ public class CatalogImpl implements Catalog {
     }
 
 	@Override
-	public Set<Catalog> getSubCatalogs() {
+	public Set<Catalog> getSubCatalog() {
         return Set.copyOf(this.subCatalogs.values());
+    }
+
+    @Override
+    public Catalog getCatalogByName(CatalogName catalogName) {
+        if (this.getName().equals(catalogName)) return this;
+
+        for (Catalog sub : subCatalogs.values()) {
+            try {
+                Catalog catalog = sub.getCatalogByName(catalogName);
+                return catalog;
+            } catch (ProductManagementException ex) {
+
+            }
+        }
+        throw new ProductManagementException("can't find catalog with such a name");
     }
     
     @Override
     public void addSubCatalog(Catalog sub) {
-        for (Catalog subCatalog : this.getSubCatalogs()) {
+        for (Catalog subCatalog : this.getSubCatalog()) {
             if (subCatalog.getName().equals(sub.getName())) throw new ProductManagementException("cannot add sub catalog with same name");
         }
         this.subCatalogs.put(sub.getName(), sub);

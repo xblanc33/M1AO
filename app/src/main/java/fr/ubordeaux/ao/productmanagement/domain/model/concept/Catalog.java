@@ -8,7 +8,9 @@ import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 public interface Catalog {
     public CatalogName getName();
 
-    public Set<Catalog> getSubCatalogs();
+    public Set<Catalog> getSubCatalog();
+
+    public Catalog getCatalogByName(CatalogName catalogName);
 
     public void addSubCatalog(Catalog subCatalog);
 

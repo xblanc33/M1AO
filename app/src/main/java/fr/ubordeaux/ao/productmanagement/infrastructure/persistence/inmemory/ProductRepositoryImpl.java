@@ -1,7 +1,9 @@
 package fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
@@ -20,9 +22,9 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
 	@Override
-	public void addProduct(ReferenceId referenceId, Price price) {
-		if (referenceId == null) throw new ProductManagementException("Cannot add product with null as Reference id");
-		if (price == null) throw new ProductManagementException("Cannot add product with null as price");
+	public void addProduct(Product product) {
+		ReferenceId referenceId = product.getReferenceId();
+		Price price = product.getPrice();
 		if (store.get(referenceId) != null) throw new ProductManagementException("Cannot add product because there is already one");
 		
 		store.put(referenceId, new Product(referenceId, price));
@@ -30,9 +32,10 @@ public class ProductRepositoryImpl implements ProductRepository {
 	}
 
 	@Override
-	public void removeProduct(ReferenceId referenceId) {
-		if (referenceId == null) throw new ProductManagementException("cannot remove null to ProductRepository");
-        if (store.get(referenceId) == null) throw new ProductManagementException("cannot remove, no such id in the ProductRepository");
+	public void removeProduct(Product product) {
+		ReferenceId referenceId = product.getReferenceId();
+		Price price = product.getPrice();
+		if (store.get(referenceId) == null) throw new ProductManagementException("cannot remove, no such id in the ProductRepository");
 		store.remove(referenceId);
 	}
 
@@ -40,6 +43,19 @@ public class ProductRepositoryImpl implements ProductRepository {
 	public Product findProductByReferenceById(ReferenceId id) {
 		if (! store.containsKey(id)) throw new ProductManagementException("Unknown reference");
 		return store.get(id);
+	}
+
+	@Override
+	public Set<Product> getProduct(int from, int to) {
+		int i = 0;
+        Set<Product> result = new HashSet<Product>();
+        for (Product product : store.values()) {
+            if ((i >= from) && (i < to)) {
+                result.add(product);
+            }
+            i++;
+        }
+        return result;
 	}
 
 	@Override

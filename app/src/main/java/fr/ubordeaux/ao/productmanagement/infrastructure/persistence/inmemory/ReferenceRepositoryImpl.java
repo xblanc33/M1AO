@@ -18,15 +18,15 @@ public class ReferenceRepositoryImpl implements ReferenceRepository {
     }
 
 	@Override
-	public void addReference(ReferenceId id , String name, String description) {
-        if (id == null) throw new ProductManagementException("cannot add null to ReferenceRepository");
-        if (store.get(id) != null) throw new ProductManagementException("ReferenceId already in the repository");
-        store.put(id,new Reference(id, name, description));
+	public void addReference(Reference reference) {
+        if (reference == null) throw new ProductManagementException("cannot add null to ReferenceRepository");
+        if (store.get(reference.getId()) != null) throw new ProductManagementException("ReferenceId already in the repository");
+        store.put(reference.getId(), reference);
 	}
 
 	@Override
-	public void removeRerence(ReferenceId id) {
-        if (id == null) throw new ProductManagementException("cannot remove null to ReferenceRepository");
+	public void removeRerence(Reference reference) {
+        ReferenceId id = reference.getId();
         if (store.get(id) == null) throw new ProductManagementException("cannot remove, no such id in the ReferenceRepository");
 		store.remove(id);
 	}
@@ -39,7 +39,7 @@ public class ReferenceRepositoryImpl implements ReferenceRepository {
 	}
 
 	@Override
-	public Set<Reference> findAllReferencesByName(String name) {
+	public Set<Reference> findReferenceByName(String name) {
         if (name == null) throw new ProductManagementException("cannot find references with null as name");
         Set<Reference> foundReferences = new HashSet<Reference>();
 		store.forEach((k,v) -> {
@@ -48,7 +48,20 @@ public class ReferenceRepositoryImpl implements ReferenceRepository {
             }
         });
         return foundReferences;
-	}
+    }
+    
+    @Override
+    public Set<Reference> getReference(int from, int to) {
+        int i = 0;
+        Set<Reference> result = new HashSet<Reference>();
+        for (Reference reference : store.values()) {
+            if ((i >= from) && (i < to)) {
+                result.add(reference);
+            }
+            i++;
+        }
+        return result;
+    }
 
 	@Override
 	public int size() {

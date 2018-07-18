@@ -75,4 +75,17 @@ public class CatalogTest {
         assertEquals(100, products.size());
     }
 
+    @Test
+    public void findCatalogByName() {
+        Catalog src = new CatalogImpl(new CatalogName("src"));
+        Catalog test = new CatalogImpl(new CatalogName("test"));
+        Catalog java = new CatalogImpl(new CatalogName("java"));
+        catalog.addSubCatalog(src);
+        catalog.addSubCatalog(test);
+        src.addSubCatalog(java);
+        Catalog java_ = catalog.getCatalogByName(new CatalogName("java"));
+        assertEquals(java, java_);
+
+    }
+
 }

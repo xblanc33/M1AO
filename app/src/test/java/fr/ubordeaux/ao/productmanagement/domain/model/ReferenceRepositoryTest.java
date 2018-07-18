@@ -23,7 +23,8 @@ public class ReferenceRepositoryTest {
         ReferenceId id = new ReferenceId();
         String name = "First Test Reference";
         String description = "This is the first ever created reference";
-        repository.addReference(id, name, description);
+        Reference reference = new Reference(id, name, description);
+        repository.addReference(reference);
         assertEquals(1, repository.size());
         Reference ref = repository.findReferenceById(id);
         assertEquals("name of reference is ok", name, ref.getName());

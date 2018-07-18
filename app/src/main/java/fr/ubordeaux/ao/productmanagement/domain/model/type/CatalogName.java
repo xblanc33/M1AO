@@ -1,5 +1,6 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.type;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,7 +20,19 @@ public class CatalogName {
         this.value = value;
     }
 
-    public boolean equals(CatalogName other) {
-        return this.value == other.value;
+    @Override
+    public boolean equals(Object other) {
+        if (! (other instanceof CatalogName)) return false;
+        return this.value == ((CatalogName)other).value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        return this.value;
     }
 }

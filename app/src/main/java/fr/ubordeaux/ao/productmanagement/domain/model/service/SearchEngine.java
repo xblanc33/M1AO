@@ -3,6 +3,7 @@ package fr.ubordeaux.ao.productmanagement.domain.model.service;
 import java.util.HashSet;
 import java.util.Set;
 
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.Collections;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
@@ -22,11 +23,11 @@ public class SearchEngine {
     private Catalog rootCatalog;
     private KeyWord2ReferenceLinkMap keyword2referenceMap;
 
-    public SearchEngine(Factory factory) {
-        products = factory.getProductRepositorySingleton();
-        references = factory.getReferenceRepositorySingleton();
-        rootCatalog = factory.getRootCatalog();
-        keyword2referenceMap = factory.getKeyWord2ReferenceLinkMapSingleton();
+    public SearchEngine(Collections collections) {
+        products = collections.getProductRepositorySingleton();
+        references = collections.getReferenceRepositorySingleton();
+        rootCatalog = collections.getRootCatalog();
+        keyword2referenceMap = collections.getKeyWord2ReferenceLinkMapSingleton();
     }
 
     public Reference searchReferenceById(ReferenceId id) {
