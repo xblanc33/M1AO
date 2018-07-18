@@ -3,11 +3,11 @@ package fr.ubordeaux.ao.productmanagement.domain.model.service;
 import java.util.HashSet;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.Collections;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
@@ -23,11 +23,11 @@ public class SearchEngine {
     private Catalog rootCatalog;
     private KeyWord2ReferenceLinkMap keyword2referenceMap;
 
-    public SearchEngine(Collections collections) {
-        products = collections.getProductRepositorySingleton();
-        references = collections.getReferenceRepositorySingleton();
-        rootCatalog = collections.getRootCatalog();
-        keyword2referenceMap = collections.getKeyWord2ReferenceLinkMapSingleton();
+    public SearchEngine() {
+        products = CollectionManager.getInstance().getProductRepository();
+        references = CollectionManager.getInstance().getReferenceRepository();
+        rootCatalog = CollectionManager.getInstance().getRootCatalog();
+        keyword2referenceMap = CollectionManager.getInstance().getLinkMap();
     }
 
     public Reference searchReferenceById(ReferenceId id) {
