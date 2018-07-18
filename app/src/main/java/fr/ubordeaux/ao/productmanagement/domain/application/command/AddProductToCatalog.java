@@ -25,6 +25,7 @@ public class AddProductToCatalog {
     }
 
     public void execute(Catalog rootCatalog) {
+        //TODO Check that the product is in the product repository
         Catalog catalog = rootCatalog.getCatalogByName(catalogName);
         catalog.addProduct(product);
     }

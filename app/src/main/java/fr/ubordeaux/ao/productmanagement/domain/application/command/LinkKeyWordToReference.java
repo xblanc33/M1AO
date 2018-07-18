@@ -17,6 +17,7 @@ public class LinkKeyWordToReference {
     }
 
     public void execute(KeyWord2ReferenceLinkMap map) {
+        //TODO Check that the reference exists in the ReferenceRepository
         map.putKeyWordProductLink(link);
     }
 }

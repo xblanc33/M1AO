@@ -17,6 +17,7 @@ public class AddProduct {
     }
 
     public void execute(ProductRepository productRepository) {
+        //TODO check that the ReferenceId exists
         productRepository.addProduct(product);
     }
 }
