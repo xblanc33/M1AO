@@ -7,7 +7,7 @@ import java.util.Set;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
@@ -39,8 +39,7 @@ public class CatalogTest {
             catalog.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
         
-        Catalog sub = new CatalogImpl(new CatalogName("sub"));
-        catalog.addSubCatalog(sub);
+        Catalog sub = catalog.createSubCatalog(new CatalogName("sub"));
         for (int i=0 ; i < MAX ; i++) {
             sub.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
@@ -66,8 +65,7 @@ public class CatalogTest {
             catalog.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
         
-        Catalog sub = new CatalogImpl(new CatalogName("sub"));
-        catalog.addSubCatalog(sub);
+        Catalog sub = catalog.createSubCatalog(new CatalogName("sub"));
         for (int i=0 ; i < MAX ; i++) {
             sub.addProduct(new Product(new ReferenceId(), new Price(2)));
         }
@@ -77,15 +75,10 @@ public class CatalogTest {
 
     @Test
     public void findCatalogByName() {
-        Catalog src = new CatalogImpl(new CatalogName("src"));
-        Catalog test = new CatalogImpl(new CatalogName("test"));
-        Catalog java = new CatalogImpl(new CatalogName("java"));
-        catalog.addSubCatalog(src);
-        catalog.addSubCatalog(test);
-        src.addSubCatalog(java);
+        Catalog src = catalog.createSubCatalog(new CatalogName("src"));
+        Catalog test = catalog.createSubCatalog(new CatalogName("test"));
+        Catalog java = src.createSubCatalog(new CatalogName("java"));
         Catalog java_ = catalog.getCatalogByName(new CatalogName("java"));
         assertEquals(java, java_);
-
     }
-
 }

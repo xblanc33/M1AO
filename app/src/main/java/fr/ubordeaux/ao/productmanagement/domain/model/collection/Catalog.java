@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.productmanagement.domain.model.concept;
+package fr.ubordeaux.ao.productmanagement.domain.model.collection;
 
 import java.util.Set;
 
@@ -12,7 +12,7 @@ public interface Catalog {
 
     public Catalog getCatalogByName(CatalogName catalogName);
 
-    public void addSubCatalog(Catalog subCatalog);
+    public Catalog createSubCatalog(CatalogName subCatalogName);
 
     public int ownSize();
 

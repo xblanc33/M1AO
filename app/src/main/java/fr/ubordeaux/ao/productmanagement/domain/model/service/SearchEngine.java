@@ -7,7 +7,7 @@ import fr.ubordeaux.ao.productmanagement.domain.model.collection.Collections;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;

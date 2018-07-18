@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
@@ -93,11 +93,13 @@ public class CatalogImpl implements Catalog {
     }
     
     @Override
-    public void addSubCatalog(Catalog sub) {
+    public Catalog createSubCatalog(CatalogName subName) {
         for (Catalog subCatalog : this.getSubCatalog()) {
-            if (subCatalog.getName().equals(sub.getName())) throw new ProductManagementException("cannot add sub catalog with same name");
+            if (subCatalog.getName().equals(subName)) throw new ProductManagementException("cannot add sub catalog with same name");
         }
-        this.subCatalogs.put(sub.getName(), sub);
+        Catalog subCatalog = new CatalogImpl(subName);
+        this.subCatalogs.put(subName, subCatalog);
+        return subCatalog;
     }
     
     @Override
