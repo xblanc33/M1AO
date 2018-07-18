@@ -1,11 +1,12 @@
 package fr.ubordeaux.ao.productmanagement.domain.application.command;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
 
-public class AddProductToCatalog {
+public class AddProductToCatalog implements Command {
     private Product product;
     private CatalogName catalogName;
 
@@ -24,9 +25,11 @@ public class AddProductToCatalog {
         this.catalogName = catalogName;
     }
 
-    public void execute(Catalog rootCatalog) {
-        //TODO Check that the product is in the product repository
-        Catalog catalog = rootCatalog.getCatalogByName(catalogName);
+    @Override
+    public void execute() {
+        Product storedProduct = CollectionManager.getInstance().getProductRepository().findProductByReferenceById(product.getReferenceId());
+        storedProduct.changePrice(product.getPrice());
+        Catalog catalog = CollectionManager.getInstance().getRootCatalog().getCatalogByName(catalogName);
         catalog.addProduct(product);
     }
 }

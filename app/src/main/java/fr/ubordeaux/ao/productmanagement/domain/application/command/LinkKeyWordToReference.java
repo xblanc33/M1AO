@@ -1,10 +1,10 @@
 package fr.ubordeaux.ao.productmanagement.domain.application.command;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord2ReferenceLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 
-public class LinkKeyWordToReference {
+public class LinkKeyWordToReference implements Command {
     private KeyWord2ReferenceLink link;
 
     public LinkKeyWordToReference(KeyWord2ReferenceLink link) {
@@ -16,8 +16,9 @@ public class LinkKeyWordToReference {
         this.link = link;
     }
 
-    public void execute(KeyWord2ReferenceLinkMap map) {
-        //TODO Check that the reference exists in the ReferenceRepository
-        map.putKeyWordProductLink(link);
+    @Override
+    public void execute() {
+        CollectionManager.getInstance().getReferenceRepository().findReferenceById(link.getReference().getId());
+        CollectionManager.getInstance().getLinkMap().putKeyWordProductLink(link);
     }
 }

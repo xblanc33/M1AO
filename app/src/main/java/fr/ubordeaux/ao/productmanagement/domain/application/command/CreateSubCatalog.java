@@ -1,10 +1,11 @@
 package fr.ubordeaux.ao.productmanagement.domain.application.command;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
 
-public class CreateSubCatalog {
+public class CreateSubCatalog implements Command {
     private CatalogName name;
     private CatalogName parentName;
     
@@ -23,8 +24,9 @@ public class CreateSubCatalog {
         this.parentName = name;
     }
 
-    public void execute(Catalog rootCatalog) {
-        Catalog parentCatalog = rootCatalog.getCatalogByName(parentName);
+    @Override
+    public void execute() {
+        Catalog parentCatalog = CollectionManager.getInstance().getRootCatalog().getCatalogByName(parentName);
         parentCatalog.createSubCatalog(name);
     }
 
