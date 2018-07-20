@@ -11,7 +11,6 @@ import fr.ubordeaux.ao.productmanagement.domain.application.command.Handler;
 import fr.ubordeaux.ao.productmanagement.domain.application.command.LinkKeyWordToReference;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
@@ -29,7 +28,7 @@ import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.Key
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
-public class Main {
+public class SampleScenarioMain {
     public static void main(String[] args) {
         createCollections();
         Gateway gateway = createCommandGatewayAndHandler();

@@ -43,8 +43,9 @@ public class SearchEngine {
     }
 
     public Set<Reference> searchReferencesByName(String name) {
-        throw new ProductManagementException("no yet supported");
-
+        Set<Reference> foundReferences = new HashSet<Reference>();
+        foundReferences.addAll(references.findReferenceByName(name));
+        return foundReferences;
     }
 
     public Set<Product> getOwnProductsOfCatalog(CatalogName catalogName) {

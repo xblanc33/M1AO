@@ -8,13 +8,8 @@ import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 
 
 public interface KeyWord2ReferenceLinkMap {
-
     public void putKeyWordProductLink(KeyWord2ReferenceLink link);
-
     public void removeKeyWordProductLink(KeyWord2ReferenceLink link);
-
     public Set<Reference> findReferenceFromKeyWord(KeyWord keyword);
-
     public Set<KeyWord> getLinkedKeyWords();
-
 }

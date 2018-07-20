@@ -1,7 +1,6 @@
 package fr.ubordeaux.ao.productmanagement.domain.application.command;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
 

@@ -74,7 +74,9 @@ public class CatalogImpl implements Catalog {
 
 	@Override
 	public Set<Catalog> getSubCatalog() {
-        return Set.copyOf(this.subCatalogs.values());
+        Set<Catalog> result = new HashSet<Catalog>();
+        result.addAll(this.subCatalogs.values());
+        return result;
     }
 
     @Override

@@ -14,9 +14,7 @@ public class Price {
     private void setPrice(double price) {
         if (price < 0) throw new ProductManagementException("price must be positive");
         if (hasMoreThanTwoDecimals(price)) throw new ProductManagementException("price should not have more than two decimals");
-
         this.price = price;
-
     }
 
     private static boolean hasMoreThanTwoDecimals(double price){

@@ -8,14 +8,11 @@ import java.util.Set;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord2ReferenceLink;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 
 
-
-
 public class KeyWord2ReferenceLinkMapImpl implements KeyWord2ReferenceLinkMap {
-    Map<KeyWord,Set<Reference>> map;
+    Map<KeyWord, Set<Reference>> map;
 
     public KeyWord2ReferenceLinkMapImpl() {
         map = new HashMap<>();
@@ -48,14 +45,18 @@ public class KeyWord2ReferenceLinkMapImpl implements KeyWord2ReferenceLinkMap {
 	@Override
 	public Set<Reference> findReferenceFromKeyWord(KeyWord keyword) {
 		if (map.containsKey(keyword)) {
-            return Set.copyOf(map.get(keyword));
+            Set<Reference> result = new HashSet<Reference>();
+            result.addAll(map.get(keyword));
+            return result;
         }
 		return new HashSet<Reference>();
 	}
 
 	@Override
 	public Set<KeyWord> getLinkedKeyWords() {
-		return Set.copyOf(map.keySet());
+        Set<KeyWord> result = new HashSet<KeyWord>();
+        result.addAll(map.keySet());
+		return result;
 	}	
 
 }

@@ -3,7 +3,6 @@ package fr.ubordeaux.ao.productmanagement.domain.model.collection;
 import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
 import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
 
 public interface ProductRepository {
