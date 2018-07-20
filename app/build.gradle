@@ -17,7 +17,7 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = "fr.ubordeaux.ao.productmanagement.ui.cli.ConsoleMain"
+mainClassName = "fr.ubordeaux.ao.productmanagement.ui.web.SocketServer"
 
 run {
    standardInput = System.in
