@@ -10,14 +10,16 @@ targetCompatibility = 1.8
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
+  compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
   testCompile 'junit:junit:4.12'
 }
 
 apply plugin: 'application'
-mainClassName = "fr.ubordeaux.ao.productmanagement.ui.web.SocketServer"
+mainClassName = "fr.ubordeaux.ao.productmanagement.infrastructure.persistence.jdbc.CreateDataBase"
 
 run {
    standardInput = System.in
