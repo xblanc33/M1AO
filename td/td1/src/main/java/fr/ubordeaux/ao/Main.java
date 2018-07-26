@@ -12,6 +12,13 @@ public class Main {
             contacts.addContact(newContact);
         }
         System.out.println(MAX+" contacts created !");
+
+        try {
+            Thread.sleep(200000);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
         
     }
 }

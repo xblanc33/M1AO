@@ -15,5 +15,12 @@ En utilisant Java, exécutez le code que vous venez de compiler:
 
 
 ## Gradle
+En utilisant Gradle, compiler le code du TD1
+
+    gradle compileJava
+
+En utilisant Gradle, exécuter le test du TD1
+
+    gradle test
 
 ## Les obje POO
