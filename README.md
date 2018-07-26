@@ -10,6 +10,17 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 * To do (Chargé de TD)
 * To do (Chargé de TD)
 
+## Sources
+
+Tous les supports du cous se trouvent sur ce dépôt GitHub.
+Pour suivre les TD, vous devez cloner ce dépôt.
+
+## TDs
+
+* [TD1](td/td1/sujet.md)
+* [TD1](td/td2/sujet.md)
+
+
 ## Références
 
 * [Algorithms](https://www.amazon.fr/Algorithms-Robert-Sedgewick/dp/032157351X/ref=sr_1_1?s=english-books&ie=UTF8&qid=1528207363&sr=1-1&keywords=algorithms+sedgewick)
