@@ -46,7 +46,7 @@ public class CreateDataBase {
 
     private static void createTable() throws SQLException {
         Statement stmt = connection.createStatement();            
-        String sql = "CREATE TABLE REFERENCE (id VARCHAR(255) not NULL, " +
+        String sql = "CREATE TABLE REFERENCE (id VARCHAR(36) not NULL, " +
         " name VARCHAR(255), " + 
         " description VARCHAR(255), " + 
         " PRIMARY KEY ( id ))";
