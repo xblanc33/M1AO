@@ -31,14 +31,14 @@ En utilisant Gradle, exécuter le test du TD1
 
 En regardant le code du TD1, précisez le rôle (value, entity, aggregate, repository) de chaque classe en vous aidant du tableau suivant.
 
-| Classe de l'objet | Value ? | Entity ? | Aggregate | Repository |
-| ------------------|---------|----------|-----------|------------|
-| Address           |         |          |           |            |
-| Contact           |         |          |           |            |
-| Contacts          |         |          |           |            |
-| Mail              |         |          |           |            |
-| PhoneNumber       |         |          |           |            |
-| Town              |         |          |           |            |
+| Classe de l'objet | Value ? | Entity ? | Aggregate ? | Repository ? |
+| ------------------|---------|----------|-------------|--------------|
+| Address           |    X    |          |             |              |
+| Contact           |         |          |             |              |
+| Contacts          |         |          |             |              |
+| Mail              |         |          |             |              |
+| PhoneNumber       |         |          |             |              |
+| Town              |         |          |             |              |
 
 ## Objets et Machine Virtuelle
 
