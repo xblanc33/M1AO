@@ -4,7 +4,8 @@ Ce TD a pour objectif de :
 
 * Connaitre et exécuter Javac
 * Connaitre et exécuter Gradle
-* Mieux comprendre les différents types d'objets
+* Mieux comprendre les différents types de classe
+* Compter le nombre d'objets présents dans une machine vituelle
 
 ## Javac & Java
 
@@ -41,16 +42,19 @@ En regardant le code du TD1, précisez le rôle (value, entity, aggregate, repos
 
 ## Objets et Machine Virtuelle
 
-Nous allons utiliser les outils **jps**, **jmap** et **jhat** pour analyser la machine virtuelle Java et compter le nombre d'objets Java créés.
+Vous allez utiliser les outils **jps**, **jmap** et **jhat** pour analyser la machine virtuelle Java et compter le nombre d'objets Java créés.
 
 ### JPS
 
-L'utilitaire **jps** permet d'identifier les programmes Java en cours d'exécution. Chaque programme est identifié par un numéro. Exécutez le TD1 puis dans une autre console de votre shell, exécutez jps pour connaître le numéro du programme.
+L'utilitaire **jps** permet d'identifier les programmes Java en cours d'exécution. Chaque programme est identifié par un numéro.
+Exécutez le TD1 puis, dans une autre console de votre shell, exécutez jps pour connaître le numéro du programme.
 
-Dans l'exemple suivant, l'exécution du TD1 s'appelle **Main** et est identifiée par le numéro **82148**.
+Par exemple suivant, le Shell1 exécute le TD1.
 
     Shell1:> java -cp ./classes fr.ubordeaux.ao.Main
     3000 contacts created ! 
+
+Puis le Shell2 exécute **jps**. On voit que l'exécution du TD1 est en cours. Elle s'appelle **Main** et est identifiée par le numéro **82148**.
 
     Shell2:> jps
     49572 org.eclipse.equinox.launcher_1.5.100.v20180611-1436.jar
@@ -82,11 +86,12 @@ En continuant l'exemple, l'utilitaire **jhat** lance un serveur web sur le port 
     Started HTTP server on port 7000
     Server is ready.
 
-Avec mon navigateur web (Chrome), il est possible d'ouvrir la page **http://localhost:7000** et ainsi voir le résultat de l'analyse.
+Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://localhost:7000** et ainsi voir le résultat de l'analyse.
 
 <img src="jhat.png" alt="image de l'analyse" width="300px"/>
 
 ### A vous de jouer
 
-Utilisez **jps**, **jmap** et **jhat** pour compter combien d'objets sont créés lors de l'exécution du TD1.
-
+* Utilisez **jps**, **jmap** et **jhat** pour compter combien d'objets sont créés lors de l'exécution du TD1.
+* Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence.
+* Modifier le code pour connaître la valeur maximale de **MAX** (sans que la machine virtuelle ne crash)
