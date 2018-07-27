@@ -84,7 +84,7 @@ En continuant l'exemple, l'utilitaire **jhat** lance un serveur web sur le port 
 
 Avec mon navigateur web (Chrome), il est possible d'ouvrir la page **http://localhost:7000** et ainsi voir le résultat de l'analyse.
 
-<img src="jhat.png" alt="image de l'analyse" width="150px"/>
+<img src="jhat.png" alt="image de l'analyse" width="300px"/>
 
 ### A vous de jouer
 
