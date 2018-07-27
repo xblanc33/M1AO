@@ -84,4 +84,9 @@ En continuant l'exemple, l'utilitaire **jhat** lance un serveur web sur le port 
 
 Avec mon navigateur web (Chrome), il est possible d'ouvrir la page **http://localhost:7000** et ainsi voir le résultat de l'analyse.
 
-<img src="jhat.png" alt="image de l'analyse" width="50px"/>
+<img src="jhat.png" alt="image de l'analyse" width="150px"/>
+
+### A vous de jouer
+
+Utilisez **jps**, **jmap** et **jhat** pour compter combien d'objets sont créés lors de l'exécution du TD1.
+
