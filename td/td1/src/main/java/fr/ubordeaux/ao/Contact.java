@@ -23,8 +23,16 @@ public class Contact {
         this.firstName = firstName;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
     private void setSecondName(String secondName) {
         this.secondName = secondName;
+    }
+
+    public String getSecondName() {
+        return secondName;
     }
 
     private void setAddress(Address address) {
@@ -33,6 +41,10 @@ public class Contact {
 
     public void changeAddress(Address newAddress) {
         this.address = newAddress;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 
     public void addMail(Mail mail) {

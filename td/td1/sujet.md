@@ -6,6 +6,7 @@ Ce TD a pour objectif de :
 * Connaitre et exécuter Gradle
 * Mieux comprendre les différents types de classe
 * Compter le nombre d'objets présents dans une machine vituelle
+* Concevoir un dépôt
 
 ## Javac & Java
 
@@ -29,7 +30,7 @@ En utilisant Gradle, exécuter le test du TD1
 
 ## Rôle des classes (Architecture DDD)
 
-En regardant le code du TD1, précisez le rôle (value, entity, aggregate, repository) de chaque classe en vous aidant du tableau suivant.
+Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Un contact a un nom, précisez le rôle (value, entity, aggregate, repository) de chaque classe en vous aidant du tableau suivant.
 
 | Classe de l'objet | Value ? | Entity ? | Aggregate ? | Repository ? |
 | ------------------|---------|----------|-------------|--------------|
@@ -95,3 +96,8 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 * Utilisez **jps**, **jmap** et **jhat** pour compter combien d'objets sont créés lors de l'exécution du TD1.
 * Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence.
 * Modifier le code pour connaître la valeur maximale de **MAX** (sans que la machine virtuelle ne crash)
+
+## Concevoir un dépôt (niveau avancé)
+
+Le fichier [ville_france.csv](./villes_france.csv) contient la liste de toutes les villes de France. 
+Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France. Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier.

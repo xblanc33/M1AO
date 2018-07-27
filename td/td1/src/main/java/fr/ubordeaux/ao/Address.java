@@ -17,12 +17,24 @@ public class Address {
         this.number = number;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
     private void setStreet(String street) {
         this.street = street;
     }
 
+    public String getStreet() {
+        return street;
+    }
+
     private void setTown(Town town) {
         this.town = town;
+    }
+
+    public Town getTown() {
+        return town;
     }
 
     @Override

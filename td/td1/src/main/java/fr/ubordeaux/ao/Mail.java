@@ -10,4 +10,8 @@ public class Mail {
     private void setMail(String mail) {
         this.mail = mail;
     }
+
+    public String getMail() {
+        return mail;
+    }
 }

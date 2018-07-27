@@ -15,8 +15,16 @@ public class Town {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     private void setZipCode(int zipcode) {
         this.zipcode = zipcode;
+    }
+
+    public int getZipCode() {
+        return zipcode;
     }
 
     @Override
