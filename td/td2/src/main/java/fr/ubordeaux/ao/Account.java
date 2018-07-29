@@ -23,7 +23,7 @@ public class Account {
         //TODO_3
     }
     
-    public Set<Transaction> getTransaction() {
+    public Set<Transaction> getTransactionSince(String date) {
         //TODO_1
     }
 
