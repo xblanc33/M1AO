@@ -4,6 +4,10 @@ Ce TD a pour objectif de :
 * Mesurer l'importance de l'encapsulation
 * Mettre en pratique les notions le typage
 
+## Consignes
+
+Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
+
 ## Account et Transaction
 
 Le code du TD2 est celui d'une application permettant à un particulier de faire une tenue de ses comptes banquaires. La classe Account représente un compte banquaire (entity). La classe Transaction représente une transaction banquaire (value).
