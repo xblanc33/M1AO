@@ -15,5 +15,4 @@ public interface Catalog {
     public Set<Product> getOwnProducts();
     public Set<Product> getAllProducts();
     public void addProduct(Product product);
-
 }
