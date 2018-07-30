@@ -20,7 +20,8 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 * [TD1](td/td1/sujet.md)
 * [TD2](td/td2/sujet.md)
 * [TD3](td/td3/sujet.md)
-
+* [TD4](td/td4/sujet.md)
+* [TD5](td/td5/sujet.md)
 
 ## Références
 
