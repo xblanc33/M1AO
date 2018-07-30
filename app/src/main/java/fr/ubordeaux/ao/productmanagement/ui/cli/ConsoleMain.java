@@ -1,14 +1,11 @@
 package fr.ubordeaux.ao.productmanagement.ui.cli;
 
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
-import javax.sql.rowset.serial.SerialArray;
 
 import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
 import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.application.command.Handler;
 import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
