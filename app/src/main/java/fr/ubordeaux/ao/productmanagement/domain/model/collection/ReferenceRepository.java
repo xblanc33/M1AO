@@ -6,10 +6,10 @@ import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public interface ReferenceRepository {
-    public void addReference(Reference reference);
-    public void removeRerence(Reference reference);
-    public Reference findReferenceById(ReferenceId id);
-    public Set<Reference> findReferenceByName(String name);
-    public Set<Reference> getReference(int from, int to);
+    public void add(Reference reference);
+    public void remove(Reference reference);
+    public Reference findById(ReferenceId id);
+    public Set<Reference> findByName(String name);
+    public Set<Reference> getReference();
     public int size();
 }

@@ -31,20 +31,20 @@ public class SearchEngine {
     }
 
     public Reference searchReferenceById(ReferenceId id) {
-        return references.findReferenceById(id);
+        return references.findById(id);
     }
 
     public Set<Reference> searchReferencesByKeyWords(Set<KeyWord> keywords) {
         Set<Reference> foundReferences = new HashSet<Reference>();
         for (KeyWord keyword : keywords) {
-            foundReferences.addAll(keyword2referenceMap.findReferenceFromKeyWord(keyword));
+            foundReferences.addAll(keyword2referenceMap.findReferenceByKeyWord(keyword));
         }
         return foundReferences;
     }
 
     public Set<Reference> searchReferencesByName(String name) {
         Set<Reference> foundReferences = new HashSet<Reference>();
-        foundReferences.addAll(references.findReferenceByName(name));
+        foundReferences.addAll(references.findByName(name));
         return foundReferences;
     }
 

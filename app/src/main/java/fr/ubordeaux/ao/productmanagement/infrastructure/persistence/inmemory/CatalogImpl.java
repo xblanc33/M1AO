@@ -2,21 +2,20 @@ package fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 
 
 public class CatalogImpl implements Catalog {
     private CatalogName name;
-    private Map<ReferenceId, Product> store;
+    private Map<Reference, Product> store;
     private Map<CatalogName, Catalog> subCatalogs;    
 
     public CatalogImpl(CatalogName name) {
@@ -49,25 +48,17 @@ public class CatalogImpl implements Catalog {
 	}
 
 	@Override
-	public Set<Product> getOwnProducts(int from, int to) {
+	public Set<Product> getOwnProducts() {
         Set<Product> result = new HashSet<>();
-        Iterator<Product> productIterator = store.values().iterator();
-        int index = 0;
-        while ((index < to) && productIterator.hasNext()) {
-            Product product = productIterator.next();
-            if (index >= from) {
-                result.add(product);
-            }
-            index++;
-        }
+        result.addAll(this.store.values());
 		return result;
 	}
 
 	@Override
-	public Set<Product> getAllProducts(int from, int to) {
-        Set<Product> result = this.getOwnProducts(from, to);
+	public Set<Product> getAllProducts() {
+        Set<Product> result = this.getOwnProducts();
         subCatalogs.values().forEach(subCatalog -> {
-            result.addAll(subCatalog.getAllProducts(from, to));
+            result.addAll(subCatalog.getAllProducts());
         });
         return result;
     }
@@ -107,8 +98,7 @@ public class CatalogImpl implements Catalog {
     @Override
 	public void addProduct(Product product) {
         if (product == null) throw new ProductManagementException("cannot add null product to catalog");
-        
-        store.put(product.getReferenceId(), product);
+        store.put(product.getReference(), product);
 	}
 
 }

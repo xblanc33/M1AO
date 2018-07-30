@@ -1,19 +1,18 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
 import fr.ubordeaux.ao.productmanagement.domain.type.Price;
-import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class Product {
     private Price price;
-    private ReferenceId referenceId;
+    private Reference reference;
 
-    public Product(ReferenceId referenceId, Price price) {
-        this.setReferenceId(referenceId);
+    public Product(Reference reference, Price price) {
+        this.setReference(reference);
         this.setPrice(price);
     }
 
-    private void setReferenceId(ReferenceId referenceId) {
-        this.referenceId = referenceId;
+    private void setReference(Reference reference) {
+        this.reference = reference;
     }
 
     private void setPrice(Price price) {
@@ -24,8 +23,8 @@ public class Product {
         this.setPrice(newPrice);
     }
 
-    public ReferenceId getReferenceId() {
-        return this.referenceId;
+    public Reference getReference() {
+        return this.reference;
     }
 
     public Price getPrice() {

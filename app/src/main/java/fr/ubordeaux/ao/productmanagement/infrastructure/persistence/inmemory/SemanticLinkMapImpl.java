@@ -7,7 +7,6 @@ import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 
 
@@ -19,9 +18,7 @@ public class SemanticLinkMapImpl implements SemanticLinkMap {
     }
 
     @Override
-	public void putKeyWordProductLink(SemanticLink link) {
-        KeyWord keyword = link.getKeyWord();
-        Reference reference = link.getReference();
+	public void addSemanticLink(KeyWord keyword, Reference reference) {
         if (map.containsKey(keyword)) {
             map.get(keyword).add(reference);
         }
@@ -33,17 +30,15 @@ public class SemanticLinkMapImpl implements SemanticLinkMap {
         }
 	}
 
-	@Override
-	public void removeKeyWordProductLink(SemanticLink link) {
-        KeyWord keyword = link.getKeyWord();
-        Reference reference = link.getReference();
-		if (map.containsKey(keyword)) {
+    @Override
+	public void removeSemanticLink(KeyWord keyword, Reference reference) {    
+        if (map.containsKey(keyword)) {
             map.get(keyword).remove(reference);
         }
-	}
-
-	@Override
-	public Set<Reference> findReferenceFromKeyWord(KeyWord keyword) {
+    }
+    
+    @Override
+    public Set<Reference> findReferenceByKeyWord(KeyWord keyword) {
 		if (map.containsKey(keyword)) {
             Set<Reference> result = new HashSet<Reference>();
             result.addAll(map.get(keyword));
@@ -53,10 +48,10 @@ public class SemanticLinkMapImpl implements SemanticLinkMap {
 	}
 
 	@Override
-	public Set<KeyWord> getLinkedKeyWords() {
+	public Set<KeyWord> getKeyWords() {
         Set<KeyWord> result = new HashSet<KeyWord>();
         result.addAll(map.keySet());
 		return result;
-	}	
+	}
 
 }

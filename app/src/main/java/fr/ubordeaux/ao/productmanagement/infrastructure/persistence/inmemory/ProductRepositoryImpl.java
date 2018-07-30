@@ -8,7 +8,6 @@ import java.util.Set;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.type.Price;
 import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 
@@ -22,39 +21,31 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
 	@Override
-	public void addProduct(Product product) {
-		ReferenceId referenceId = product.getReferenceId();
-		Price price = product.getPrice();
-		if (store.get(referenceId) != null) throw new ProductManagementException("Cannot add product because there is already one");
+	public void add(Product product) {
+		if (product == null) throw new ProductManagementException("Cannot add null product");
+		if (store.get(product.getReference().getId()) != null) throw new ProductManagementException("cannot add product because there is already one");
 		
-		store.put(referenceId, new Product(referenceId, price));
+		store.put(product.getReference().getId(), product);
 		
 	}
 
 	@Override
-	public void removeProduct(Product product) {
-		ReferenceId referenceId = product.getReferenceId();
-		Price price = product.getPrice();
+	public void remove(Product product) {
+		ReferenceId referenceId = product.getReference().getId();
 		if (store.get(referenceId) == null) throw new ProductManagementException("cannot remove, no such id in the ProductRepository");
 		store.remove(referenceId);
 	}
 
 	@Override
-	public Product findProductByReferenceById(ReferenceId id) {
+	public Product findByReferenceById(ReferenceId id) {
 		if (! store.containsKey(id)) throw new ProductManagementException("Unknown reference");
 		return store.get(id);
 	}
 
 	@Override
-	public Set<Product> getProduct(int from, int to) {
-		int i = 0;
-        Set<Product> result = new HashSet<Product>();
-        for (Product product : store.values()) {
-            if ((i >= from) && (i < to)) {
-                result.add(product);
-            }
-            i++;
-        }
+	public Set<Product> getProduct() {
+		Set<Product> result = new HashSet<Product>();
+		result.addAll(this.store.values());
         return result;
 	}
 

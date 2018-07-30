@@ -6,9 +6,9 @@ import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public interface ProductRepository {
-    public void addProduct(Product product);
-    public void removeProduct(Product product);
-    public Product findProductByReferenceById(ReferenceId id);
-    public Set<Product> getProduct(int from, int to);
+    public void add(Product product);
+    public void remove(Product product);
+    public Product findByReferenceById(ReferenceId id);
+    public Set<Product> getProduct();
     public int size();
 }

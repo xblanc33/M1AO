@@ -5,41 +5,34 @@ import java.util.Objects;
 import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
 public class Price {
-    private double price;
+    private int valueInEuroCents;
 
-    public Price(double price) {
-        this.setPrice(price);
+    public Price(int valueInEuroCents) {
+        this.setPrice(valueInEuroCents);
     }
 
-    private void setPrice(double price) {
-        if (price < 0) throw new ProductManagementException("price must be positive");
-        if (hasMoreThanTwoDecimals(price)) throw new ProductManagementException("price should not have more than two decimals");
-        this.price = price;
+    private void setPrice(int valueInEuroCents) {
+        if (valueInEuroCents < 0) throw new ProductManagementException("prices are in Euro Cents, and therefore must be positive");
+        this.valueInEuroCents = valueInEuroCents;
     }
 
-    private static boolean hasMoreThanTwoDecimals(double price){
-        String priceAsString = String.valueOf(price);
-        int dotIndex = priceAsString.indexOf('.');
-        return dotIndex+2 < priceAsString.length();
-    }
-
-    public double getPrice() {
-        return this.price;
+    public int getPrice() {
+        return this.valueInEuroCents;
     }
 
     @Override
     public boolean equals(Object other) {
         if (! (other instanceof Price)) return false;
-        return this.price == ((Price)other).price;
+        return this.valueInEuroCents == ((Price)other).valueInEuroCents;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(price);
+        return Objects.hash(valueInEuroCents);
     }
 
     @Override
     public String toString() {
-        return String.valueOf(this.price);
+        return String.valueOf(this.valueInEuroCents);
     }
 }

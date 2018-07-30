@@ -14,7 +14,6 @@ import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManag
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.service.SearchEngine;
@@ -60,25 +59,25 @@ public class SampleScenarioMain {
     private static void addSomeKeyWords(Gateway gateway) {
         ReferenceRepository referenceRepository = CollectionManager.getInstance().getReferenceRepository();
         KeyWord keyword = new KeyWord("interesting");
-        Set<Reference> references = referenceRepository.getReference(0, referenceRepository.size());
+        Set<Reference> references = referenceRepository.getReference();
         for (Reference reference : references) {
-            gateway.pushCommand(new AddSemanticLink(new SemanticLink(keyword, reference)));
+            gateway.pushCommand(new AddSemanticLink(keyword, reference));
         }
         System.out.println("Did add keywords");
     }
 
     private static void addSomeProducts(Gateway gateway) {
         ReferenceRepository referenceRepository = CollectionManager.getInstance().getReferenceRepository();
-        Set<Reference> references = referenceRepository.getReference(0, referenceRepository.size());
+        Set<Reference> references = referenceRepository.getReference();
         for (Reference reference : references) {
-            gateway.pushCommand(new AddProduct(new Product(reference.getId(), new Price(2))));
+            gateway.pushCommand(new AddProduct(new Product(reference, new Price(2))));
         }
         System.out.println("Did add products");
     }
 
     private static void addSomeProducts2Catalog(Gateway gateway) {
         ProductRepository productRepository = CollectionManager.getInstance().getProductRepository();
-        Set<Product> products = productRepository.getProduct(0, productRepository.size());
+        Set<Product> products = productRepository.getProduct();
         for (Product product : products) {
             gateway.pushCommand(new AddProductToCatalog(product, new CatalogName("root")));
         }
@@ -97,9 +96,9 @@ public class SampleScenarioMain {
         }
 
         Catalog rootCatalog = CollectionManager.getInstance().getRootCatalog();
-        Set<Product> products = rootCatalog.getOwnProducts(0, 3);
+        Set<Product> products = rootCatalog.getOwnProducts();
         for (Product product : products) {
-            System.out.println("\tSearch in root catalog, found "+product.getReferenceId()+ " price "+product.getPrice());
+            System.out.println("\tSearch in root catalog, found "+product.getReference().getId()+ " price "+product.getPrice());
         }
     }
 }

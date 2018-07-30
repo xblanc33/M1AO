@@ -7,13 +7,12 @@ import org.junit.Test;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
 
 
-public class KeyWord2ReferenceLinkMapTest {
+public class SemanticLinkMapTest {
     SemanticLinkMap map;
 
     @Before
@@ -23,9 +22,8 @@ public class KeyWord2ReferenceLinkMapTest {
 
     @Test
     public void putKeyWordProductLink() {
-        SemanticLink link = new SemanticLink(new KeyWord("test"), new Reference(new ReferenceId(), "book","super book"));
-        map.putKeyWordProductLink(link); 
-        assertEquals(1, map.findReferenceFromKeyWord(new KeyWord("test")).size());
+        map.addSemanticLink(new KeyWord("test"), new Reference(new ReferenceId(), "book","super book"));
+        assertEquals(1, map.findReferenceByKeyWord(new KeyWord("test")).size());
     }
 
 }

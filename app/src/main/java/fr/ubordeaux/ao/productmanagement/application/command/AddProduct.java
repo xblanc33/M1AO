@@ -19,7 +19,7 @@ public class AddProduct implements Command {
     @Override
     public void execute() {
         CollectionManager collections = CollectionManager.getInstance();
-        collections.getReferenceRepository().findReferenceById(product.getReferenceId());
-        collections.getProductRepository().addProduct(product);
+        collections.getReferenceRepository().findById(product.getReference().getId());
+        collections.getProductRepository().add(product);
     }
 }

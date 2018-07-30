@@ -18,7 +18,7 @@ public class ReferenceRepositoryImpl extends ConceptMapping implements Reference
     }
 
 	@Override
-	public void addReference(Reference reference) {
+	public void add(Reference reference) {
 		if (reference == null) throw new ProductManagementException("cannot add null to ReferenceRepository");
 		try {
 			PreparedStatement preparedStatement = getConnection().prepareStatement( "INSERT INTO REFERENCE (id, name, description  ) VALUES (?,?,?)" );
@@ -34,12 +34,12 @@ public class ReferenceRepositoryImpl extends ConceptMapping implements Reference
 	}
 
 	@Override
-	public void removeRerence(Reference reference) {
+	public void remove(Reference reference) {
 		//TODO
 	}
 
 	@Override
-	public Reference findReferenceById(ReferenceId id) {
+	public Reference findById(ReferenceId id) {
 		if (id == null) throw new ProductManagementException("cannot find reference with null id");
 		try {
 			Statement statement = getConnection().createStatement();
@@ -59,12 +59,12 @@ public class ReferenceRepositoryImpl extends ConceptMapping implements Reference
 	}
 
 	@Override
-	public Set<Reference> findReferenceByName(String name) {
+	public Set<Reference> findByName(String name) {
 		return null;
 	}
 
 	@Override
-	public Set<Reference> getReference(int from, int to) {
+	public Set<Reference> getReference() {
 		return null;
 	}
 

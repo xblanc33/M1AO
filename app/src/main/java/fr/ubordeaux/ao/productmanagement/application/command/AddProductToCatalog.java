@@ -27,7 +27,7 @@ public class AddProductToCatalog implements Command {
 
     @Override
     public void execute() {
-        Product storedProduct = CollectionManager.getInstance().getProductRepository().findProductByReferenceById(product.getReferenceId());
+        Product storedProduct = CollectionManager.getInstance().getProductRepository().findByReferenceById(product.getReference().getId());
         storedProduct.changePrice(product.getPrice());
         Catalog catalog = CollectionManager.getInstance().getRootCatalog().getCatalogByName(catalogName);
         catalog.addProduct(product);

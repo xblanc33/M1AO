@@ -17,7 +17,6 @@ import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.service.SearchEngine;
 import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
@@ -117,7 +116,7 @@ public class SocketServer {
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         for (Reference reference : foundReferences) {
-            gateway.pushCommand(new AddSemanticLink(new SemanticLink(new KeyWord(keyWord), reference)));
+            gateway.pushCommand(new AddSemanticLink(new KeyWord(keyWord), reference));
             out.println("Reference ("+reference.getId()+") should be linked soon with the keyword "+keyWord+"!");
         }
 

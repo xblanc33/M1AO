@@ -17,7 +17,7 @@ public class AddReference implements Command {
     }
 
     public void execute() {
-        CollectionManager.getInstance().getReferenceRepository().addReference(reference);
+        CollectionManager.getInstance().getReferenceRepository().add(reference);
     }
 
 }

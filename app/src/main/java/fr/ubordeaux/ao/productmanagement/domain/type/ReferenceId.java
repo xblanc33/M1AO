@@ -17,7 +17,7 @@ public class ReferenceId {
     @Override
     public boolean equals(Object other) {
         if (! (other instanceof ReferenceId)) return false;
-        return this.id == ((ReferenceId)other).id;
+        return this.id.equals(((ReferenceId)other).id);
     }
 
     @Override

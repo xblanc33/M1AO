@@ -19,7 +19,7 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = "fr.ubordeaux.ao.productmanagement.infrastructure.persistence.jdbc.CreateDataBase"
+mainClassName = "fr.ubordeaux.ao.productmanagement.ui.web.SocketServer"
 
 run {
    standardInput = System.in

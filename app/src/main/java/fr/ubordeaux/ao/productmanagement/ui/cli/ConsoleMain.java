@@ -9,7 +9,6 @@ import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
 import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.service.SearchEngine;
 import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
@@ -92,7 +91,7 @@ public class ConsoleMain {
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         for (Reference reference : foundReferences) {
-            gateway.pushCommand(new AddSemanticLink(new SemanticLink(new KeyWord(keyWord), reference)));
+            gateway.pushCommand(new AddSemanticLink(new KeyWord(keyWord), reference));
             System.out.println("Reference ("+reference.getId()+") should be linked soon with the keyword "+keyWord+"!");
         }
 

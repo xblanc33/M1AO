@@ -1,5 +1,8 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
+import java.util.Objects;
+
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class Reference {
@@ -14,14 +17,17 @@ public class Reference {
     }
 
     private void setReferenceId(ReferenceId id) {
+        if (id == null) throw new ProductManagementException("cannot create reference with null id");
         this.id = id;
     }
 
     private void setName(String name) {
+        if (name == null) throw new ProductManagementException("cannot create reference with null name");
         this.name = name;
     }
 
     private void setDescription(String description) {
+        if (description == null) throw new ProductManagementException("cannot create description with null name");
         this.description = description;
     }
 
@@ -35,5 +41,26 @@ public class Reference {
 
     public String getDescription() {
         return this.description;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof Reference) {
+            Reference otherReference = (Reference)other;
+            boolean equals = this.getId().equals(otherReference.getId());
+			return equals;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Reference id="+id+ " name="+name+" description="+description;
     }
 }
