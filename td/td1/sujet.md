@@ -10,23 +10,15 @@ Ce TD a pour objectif de :
 
 ## Javac & Java
 
-En utilisant Javac, compilez le code situé dans le répertoire td1/src/main/java et faites en sorte que les classes compilées se retrouvent dans le répertoire td1/classes:
+En utilisant Javac, compilez le code situé dans le répertoire td1/src/main/java et faites en sorte que les classes compilées se retrouvent dans le répertoire td1/classes.
 
-    javac .\src\main\java\fr\ubordeaux\ao\*.java -d classes
-
-En utilisant Java, exécutez le code que vous venez de compiler:
-    
-    java -cp ./classes fr.ubordeaux.ao.Main
+En utilisant Java, exécutez le code que vous venez de compiler.
 
 ## Gradle
 
 En utilisant Gradle, compiler le code du TD1
 
-    gradle compileJava
-
 En utilisant Gradle, exécuter le test du TD1
-
-    gradle test
 
 ## Rôle des classes (Architecture DDD)
 
@@ -34,7 +26,7 @@ Regardez le code du TD1. Celui-ci représente une application de gestion de cont
 
 | Classe de l'objet | Value ? | Entity ? | Aggregate ? | Repository ? |
 | ------------------|---------|----------|-------------|--------------|
-| Address           |    X    |          |             |              |
+| Address           |         |          |             |              |
 | Contact           |         |          |             |              |
 | Contacts          |         |          |             |              |
 | Mail              |         |          |             |              |
@@ -53,7 +45,7 @@ Exécutez le TD1 puis, dans une autre console de votre shell, exécutez jps pour
 Par exemple suivant, le Shell1 exécute le TD1.
 
     Shell1:> java -cp ./classes fr.ubordeaux.ao.Main
-    3000 contacts created ! 
+    3000 contacts created !
 
 Puis le Shell2 exécute **jps**. On voit que l'exécution du TD1 est en cours. Elle s'appelle **Main** et est identifiée par le numéro **82148**.
 
