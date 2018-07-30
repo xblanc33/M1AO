@@ -5,12 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Set;
-import java.util.UUID;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class ReferenceRepositoryImpl extends ConceptMapping implements ReferenceRepository {
 

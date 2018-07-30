@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
 public abstract class ConceptMapping {
     private Connection connection;

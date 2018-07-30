@@ -9,9 +9,9 @@ import org.junit.Test;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
 
 public class CatalogTest {

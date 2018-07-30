@@ -4,10 +4,10 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Command;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Handler;
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.application.command.Command;
+import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
+import fr.ubordeaux.ao.productmanagement.application.command.Handler;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
 public class GatewayImpl implements Gateway {
     private Set<Handler> handlers;

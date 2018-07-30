@@ -6,21 +6,21 @@ import java.util.Set;
 
 import javax.sql.rowset.serial.SerialArray;
 
-import fr.ubordeaux.ao.productmanagement.domain.application.command.AddReference;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Handler;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.LinkKeyWordToReference;
+import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
+import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
+import fr.ubordeaux.ao.productmanagement.application.command.Handler;
+import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord2ReferenceLink;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.service.SearchEngine;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.service.SearchEngine;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.GatewayImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.HandlerImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWord2ReferenceLinkMapImpl;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
@@ -50,7 +50,7 @@ public class ConsoleMain {
     }
 
     private static void createCollections() {
-        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new KeyWord2ReferenceLinkMapImpl());
+        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new SemanticLinkMapImpl());
     }
 
     private static void createCommandGatewayAndHandler() {
@@ -95,7 +95,7 @@ public class ConsoleMain {
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         for (Reference reference : foundReferences) {
-            gateway.pushCommand(new LinkKeyWordToReference(new KeyWord2ReferenceLink(new KeyWord(keyWord), reference)));
+            gateway.pushCommand(new AddSemanticLink(new SemanticLink(new KeyWord(keyWord), reference)));
             System.out.println("Reference ("+reference.getId()+") should be linked soon with the keyword "+keyWord+"!");
         }
 

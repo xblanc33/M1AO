@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class Product {
     private Price price;

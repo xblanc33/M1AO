@@ -1,9 +1,9 @@
-package fr.ubordeaux.ao.productmanagement.domain.model.service;
+package fr.ubordeaux.ao.productmanagement.domain.service;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
@@ -11,17 +11,17 @@ import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManag
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class SearchEngine {
 
     private ProductRepository products;
     private ReferenceRepository references;
     private Catalog rootCatalog;
-    private KeyWord2ReferenceLinkMap keyword2referenceMap;
+    private SemanticLinkMap keyword2referenceMap;
 
     public SearchEngine() {
         products = CollectionManager.getInstance().getProductRepository();

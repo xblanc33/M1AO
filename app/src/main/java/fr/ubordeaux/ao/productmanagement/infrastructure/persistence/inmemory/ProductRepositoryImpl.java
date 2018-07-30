@@ -7,9 +7,9 @@ import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 
 

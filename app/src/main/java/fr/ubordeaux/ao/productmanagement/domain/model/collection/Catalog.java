@@ -2,7 +2,7 @@ package fr.ubordeaux.ao.productmanagement.domain.model.collection;
 
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 
 public interface Catalog {

@@ -1,8 +1,8 @@
-package fr.ubordeaux.ao.productmanagement.domain.application.command;
+package fr.ubordeaux.ao.productmanagement.application.command;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
 public class AddReference implements Command {
     private Reference reference;

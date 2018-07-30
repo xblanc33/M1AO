@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.productmanagement.domain.model.type;
+package fr.ubordeaux.ao.productmanagement.domain.type;
 
 import java.util.Objects;
 import java.util.UUID;

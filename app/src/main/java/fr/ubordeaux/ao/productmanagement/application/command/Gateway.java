@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.productmanagement.domain.application.command;
+package fr.ubordeaux.ao.productmanagement.application.command;
 
 public interface Gateway {
     public void pushCommand(Command command);

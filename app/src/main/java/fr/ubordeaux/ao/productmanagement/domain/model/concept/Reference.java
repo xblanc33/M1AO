@@ -1,6 +1,6 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class Reference {
     private ReferenceId id;

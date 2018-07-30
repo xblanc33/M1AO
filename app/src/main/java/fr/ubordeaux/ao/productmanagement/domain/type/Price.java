@@ -1,8 +1,8 @@
-package fr.ubordeaux.ao.productmanagement.domain.model.type;
+package fr.ubordeaux.ao.productmanagement.domain.type;
 
 import java.util.Objects;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
 public class Price {
     private double price;

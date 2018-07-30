@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public class ReferenceTest {
 

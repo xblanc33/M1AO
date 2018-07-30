@@ -3,28 +3,28 @@ package fr.ubordeaux.ao.productmanagement.ui.cli;
 import java.util.HashSet;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.application.command.AddProduct;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.AddProductToCatalog;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.AddReference;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Handler;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.LinkKeyWordToReference;
+import fr.ubordeaux.ao.productmanagement.application.command.AddProduct;
+import fr.ubordeaux.ao.productmanagement.application.command.AddProductToCatalog;
+import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
+import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
+import fr.ubordeaux.ao.productmanagement.application.command.Handler;
+import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord2ReferenceLink;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Product;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.service.SearchEngine;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.Price;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.service.SearchEngine;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.type.Price;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.GatewayImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.HandlerImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWord2ReferenceLinkMapImpl;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
@@ -40,7 +40,7 @@ public class SampleScenarioMain {
     }
 
     private static void createCollections() {
-        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new KeyWord2ReferenceLinkMapImpl());
+        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new SemanticLinkMapImpl());
     }
 
     private static Gateway createCommandGatewayAndHandler() {
@@ -62,7 +62,7 @@ public class SampleScenarioMain {
         KeyWord keyword = new KeyWord("interesting");
         Set<Reference> references = referenceRepository.getReference(0, referenceRepository.size());
         for (Reference reference : references) {
-            gateway.pushCommand(new LinkKeyWordToReference(new KeyWord2ReferenceLink(keyword, reference)));
+            gateway.pushCommand(new AddSemanticLink(new SemanticLink(keyword, reference)));
         }
         System.out.println("Did add keywords");
     }

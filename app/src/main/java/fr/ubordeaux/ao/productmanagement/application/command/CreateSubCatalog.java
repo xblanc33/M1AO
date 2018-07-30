@@ -1,9 +1,9 @@
-package fr.ubordeaux.ao.productmanagement.domain.application.command;
+package fr.ubordeaux.ao.productmanagement.application.command;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
 
 public class CreateSubCatalog implements Command {
     private CatalogName name;

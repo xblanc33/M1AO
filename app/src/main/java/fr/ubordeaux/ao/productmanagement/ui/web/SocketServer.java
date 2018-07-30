@@ -8,24 +8,24 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.application.command.AddReference;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.domain.application.command.LinkKeyWordToReference;
+import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
+import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
+import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWord2ReferenceLinkMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
-import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord2ReferenceLink;
+import fr.ubordeaux.ao.productmanagement.domain.model.concept.SemanticLink;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.service.SearchEngine;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.CatalogName;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.service.SearchEngine;
+import fr.ubordeaux.ao.productmanagement.domain.type.CatalogName;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.GatewayImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.HandlerImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWord2ReferenceLinkMapImpl;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
@@ -51,7 +51,7 @@ public class SocketServer {
         Catalog rootCatalog = new CatalogImpl(new CatalogName("root"));
         ProductRepository productRepository = new ProductRepositoryImpl();
         ReferenceRepository referenceRepository = new ReferenceRepositoryImpl();
-        KeyWord2ReferenceLinkMap linkMap = new KeyWord2ReferenceLinkMapImpl();
+        SemanticLinkMap linkMap = new SemanticLinkMapImpl();
         CollectionManager.createInstance(rootCatalog, productRepository, referenceRepository, linkMap);
     }
 
@@ -117,7 +117,7 @@ public class SocketServer {
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         for (Reference reference : foundReferences) {
-            gateway.pushCommand(new LinkKeyWordToReference(new KeyWord2ReferenceLink(new KeyWord(keyWord), reference)));
+            gateway.pushCommand(new AddSemanticLink(new SemanticLink(new KeyWord(keyWord), reference)));
             out.println("Reference ("+reference.getId()+") should be linked soon with the keyword "+keyWord+"!");
         }
 

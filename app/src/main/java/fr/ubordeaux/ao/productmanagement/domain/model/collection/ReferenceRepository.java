@@ -3,7 +3,7 @@ package fr.ubordeaux.ao.productmanagement.domain.model.collection;
 import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
-import fr.ubordeaux.ao.productmanagement.domain.model.type.ReferenceId;
+import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 
 public interface ReferenceRepository {
     public void addReference(Reference reference);

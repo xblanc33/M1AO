@@ -1,12 +1,12 @@
 package fr.ubordeaux.ao.productmanagement.domain.model.concept;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.exception.ProductManagementException;
+import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
-public class KeyWord2ReferenceLink {
+public class SemanticLink {
     private KeyWord keyword;
     private Reference reference;
 
-    public KeyWord2ReferenceLink(KeyWord keyword, Reference reference) {
+    public SemanticLink(KeyWord keyword, Reference reference) {
         this.setKeyWord(keyword);
         this.setReference(reference);
     }
