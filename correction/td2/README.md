@@ -51,4 +51,4 @@ Le code du TD2 est celui d'une application permettant à un particulier de faire
 
 * Modifiez le code pour qu'il soit possible de supprimer une transaction d'un compte mais uniquement en donnant sa date, son titre et son montant.
   
-   Comme les Transactions sont des value object, il est possible de les comparer par valeur (et non pas par référence). Le fait d'avoir redéfini la méthode equals nous permet alors de l'exploiter. (voir code)
+   Comme les Transactions sont des value object, il est possible de les comparer par valeur (et non pas par référence). Il faut redéfinir la méthode equals (et donc ajouter un id à la transaction) ce qui permet alors de l'exploiter la méthode remove de la collection. (voir code et les tests)
