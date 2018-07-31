@@ -3,25 +3,27 @@ package fr.ubordeaux.ao;
 import java.util.Date;
 
 public class Transaction {
-    private String date;
+    private Date date;
     private String title;
-    private double amount;
+    private int amount;
 
-    public Transaction(String date, String title, double amount) {
-        this.date = date;
+    public Transaction(String title, int amount) {
+        if (amount == 0) throw new IllegalArgumentException("amount must be positive!");
+
+        this.date = new Date();
         this.title = title;
         this.amount = amount;
     }
 
     public Date getDate() {
-        //TODO_2
+        return date;
     }
 
     public String getTitle() {
-        //TODO_2
+        return title;
     }
 
     public double getAmount() {
-        //TODO_2
+        return amount;
     }
 }

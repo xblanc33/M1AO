@@ -8,6 +8,13 @@ Ce TD a pour objectif de :
 
 Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
 
+## Notion de typage
+
+On veut améliorer l'application et surtout son typage.
+
+* Changez le code pour que le type la date d'une transaction ne soit pas une chaîne de charactère (String) mais une réelle date. De plus on veut que la date soit fixé au jours de la création d'une transaction.
+* Changez le code pour que le type d'un montant ne soit pas un double mais un entier positif (on considère que c'est la valeur en centime d'euros). On pourrait même lever une exception (IllegalArgumentException) lors de la création si le montant est égal à zéro.
+
 ## Account et Transaction
 
 Le code du TD2 est celui d'une application permettant à un particulier de faire une tenue de ses comptes banquaires. La classe Account représente un compte banquaire (entity). La classe Transaction représente une transaction banquaire (value).
@@ -17,12 +24,7 @@ Le code du TD2 est celui d'une application permettant à un particulier de faire
 * Coder les //TODO_2 de la classe Transaction. Pourquoi cette classe ne possède pas de méthodes publiques permettant de changer les valeurs des propriétés ?
 * Codez le //TODO_3 de la classe Account pour mettre à jours le solde (balance) du compte.
 
-## Notion de typage
 
-On veut améliorer l'application et surtout son typage. 
-
-* Changez le code pour que le type la date d'une transaction ne soit pas une chaîne de charactère (String) mais une réelle date. 
-* Changez le code pour que le type d'un montant ne soit pas un double mais un nombre décimal avec au plus deux chiffres après la virgule. On pourrait même intégrer la notion de devise (euro, dollars, etc.). Vous pouvez vous inspirer de la classe Amount.
  
 ## Notions avancées
 

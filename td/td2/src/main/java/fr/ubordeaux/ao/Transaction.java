@@ -1,19 +1,17 @@
 package fr.ubordeaux.ao;
 
-import java.util.Date;
-
 public class Transaction {
     private String date;
     private String title;
     private double amount;
 
-    public Transaction(String date, String title, double amount) {
-        this.date = date;
+    public Transaction(String title, double amount) {
+        //Affecter la date à aujourd'hui
         this.title = title;
         this.amount = amount;
     }
 
-    public Date getDate() {
+    public String getDate() {
         //TODO_2
     }
 

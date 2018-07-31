@@ -21,7 +21,7 @@ public class ReferenceRepositoryImpl extends ConceptMapping implements Reference
 	public void add(Reference reference) {
 		if (reference == null) throw new ProductManagementException("cannot add null to ReferenceRepository");
 		try {
-			PreparedStatement preparedStatement = getConnection().prepareStatement( "INSERT INTO REFERENCE (id, name, description  ) VALUES (?,?,?)" );
+			PreparedStatement preparedStatement = getConnection().prepareStatement( "INSERT INTO REFERENCE (id, name, description) VALUES (?,?,?)" );
 			int nthPlaceholder = 1;
 			String uuid = reference.getId().toString();			
 			preparedStatement.setString( nthPlaceholder++, uuid);

@@ -2,6 +2,9 @@ package fr.ubordeaux.ao;
 
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.UUID;
+import java.util.Set;
+import java.util.Date;
 
 public class Account {
     private double balance;
@@ -9,9 +12,13 @@ public class Account {
     private String name;
     private Set<Transaction> transactions;
 
-    public Account(String id, String name) {
+    private Account(String id, String name) {
         this.balance = 0;
         transactions = new HashSet<Transaction>();
+    }
+
+    public static Account createAccount(String name) {
+        return new Account(UUID.randomUUID().toString(),name);
     }
 
     public double getBalance() {
@@ -20,12 +27,14 @@ public class Account {
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
-        //TODO_3
+        balance = balance + transaction.getAmount();
     }
     
-    public Set<Transaction> getTransactionSince(String date) {
-        Set<Transation> copy = new HashSet<Transaction>();
-        copy.addAll(transactions);
+    public Set<Transaction> getTransactionSince(Date date) {
+        Set<Transaction> copy = new HashSet<Transaction>();
+        for (Transaction transaction : transactions) {
+            if (date.after(transaction.getDate())) copy.add(transaction);
+        }
         return copy;
     }
 
