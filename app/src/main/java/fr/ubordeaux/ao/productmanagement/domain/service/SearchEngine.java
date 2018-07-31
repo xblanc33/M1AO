@@ -3,7 +3,7 @@ package fr.ubordeaux.ao.productmanagement.domain.service;
 import java.util.HashSet;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWordMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
@@ -21,13 +21,13 @@ public class SearchEngine {
     private ProductRepository products;
     private ReferenceRepository references;
     private Catalog rootCatalog;
-    private SemanticLinkMap keyword2referenceMap;
+    private KeyWordMap keywordMap;
 
     public SearchEngine() {
         products = CollectionManager.getInstance().getProductRepository();
         references = CollectionManager.getInstance().getReferenceRepository();
         rootCatalog = CollectionManager.getInstance().getRootCatalog();
-        keyword2referenceMap = CollectionManager.getInstance().getLinkMap();
+        keywordMap = CollectionManager.getInstance().getKeyWordMap();
     }
 
     public Reference searchReferenceById(ReferenceId id) {
@@ -37,7 +37,7 @@ public class SearchEngine {
     public Set<Reference> searchReferencesByKeyWords(Set<KeyWord> keywords) {
         Set<Reference> foundReferences = new HashSet<Reference>();
         for (KeyWord keyword : keywords) {
-            foundReferences.addAll(keyword2referenceMap.findReferenceByKeyWord(keyword));
+            foundReferences.addAll(keywordMap.findReferenceByKeyWord(keyword));
         }
         return foundReferences;
     }

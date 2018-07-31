@@ -6,9 +6,9 @@ import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 
 
-public interface SemanticLinkMap {
-    public void addSemanticLink(KeyWord keyword, Reference reference);
-    public void removeSemanticLink(KeyWord keyword, Reference reference);
+public interface KeyWordMap {
+    public void map(KeyWord keyword, Reference reference);
+    public void unmap(KeyWord keyword, Reference reference);
     public Set<Reference> findReferenceByKeyWord(KeyWord keyword);
     public Set<KeyWord> getKeyWords();
 }

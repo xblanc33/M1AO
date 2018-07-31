@@ -10,10 +10,10 @@ import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
 import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
+import fr.ubordeaux.ao.productmanagement.application.command.MapKeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWordMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ReferenceRepository;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
@@ -24,7 +24,7 @@ import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.GatewayImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.HandlerImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWordMapImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
@@ -50,8 +50,8 @@ public class SocketServer {
         Catalog rootCatalog = new CatalogImpl(new CatalogName("root"));
         ProductRepository productRepository = new ProductRepositoryImpl();
         ReferenceRepository referenceRepository = new ReferenceRepositoryImpl();
-        SemanticLinkMap linkMap = new SemanticLinkMapImpl();
-        CollectionManager.createInstance(rootCatalog, productRepository, referenceRepository, linkMap);
+        KeyWordMap keywordMap = new KeyWordMapImpl();
+        CollectionManager.createInstance(rootCatalog, productRepository, referenceRepository, keywordMap);
     }
 
     private void createCommandGatewayAndHandler() {
@@ -116,7 +116,7 @@ public class SocketServer {
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         for (Reference reference : foundReferences) {
-            gateway.pushCommand(new AddSemanticLink(new KeyWord(keyWord), reference));
+            gateway.pushCommand(new MapKeyWord(new KeyWord(keyWord), reference));
             out.println("Reference ("+reference.getId()+") should be linked soon with the keyword "+keyWord+"!");
         }
 

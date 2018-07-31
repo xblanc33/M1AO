@@ -8,7 +8,7 @@ import fr.ubordeaux.ao.productmanagement.application.command.AddProductToCatalog
 import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
 import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
 import fr.ubordeaux.ao.productmanagement.application.command.Handler;
-import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
+import fr.ubordeaux.ao.productmanagement.application.command.MapKeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.Catalog;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.ProductRepository;
@@ -23,7 +23,7 @@ import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.GatewayImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.HandlerImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWordMapImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
@@ -39,7 +39,7 @@ public class SampleScenarioMain {
     }
 
     private static void createCollections() {
-        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new SemanticLinkMapImpl());
+        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new KeyWordMapImpl());
     }
 
     private static Gateway createCommandGatewayAndHandler() {
@@ -61,7 +61,7 @@ public class SampleScenarioMain {
         KeyWord keyword = new KeyWord("interesting");
         Set<Reference> references = referenceRepository.getReference();
         for (Reference reference : references) {
-            gateway.pushCommand(new AddSemanticLink(keyword, reference));
+            gateway.pushCommand(new MapKeyWord(keyword, reference));
         }
         System.out.println("Did add keywords");
     }

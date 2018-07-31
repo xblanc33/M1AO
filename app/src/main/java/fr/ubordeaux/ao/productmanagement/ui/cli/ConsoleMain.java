@@ -6,7 +6,7 @@ import java.util.Set;
 
 import fr.ubordeaux.ao.productmanagement.application.command.AddReference;
 import fr.ubordeaux.ao.productmanagement.application.command.Gateway;
-import fr.ubordeaux.ao.productmanagement.application.command.AddSemanticLink;
+import fr.ubordeaux.ao.productmanagement.application.command.MapKeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.collection.CollectionManager;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
@@ -16,7 +16,7 @@ import fr.ubordeaux.ao.productmanagement.domain.type.ReferenceId;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.GatewayImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.command.HandlerImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.CatalogImpl;
-import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.SemanticLinkMapImpl;
+import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.KeyWordMapImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ProductRepositoryImpl;
 import fr.ubordeaux.ao.productmanagement.infrastructure.persistence.inmemory.ReferenceRepositoryImpl;
 
@@ -46,7 +46,7 @@ public class ConsoleMain {
     }
 
     private static void createCollections() {
-        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new SemanticLinkMapImpl());
+        CollectionManager.createInstance(new CatalogImpl(new CatalogName("root")), new ProductRepositoryImpl(), new ReferenceRepositoryImpl(), new KeyWordMapImpl());
     }
 
     private static void createCommandGatewayAndHandler() {
@@ -91,7 +91,7 @@ public class ConsoleMain {
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         for (Reference reference : foundReferences) {
-            gateway.pushCommand(new AddSemanticLink(new KeyWord(keyWord), reference));
+            gateway.pushCommand(new MapKeyWord(new KeyWord(keyWord), reference));
             System.out.println("Reference ("+reference.getId()+") should be linked soon with the keyword "+keyWord+"!");
         }
 

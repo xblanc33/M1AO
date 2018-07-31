@@ -7,15 +7,15 @@ public class CollectionManager {
     private Catalog rootCatalog;
     private ProductRepository productRepository;
     private ReferenceRepository referenceRepository;
-    private SemanticLinkMap linkMap;
+    private KeyWordMap keywordMap;
 
     private static CollectionManager singleton = null;
 
-    private CollectionManager(Catalog rootCatalog, ProductRepository productRepository, ReferenceRepository referenceRepository, SemanticLinkMap linkMap) {
+    private CollectionManager(Catalog rootCatalog, ProductRepository productRepository, ReferenceRepository referenceRepository, KeyWordMap keywordMap) {
         this.setRootCatalog(rootCatalog);
         this.setProductRepository(productRepository);
         this.setReferenceRepository(referenceRepository);
-        this.setSemanticLinkMap(linkMap);
+        this.setKeyWordMap(keywordMap);
     }
 
     private void setRootCatalog(Catalog rootCatalog) {
@@ -33,9 +33,9 @@ public class CollectionManager {
         this.referenceRepository = referenceRepository;
     }
 
-    private void setSemanticLinkMap(SemanticLinkMap linkMap) {
-        if (linkMap == null) throw new ProductManagementException("Cannot create CollectionManager with null as linkMap");
-        this.linkMap = linkMap;
+    private void setKeyWordMap(KeyWordMap keywordMap) {
+        if (keywordMap == null) throw new ProductManagementException("Cannot create CollectionManager with null as linkMap");
+        this.keywordMap = keywordMap;
     }
 
     public static CollectionManager getInstance() {
@@ -43,9 +43,9 @@ public class CollectionManager {
         return singleton;
     }
 
-    public static CollectionManager createInstance(Catalog rootCatalog, ProductRepository productRepository, ReferenceRepository referenceRepository, SemanticLinkMap linkMap) {
+    public static CollectionManager createInstance(Catalog rootCatalog, ProductRepository productRepository, ReferenceRepository referenceRepository, KeyWordMap keywordMap) {
         if (singleton == null) {
-            singleton = new CollectionManager(rootCatalog, productRepository, referenceRepository, linkMap);
+            singleton = new CollectionManager(rootCatalog, productRepository, referenceRepository, keywordMap);
         }
         return singleton;
     }
@@ -62,7 +62,7 @@ public class CollectionManager {
         return referenceRepository;
     }
 
-    public SemanticLinkMap getLinkMap() {
-        return linkMap;
+    public KeyWordMap getKeyWordMap() {
+        return keywordMap;
     }
 }

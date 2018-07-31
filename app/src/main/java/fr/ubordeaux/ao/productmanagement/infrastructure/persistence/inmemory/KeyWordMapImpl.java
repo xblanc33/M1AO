@@ -5,20 +5,20 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fr.ubordeaux.ao.productmanagement.domain.model.collection.SemanticLinkMap;
+import fr.ubordeaux.ao.productmanagement.domain.model.collection.KeyWordMap;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 
 
-public class SemanticLinkMapImpl implements SemanticLinkMap {
+public class KeyWordMapImpl implements KeyWordMap {
     Map<KeyWord, Set<Reference>> map;
 
-    public SemanticLinkMapImpl() {
+    public KeyWordMapImpl() {
         map = new HashMap<>();
     }
 
     @Override
-	public void addSemanticLink(KeyWord keyword, Reference reference) {
+	public void map(KeyWord keyword, Reference reference) {
         if (map.containsKey(keyword)) {
             map.get(keyword).add(reference);
         }
@@ -31,7 +31,7 @@ public class SemanticLinkMapImpl implements SemanticLinkMap {
 	}
 
     @Override
-	public void removeSemanticLink(KeyWord keyword, Reference reference) {    
+	public void unmap(KeyWord keyword, Reference reference) {    
         if (map.containsKey(keyword)) {
             map.get(keyword).remove(reference);
         }

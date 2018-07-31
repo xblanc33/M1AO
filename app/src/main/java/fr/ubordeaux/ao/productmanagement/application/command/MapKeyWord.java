@@ -5,11 +5,11 @@ import fr.ubordeaux.ao.productmanagement.domain.model.concept.KeyWord;
 import fr.ubordeaux.ao.productmanagement.domain.model.concept.Reference;
 import fr.ubordeaux.ao.productmanagement.domain.exception.ProductManagementException;
 
-public class AddSemanticLink implements Command {
+public class MapKeyWord implements Command {
     private KeyWord keyword;
     private Reference reference;
 
-    public AddSemanticLink(KeyWord keyword, Reference reference) {
+    public MapKeyWord(KeyWord keyword, Reference reference) {
         this.setKeyWord(keyword);
         this.setReference(reference);
     }
@@ -29,6 +29,6 @@ public class AddSemanticLink implements Command {
         Reference foundReference = CollectionManager.getInstance().getReferenceRepository().findById(reference.getId());
         if (foundReference == null) throw new ProductManagementException("Cannot link reference, it does not exist in ReferenceRepository");
         
-        CollectionManager.getInstance().getLinkMap().addSemanticLink(keyword, reference);
+        CollectionManager.getInstance().getKeyWordMap().map(keyword, reference);
     }
 }
