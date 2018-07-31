@@ -15,13 +15,22 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 Tous les supports du cous se trouvent sur ce dépôt GitHub.
 Pour suivre les TD, vous devez cloner ce dépôt.
 
-## TDs
+## Sujets des TDs
 
 * [TD1](td/td1/sujet.md)
 * [TD2](td/td2/sujet.md)
 * [TD3](td/td3/sujet.md)
 * [TD4](td/td4/sujet.md)
 * [TD5](td/td5/sujet.md)
+
+## Corrections des TDs
+
+* [TD1](correction/td1/sujet.md)
+* [TD2](correction/td2/sujet.md)
+* [TD3](correction/td3/sujet.md)
+* [TD4](correction/td4/sujet.md)
+* [TD5](correction/td5/sujet.md)
+
 
 ## Références
 
