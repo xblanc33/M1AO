@@ -50,4 +50,43 @@ Il est important de noter que toutes les collections sont codées par des interf
 
 Les services sont :
 
-* SearchEngine : le moteur de recherche est un très bon exemple de service métier. Il propose de chercher des références ou des produits en fonction de plusieurs critères. Il ajoute donc bien de la valeur au métier.
+* SearchEngine : le moteur de recherche est un très bon exemple de service métier. Il propose de chercher des références ou des produits en fonction de plusieurs critères. Il ajoute donc bien de la valeur au métier. 
+
+Les exceptions sont :
+
+* ProductManagementException : Il n'y a qu'une seule exception métier. Cela reste à améliorer. Il est important de noter que cette exception est une RuntimeException !
+
+### La Couche application (Accès aux objets métiers proposés à la couche UI)
+
+Cette couche suit le pattern CQRS. Elle propose donc des command et des query (les query ne sont pas encore implémentées).
+
+Les command se trouvent dans le package command (AddProduct, AddProductToCatalog, AddReference, CreateSubCatalog, MapKeyWord). Elles héritent de la classe Command.
+
+Le package contient aussi les interfaces Gateway et Handler qui gèrent l'exécution des Command. Ces interfaces devront être réalisées par la couche infrastructure.
+
+### La Couche ui
+
+Cette couche propose deux interface utilisateur :
+
+* Une interface en ligne de commande (shell)
+* Une interface via les socket (en utilisant netcat)
+
+Les fonctions supportées par ces interfaces utilisateur sont maigres. L'intérêt est uniquement de montrer comment elles sont codées.
+
+### La Couche infrastructure
+
+Cette couche réalise les interfaces des couches Domain et Application. En particulier, elle réalise les collections (persistence) ainsi que la gestion des commandes (command).
+
+Pour illustrer le fait que la couche infrastructure réalise le lien avec le framework technique, deux réalisations des collections sont proposées : une en mémoire qui exploite les collections Java, une en base de donnée qui exploite JDBC.
+
+On pourrait aussi imaginer deux réalisations des commandes : une en mémoire (l'implémentation actuelle) et une exploitant le message queuing (à la RabbitMQ).
+
+## Order Management - fr.ubordeaux.ao.ordermanagement
+
+Ce bounded context est développé selon une architecture en couches:
+
+* la couche **domain** contient les concepts et services métiers de l'application (Order, OrderLine, etc.)
+* la couche **application** contient les service d'accès à la couche domain (utilisés par la couche ui)
+* la couche **user interface** contient les interfaces utilisateurs de l'application
+* la couche **infrastructure** contient les classes d'implémentation et l'adhérence aux plates-formes techniques.
+
