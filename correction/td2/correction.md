@@ -1,4 +1,5 @@
 # TD2
+
 Ce TD a pour objectif de :
 
 * Mesurer l'importance de l'encapsulation
@@ -13,9 +14,19 @@ Les modifications que vous devez apporter au code doivent être compilée (direc
 Le code du TD2 est celui d'une application permettant à un particulier de faire une tenue de ses comptes banquaires. La classe Account représente un compte banquaire (entity). La classe Transaction représente une transaction banquaire (value).
 
 * Quel est l'état de la classe Account (quelles propriétés peuvent changer) ? Coder la méthode commentée //TODO_1 de cette classe en vous assurant que l'état de la classe ne peut pas être changé à l'extérieur de la classe.
+
+    Dans la classe Account **balance** et **transactions** sont les deux propriétés qui peuvent changer. Les propriétés **id** et **name** ne changent pas avec le temps. Donc on peut dire que l'état est constitué de ces deux propriétés (balance et transactions).
+
+    Coder le //TODO_1 nécessite de renvoyer une copie de l'ensemble des transactions. Si on ne renvoit pas une copie alors les transactions pourraient être modifiées à l'extérieur de l'objet. On violerait alors le principe d'encapsulation. Notons qu'il n'est pas nécessaire de copier les transactions car celles-ci ne peuvent pas changer (elles sont des value object).
+
 * L'identifiant des objets Account est codé par la propriétée String id. De fait, pensez-vous que deux objets Account peuvent avoir le même id ? Si tel est le cas, comment s'assurer que cela n'arrivera pas ?
+
+    Oui il est tout à fait possible de construire (new) deux Account en leur donnant le même id. Pour se protéger de ce cas, il faut alors interdir l'instantiation (rendre le constructeur privé) et par exemple coder une factory. 
+
 * Coder les //TODO_2 de la classe Transaction. Pourquoi cette classe ne possède pas de méthodes publiques permettant de changer les valeurs des propriétés ?
 * Codez le //TODO_3 de la classe Account pour mettre à jours le solde (balance) du compte.
+
+
 
 ## Notion de typage
 

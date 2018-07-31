@@ -24,7 +24,9 @@ public class Account {
     }
     
     public Set<Transaction> getTransactionSince(String date) {
-        //TODO_1
+        Set<Transation> copy = new HashSet<Transaction>();
+        copy.addAll(transactions);
+        return copy;
     }
 
 
