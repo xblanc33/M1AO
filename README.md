@@ -25,11 +25,11 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 
 ## Corrections des TDs
 
-* [TD1](correction/td1/sujet.md)
-* [TD2](correction/td2/sujet.md)
-* [TD3](correction/td3/sujet.md)
-* [TD4](correction/td4/sujet.md)
-* [TD5](correction/td5/sujet.md)
+* [TD1](correction/td1/correction.md)
+* [TD2](correction/td2/correction.md)
+* [TD3](correction/td3/correction.md)
+* [TD4](correction/td4/correction.md)
+* [TD5](correction/td5/correction.md)
 
 
 ## Références
