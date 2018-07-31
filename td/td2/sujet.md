@@ -28,5 +28,5 @@ Le code du TD2 est celui d'une application permettant à un particulier de faire
  
 ## Notions avancées
 
-* Dans la classe Account, la méthode addTransaction(Transaction transaction) peut-elle être changée par la méthode addTransaction(String id, String titre, double montant) ? Quelle différence cela fait-il ?
+* Dans la classe Account, la méthode addTransaction(Transaction transaction) peut-elle être changée par la méthode addTransaction(String titre, int montant) ? Quelle différence cela fait-il ?
 * Modifiez le code pour qu'il soit possible de supprimer une transaction d'un compte mais uniquement en donnant sa date, son titre et son montant.

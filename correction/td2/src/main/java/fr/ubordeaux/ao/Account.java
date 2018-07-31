@@ -29,11 +29,16 @@ public class Account {
         transactions.add(transaction);
         balance = balance + transaction.getAmount();
     }
+
+    public void removeTransaction(Transaction transaction) {
+        transactions.remove(transaction);
+        balance = balance - transaction.getAmount();
+    }
     
     public Set<Transaction> getTransactionSince(Date date) {
         Set<Transaction> copy = new HashSet<Transaction>();
         for (Transaction transaction : transactions) {
-            if (date.after(transaction.getDate())) copy.add(transaction);
+            if (date.before(transaction.getDate())) copy.add(transaction);
         }
         return copy;
     }

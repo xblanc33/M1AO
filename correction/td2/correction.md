@@ -41,11 +41,14 @@ Le code du TD2 est celui d'une application permettant à un particulier de faire
     Cette classe représente des **Value Object**, une fois créé, la Transaction ne doit pas changer. Il ne faut donc pas mettre de méthode permettant de changer les propriétés !
 
 * Codez le //TODO_3 de la classe Account pour mettre à jours le solde (balance) du compte.
+    Voir le code.
 
-
-
- 
 ## Notions avancées
 
-* Dans la classe Account, la méthode addTransaction(Transaction transaction) peut-elle être changée par la méthode addTransaction(String id, String titre, double montant) ? Quelle différence cela fait-il ?
+* Dans la classe Account, la méthode addTransaction(Transaction transaction) peut-elle être changée par la méthode addTransaction(String titre, int montant) ? Quelle différence cela fait-il ?
+
+    Oui c'est possible. Au niveau du comportement de l'application cela ne change rien. Par contre, avec addTransaction(String titre, int montant) on change un peu la signification de la méthode qui ne fait pas seulement l'ajout de la transaction mais qui réalise aussi la construction de l'objet. De fait le nommage de cette méthode serait un peu innaproprié. De plus, on pourrait vouloir mettre dans le code de cette méthode des contrôles visant à s'assurer que l'on peut instancier l'objet. Bref, du coup, ce n'est pas vraiment idéal. 
+
 * Modifiez le code pour qu'il soit possible de supprimer une transaction d'un compte mais uniquement en donnant sa date, son titre et son montant.
+  
+   Comme les Transactions sont des value object, il est possible de les comparer par valeur (et non pas par référence). Le fait d'avoir redéfini la méthode equals nous permet alors de l'exploiter. (voir code)
