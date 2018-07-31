@@ -7,8 +7,8 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 ## Intervenants
 
 * Xavier Blanc (Chargé de cours)
-* To do (Chargé de TD)
-* To do (Chargé de TD)
+* Frédérique Carrere (Chargé de TD)
+* Lionel Clément (Chargé de TD)
 
 ## Sources
 
@@ -30,6 +30,10 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 * [TD3](correction/td3/correction.md)
 * [TD4](correction/td4/correction.md)
 * [TD5](correction/td5/correction.md)
+
+## Une mise en oeuvre pédagogique des concepts du DDD
+
+Vous pouvez voir [ici](app/README.md) le code d'une application de eCommerce mettant en oeuvre les concepts du DDD.
 
 
 ## Références
