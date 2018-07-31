@@ -17,24 +17,20 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 
 ## Sujets des TDs
 
-* [TD1](td/td1/sujet.md)
-* [TD2](td/td2/sujet.md)
-* [TD3](td/td3/sujet.md)
-* [TD4](td/td4/sujet.md)
-* [TD5](td/td5/sujet.md)
+* [TD1](td/td1/)
+* [TD2](td/td2/)
+* [TD3](td/td3/)
+* [TD4](td/td4/)
+* [TD5](td/td5/)
 
 ## Corrections des TDs
 
-* [TD1](correction/td1/correction.md)
-* [TD2](correction/td2/correction.md)
-* [TD3](correction/td3/correction.md)
-* [TD4](correction/td4/correction.md)
-* [TD5](correction/td5/correction.md)
+* [TD1](correction/td1/)
+* [TD2](correction/td2/)
 
 ## Une mise en oeuvre pédagogique des concepts du DDD
 
 Vous pouvez voir [ici](app/) le code d'une application de eCommerce mettant en oeuvre les concepts du DDD.
-
 
 ## Références
 
