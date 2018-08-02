@@ -21,7 +21,6 @@ On veut améliorer l'application et surtout son typage.
 
     voir le code. 
 
-
 ## Account et Transaction
 
 Le code du TD2 est celui d'une application permettant à un particulier de faire une tenue de ses comptes banquaires. La classe Account représente un compte banquaire (entity). La classe Transaction représente une transaction banquaire (value).
