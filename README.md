@@ -27,7 +27,7 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 
 * [TD1](correction/td1/)
 * [TD2](correction/td2/)
-* [TD2](correction/td3/)
+* [TD3](correction/td3/)
 
 ## Une mise en oeuvre pédagogique des concepts du DDD
 
