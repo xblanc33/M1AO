@@ -16,10 +16,8 @@ Dans ce TD vous allez développer le catalogue de références d'un magasin de e
 
 La couche model contient les concepts métiers suivants:
 
-* Reference : Une référence produit (id, nom, description)
-* Produit : Un produit en stock (id, référence, prix, état)
+* Reference : Une référence produit (id, nom, description, prix)
 * Catalog : le catalogue des références
-* Stock : la liste des produits en stock
 
 De plus, cette couche propose le service suivant:
 
@@ -29,7 +27,7 @@ De plus, cette couche propose le service suivant:
 
 La couche application suit les principes CQRS et prose donc :
 
-* des commandes (création d'une référence, création d'un produit, etc.)
+* des commandes (création d'une référence, etc.)
 * des query (naviguer dans la liste des références, des produits, etc.)
 
 ## Couche infrastructure
@@ -39,4 +37,3 @@ Cette couche se fera en mémoire. Elle contient donc les classes d'infrastructur
 ## Couche UI
 
 Cette couche se fera en ligne de commande. Elle proposera une interaction simple permettant à un utilisateur d'intéragir avec l'application.
-

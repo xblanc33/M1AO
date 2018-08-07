@@ -19,7 +19,7 @@ dependencies {
 }
 
 apply plugin: 'application'
-mainClassName = "fr.ubordeaux.ao.referencemanagement.ui.ConsoleMain"
+mainClassName = "fr.ubordeaux.ao.referencemanagement.ui.SocketServerMain"
 
 run {
    standardInput = System.in

@@ -26,7 +26,7 @@ public class SearchEngine {
                 return reference;
             }
         }
-        throw new ReferenceManagementException("cannot fin reference, id does not exist");
+        throw new ReferenceManagementException("cannot find reference, id does not exist");
     }
 
     public Set<Reference> searchReferencesByKeyWords(Set<KeyWord> keywords) {
