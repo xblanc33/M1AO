@@ -26,6 +26,8 @@ La couche model contient les concepts métiers suivants:
 
 Cette couche se fera en mémoire. Elle contient donc les classes d'infrastructure permettant de gérer en mémoire vive le catalogue et le stock.
 
+    Voir le code. J'ai utilisé une Map pour stocker les références et les indexer par leur id.
+
 ## Couche UI
 
 Cette couche se fera en ligne de commande. Elle proposera une interaction simple permettant à un utilisateur d'intéragir avec l'application (créer une référence, l'ajouter dans le catalogue, la supprimer du catalogue).

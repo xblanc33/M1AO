@@ -1,4 +1,4 @@
-package fr.ubordeaux.infrastructure.inmemory;
+package fr.ubordeaux.ao.infrastructure.inmemory;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,7 +21,7 @@ public class CatalogImpl implements Catalog {
     }
 
     public Set<Reference> getReferences() {
-        Set<Reference> result = new HashSet();
+        Set<Reference> result = new HashSet<Reference>();
         result.addAll(references.values());
         return result;
     }
