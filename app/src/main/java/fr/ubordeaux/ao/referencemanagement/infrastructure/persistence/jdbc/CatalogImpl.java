@@ -92,7 +92,6 @@ public class CatalogImpl extends ConceptMapping implements Catalog {
 		} catch (SQLException e) {
 			throw new ReferenceManagementException("cannot add to ReferenceRepository (SQL Exception)");
 		}
-		
 	}
 
 }
