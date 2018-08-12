@@ -1,7 +1,9 @@
 # TD5
+
 Ce TD a pour objectif de :
 
-* Coder un (pseudo) test d'acceptation
+* Réaliser les corrections proposées par un linter
+* Coder un test d'acceptation
 * Coder un test Unitaire
 
 ## Consignes
@@ -13,10 +15,15 @@ Les modifications que vous devez apporter au code doivent être compilée (direc
 En reprenant le code du TD4, testez les scénarios suivants :
 
 * Ajout d'une référence dans le catalogue
-* Ajout d'un produit dans le stock
 * Recherche d'une référence
-* Recherche d'un produit
 
 ## Test Unitaire
 
-Tester Unitairement la classe SearchEngine en veillant à ce que les recherches aboutissent aux bons résultats.
+Vous allez changer l'interface Catalog et sa classe d'implantation CatalogImpl pour faire en sorte qu'un catalogue respecte les besoins suivants:
+
+* Un catalogue a un nom (composé uniquement de lettres minuscules, minimum 3 lettres maximum 10 lettres)
+* Un catalogue peut avoir plusieurs sous-catalogues
+* Les noms des catalogues frères (sous-catalogues d'un même catalogue) doivent avoir des noms différents
+* On peut obtenir la liste des références contenues directement par un catalogue (getOwnReferences) ou avoir les références contenues par un catalogue et toute sa descendance (getAllReferences)  
+  
+Tester Unitairement la classe Catalogue en veillant à ce que les besoins soient bien respectés.
