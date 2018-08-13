@@ -10,6 +10,21 @@ Ce TD a pour objectif de :
 
 Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
 
+## Linter
+
+Exécuter le linter Checkstyle
+
+    gradle checkstyleMain
+
+Réalisez les recommandations qu'il vous propose pour la classe **Reference.java**. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
+
+Exécuter le linter Findbugs
+
+    gradle findbugsMain
+
+Réalisez les recommandations **Correctness Warnings** qu'il vous propose. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
+
+
 ## Test d'acceptation
 
 En reprenant le code du TD4, testez les scénarios suivants :

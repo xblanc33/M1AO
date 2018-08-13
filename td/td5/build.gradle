@@ -18,18 +18,17 @@ dependencies {
 }
 
 apply plugin: 'checkstyle'
-
 checkstyle {
     toolVersion "7.6.1"
 }
 
-/*apply plugin: 'finbugs'
+apply plugin: 'findbugs'
 tasks.withType(FindBugs) {
     reports {
         xml.enabled false
         html.enabled true
     }
-}*/
+}
 
 apply plugin: 'application'
 mainClassName = "fr.ubordeaux.ao.ui.ConsoleMain"
