@@ -97,7 +97,9 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 * Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence (et non pas 3000).
 * Modifier le code pour connaître la valeur maximale de **MAX** (sans que la machine virtuelle ne crash)
 
-    En suivant les instructions on peut voir que le 
+    En suivant les instructions on peut voir que l'objet ville est construit 3000 fois. C'est parce qu'il est construite à chaque itération. Il suffit de sortir la construction de l'itération.
+
+    Cet exercice a pour objectif de montrer que la conception s'intéresse aux objets (leurs relations, quand ils sont construits et détruits). C'est différent de l'algo qui s'intéresse à la résolution des problèmes. Un bon algo peut donner de mauvaises perfs avec une mauvaise conception. Un mauvais algo ne donnera jamais de bonnes perfs mais une bonne conception peut l'optimiser (cacher des résultats déjà calculés par exemple.
 
 ## Concevoir un dépôt (niveau avancé)
 
