@@ -97,6 +97,8 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 * Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence (et non pas 3000).
 * Modifier le code pour connaître la valeur maximale de **MAX** (sans que la machine virtuelle ne crash)
 
+    En suivant les instructions on peut voir que le 
+
 ## Concevoir un dépôt (niveau avancé)
 
 Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France. 
