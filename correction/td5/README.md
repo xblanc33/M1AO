@@ -18,15 +18,15 @@ Exécuter le linter Checkstyle
 
 Réalisez les recommandations qu'il vous propose pour la classe **Reference.java**. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
 
-    Voir fichier Reference.java
+    Voir fichier Reference.java pour les corrections.
 
 Exécuter le linter Findbugs
 
     gradle findbugsMain
 
-    Voir fichier Reference.java
-
 Réalisez les recommandations **Correctness Warnings** qu'il vous propose. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
+
+    C'est le fichier CatalogImpl.java qui contient un erreur dans le contructeur. En effet on a créé un variable locale au constructeur **references**. Voir le code pour.
 
 
 ## Test d'acceptation
