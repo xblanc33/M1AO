@@ -9,6 +9,7 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 * Xavier Blanc (Chargé de cours)
 * Frédérique Carrere (Chargé de TD)
 * Lionel Clément (Chargé de TD)
+* Arthur Chevalier (Chargé de TD)
 
 ## Sources
 
