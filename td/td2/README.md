@@ -6,7 +6,7 @@ Ce TD a pour objectif de :
 
 ## Consignes
 
-Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
+Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
 
 ## Notion de typage
 
@@ -24,8 +24,6 @@ Le code du TD2 est celui d'une application permettant à un particulier de faire
 * Coder les //TODO_2 de la classe Transaction. Pourquoi cette classe ne possède pas de méthodes publiques permettant de changer les valeurs des propriétés ?
 * Codez le //TODO_3 de la classe Account pour mettre à jours le solde (balance) du compte.
 
-
- 
 ## Notions avancées
 
 * Dans la classe Account, la méthode addTransaction(Transaction transaction) peut-elle être changée par la méthode addTransaction(String titre, int montant) ? Quelle différence cela fait-il ?

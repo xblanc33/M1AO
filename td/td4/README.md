@@ -7,7 +7,7 @@ Ce TD a pour objectif de :
 
 ## Consignes
 
-Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
+Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
 
 ## Catalogue de Références, et stock de produits
 

@@ -23,7 +23,11 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 * [TD3](td/td3/)
 * [TD4](td/td4/)
 * [TD5](td/td5/)
-
+* [TD6](td/td6/)
+* [TD7](td/td7/)
+* [TD8](td/td8/)
+* [TD9](td/td9/)
+  
 ## Corrections des TDs
 
 * [TD1](correction/td1/)
