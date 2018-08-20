@@ -30,7 +30,7 @@ public class TextualMenu {
     }
 
     private void initCollection() {
-        catalog = new CatalogImpl();
+        catalog = new CatalogImpl("root");
     }
 
     protected void handleUserInstructions() throws IOException {
@@ -61,7 +61,7 @@ public class TextualMenu {
         Price refPrice = new Price(Integer.parseInt(price));
         Reference reference = new Reference(refId, refName, refDescription, refPrice);
 
-        catalog.addReference(reference);
+        catalog.add(reference);
         out.println("Reference ("+refId+") has been created and added to the catalog !");
     }
 

@@ -3,7 +3,7 @@ apply plugin: 'java'
 group = 'fr.ubordeaux.ao'
 version = '1.0-SNAPSHOT'
 
-description = """TD4"""
+description = """TD5"""
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
