@@ -4,6 +4,10 @@ import java.util.Set;
 
 import fr.ubordeaux.ao.referencemanagement.domain.type.CatalogName;
 
+/**
+ * Repository 
+ * 
+ */
 public interface Catalog {
     public CatalogName getName();
     public Set<Catalog> getSubCatalogs();

@@ -2,6 +2,10 @@ package fr.ubordeaux.ao.referencemanagement.domain.model;
 
 import java.util.Objects;
 
+/**
+ * Value Object 
+ * 
+ */
 public class KeyWord {
     private String value;
 

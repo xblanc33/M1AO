@@ -9,6 +9,10 @@ import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWord;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Reference;
 import fr.ubordeaux.ao.referencemanagement.domain.exception.ReferenceManagementException;
 
+/**
+ * Service 
+ * 
+ */
 public class SearchEngine {
 
     private Catalog rootCatalog;

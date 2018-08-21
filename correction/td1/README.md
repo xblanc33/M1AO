@@ -32,14 +32,14 @@ En utilisant Gradle, exécuter le test du TD1
 
 Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Un contact a un nom, précisez le rôle (value, entity, aggregate, repository) de chaque classe en vous aidant du tableau suivant.
 
-| Classe de l'objet | Value ? | Entity ? | Aggregate ? | Repository ? |
-| ------------------|---------|----------|-------------|--------------|
-| Address           |    X    |          |             |              |
-| Contact           |         |          |      X      |              |
-| Contacts          |         |          |             |      X       |
-| Mail              |    X    |          |             |              |
-| PhoneNumber       |    X    |          |             |              |
-| Town              |    X    |          |             |              |
+| Classe de l'objet | Value ? | Entity ? | Serivce ? | Aggregate ? | Repository ? |
+| ------------------|---------|----------|-----------|-------------|--------------|
+| Address           |    X    |          |           |             |              |
+| Contact           |         |          |           |      X      |              |
+| Contacts          |         |          |           |             |      X       |
+| Mail              |    X    |          |           |             |              |
+| PhoneNumber       |    X    |          |           |             |              |
+| Town              |    X    |          |           |             |              |
 
 ## Objets et Machine Virtuelle
 
