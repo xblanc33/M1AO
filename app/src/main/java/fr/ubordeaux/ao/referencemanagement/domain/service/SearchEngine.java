@@ -5,7 +5,6 @@ import java.util.Set;
 
 import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWordMap;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Catalog;
-import fr.ubordeaux.ao.referencemanagement.domain.model.CollectionManager;
 import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWord;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Reference;
 import fr.ubordeaux.ao.referencemanagement.domain.exception.ReferenceManagementException;
@@ -15,9 +14,19 @@ public class SearchEngine {
     private Catalog rootCatalog;
     private KeyWordMap keywordMap;
 
-    public SearchEngine() {
-        rootCatalog = CollectionManager.getInstance().getRootCatalog();
-        keywordMap = CollectionManager.getInstance().getKeyWordMap();
+    public SearchEngine(Catalog rootCatalog, KeyWordMap keywordMap) {
+        this.setRootCatalog(rootCatalog);
+        this.setKeyWordMap(keywordMap);
+    }
+
+    private void setRootCatalog(Catalog rootCatalog) {
+        if (rootCatalog == null) throw new ReferenceManagementException("cannot create SearchEngine with null as root catalog");
+        this.rootCatalog = rootCatalog;
+    }
+
+    private void setKeyWordMap(KeyWordMap keywordMap) {
+        if (keywordMap == null) throw new ReferenceManagementException("cannot create SearchEngine with null as a KeyWordMap");
+        this.keywordMap = keywordMap;
     }
 
     public Reference searchReferenceById(String id) {

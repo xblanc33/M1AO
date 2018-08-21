@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.referencemanagement.application.command;
 
 import fr.ubordeaux.ao.referencemanagement.domain.model.Catalog;
-import fr.ubordeaux.ao.referencemanagement.domain.model.CollectionManager;
+import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWordMap;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Reference;
 import fr.ubordeaux.ao.referencemanagement.domain.exception.ReferenceManagementException;
 import fr.ubordeaux.ao.referencemanagement.domain.type.CatalogName;
@@ -26,8 +26,8 @@ public class AddReferenceToCatalog implements Command {
     }
 
     @Override
-    public void execute() {
-        Catalog catalog = CollectionManager.getInstance().getRootCatalog().getSubCatalogByName(catalogName);
+    public void execute(Catalog rootCatalog, KeyWordMap keywordMap) {
+        Catalog catalog = rootCatalog.getSubCatalogByName(catalogName);
         catalog.add(reference);
     }
 }

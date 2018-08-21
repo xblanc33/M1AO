@@ -12,7 +12,6 @@ import fr.ubordeaux.ao.referencemanagement.application.command.AddReferenceToCat
 import fr.ubordeaux.ao.referencemanagement.application.command.Gateway;
 import fr.ubordeaux.ao.referencemanagement.application.command.MapKeyWord;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Catalog;
-import fr.ubordeaux.ao.referencemanagement.domain.model.CollectionManager;
 import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWord;
 import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWordMap;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Reference;
@@ -28,6 +27,8 @@ public class TextualMenu {
     private BufferedReader in;
     private PrintWriter out;
     private Gateway gateway;
+    private Catalog rootCatalog;
+    private KeyWordMap keywordMap;
 
     protected TextualMenu(BufferedReader in , PrintWriter out) {
         this.in = in;
@@ -44,14 +45,13 @@ public class TextualMenu {
     }
 
     private void initCollectionManager() {
-        Catalog rootCatalog = new CatalogImpl(new CatalogName("root"));
-        KeyWordMap keywordMap = new KeyWordMapImpl();
-        CollectionManager.createInstance(rootCatalog, keywordMap);
+        rootCatalog = new CatalogImpl(new CatalogName("root"));
+        keywordMap = new KeyWordMapImpl();
     }
 
     private void createCommandGatewayAndHandler() {
         gateway = new GatewayImpl();
-        gateway.addCommandHandler(new HandlerImpl());
+        gateway.addCommandHandler(new HandlerImpl(rootCatalog, keywordMap));
     }
 
     protected void handleUserInstructions() throws IOException {
@@ -99,7 +99,7 @@ public class TextualMenu {
         out.println("Reference name : ");
         String refName = in.readLine();
         
-        SearchEngine searchEngine = new SearchEngine();
+        SearchEngine searchEngine = new SearchEngine(rootCatalog, keywordMap);
         Set<Reference> foundReferences = searchEngine.searchReferencesByName(refName);
 
         if (foundReferences.size() == 0) {

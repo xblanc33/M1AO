@@ -1,7 +1,8 @@
 package fr.ubordeaux.ao.referencemanagement.application.command;
 
-import fr.ubordeaux.ao.referencemanagement.domain.model.CollectionManager;
+import fr.ubordeaux.ao.referencemanagement.domain.model.Catalog;
 import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWord;
+import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWordMap;
 import fr.ubordeaux.ao.referencemanagement.domain.model.Reference;
 import fr.ubordeaux.ao.referencemanagement.domain.service.SearchEngine;
 import fr.ubordeaux.ao.referencemanagement.domain.exception.ReferenceManagementException;
@@ -26,10 +27,10 @@ public class MapKeyWord implements Command {
     }
 
     @Override
-    public void execute() {
-        Reference foundReference = (new SearchEngine()).searchReferenceById(reference.getId());
+    public void execute(Catalog rootCatalog, KeyWordMap keywordMap) {
+        Reference foundReference = (new SearchEngine(rootCatalog, keywordMap)).searchReferenceById(reference.getId());
         if (foundReference == null) throw new ReferenceManagementException("Cannot link reference, it does not exist in ReferenceRepository");
         
-        CollectionManager.getInstance().getKeyWordMap().map(keyword, reference);
+        keywordMap.map(keyword, reference);
     }
 }

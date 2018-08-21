@@ -5,6 +5,11 @@ import java.util.Objects;
 import fr.ubordeaux.ao.referencemanagement.domain.exception.ReferenceManagementException;
 import fr.ubordeaux.ao.referencemanagement.domain.type.Price;
 
+/**
+ * Value Object 
+ * 
+ * We consider that the basePrice never changes (as well as id, name and description)
+ */
 public class Reference {
     private String id;
     private String name;
@@ -58,8 +63,11 @@ public class Reference {
     public boolean equals(Object other) {
         if (other instanceof Reference) {
             Reference otherReference = (Reference)other;
-            boolean equals = this.getId().compareTo(otherReference.getId())==0;
-			return equals;
+            boolean sameId = this.getId().compareTo(otherReference.getId())==0;
+            boolean sameName = this.getName().compareTo(otherReference.getName())==0;
+            boolean sameDescription = this.getDescription().compareTo(otherReference.getDescription())==0;
+            boolean sameBasePrice = this.getBasePrice().equals(otherReference.getBasePrice());
+			return sameId && sameName && sameDescription && sameBasePrice;
         } else {
             return false;
         }

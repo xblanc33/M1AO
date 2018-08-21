@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.referencemanagement.application.command;
 
 import fr.ubordeaux.ao.referencemanagement.domain.model.Catalog;
-import fr.ubordeaux.ao.referencemanagement.domain.model.CollectionManager;
+import fr.ubordeaux.ao.referencemanagement.domain.model.KeyWordMap;
 import fr.ubordeaux.ao.referencemanagement.domain.exception.ReferenceManagementException;
 import fr.ubordeaux.ao.referencemanagement.domain.type.CatalogName;
 
@@ -25,8 +25,8 @@ public class CreateSubCatalog implements Command {
     }
 
     @Override
-    public void execute() {
-        Catalog parentCatalog = CollectionManager.getInstance().getRootCatalog().getSubCatalogByName(parentName);
+    public void execute(Catalog rootCatalog, KeyWordMap keywordMap) {
+        Catalog parentCatalog = rootCatalog.getSubCatalogByName(parentName);
         parentCatalog.createSubCatalog(name);
     }
 }
