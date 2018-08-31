@@ -7,13 +7,15 @@ Ce TD a pour objectif de :
 
 ## Consignes
 
-Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
+Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
+
+Le code du TD2 est celui d'une application permettant à un particulier de faire une tenue de ses comptes banquaires. La classe **Account** représente un compte banquaire (entity). La classe **Transaction** représente une transaction banquaire (value).
 
 ## Notion de typage
 
 On veut améliorer l'application et surtout son typage.
 
-* Changez le code pour que le type la date d'une transaction ne soit pas une chaîne de charactère (String) mais une réelle date. De plus on veut que la date soit fixé au jours de la création d'une transaction.
+* Changez le code pour que le type **date** d'une transaction ne soit pas une chaîne de charactères (String) mais une réelle Date (java.util.Date). De plus on veut que la date soit fixée au jour de la création d'une transaction.
 
     il faut passer par la classe java.util.Date (voir code)
 

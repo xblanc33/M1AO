@@ -95,7 +95,7 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 
 * Utilisez **jps**, **jmap** et **jhat** pour compter combien d'objets sont créés lors de l'exécution du TD1.
 * Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence (et non pas 3000).
-* Modifier le code pour connaître la valeur maximale de **MAX** (sans que la machine virtuelle ne crash)
+* Dans le code, modifiez la valeur de **MAX** pour connaître le nombre maximal d'objets qu'il est possible de loger en mémoire avant de faire crasher la VM
 
     En suivant les instructions on peut voir que l'objet ville est construit 3000 fois. C'est parce qu'il est construite à chaque itération. Il suffit de sortir la construction de l'itération.
 
