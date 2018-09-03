@@ -38,7 +38,7 @@ Pour suivre les TD, vous devez cloner ce dépôt.
 
 ## Une mise en oeuvre pédagogique des concepts du DDD
 
-Vous pouvez voir [ici](app/) le code d'une application de eCommerce mettant en oeuvre les concepts du DDD.
+Vous pouvez voir [ici](https://github.com/xblanc33/DDD) le code d'une application de eCommerce mettant en oeuvre les concepts du DDD.
 
 ## Références
 
