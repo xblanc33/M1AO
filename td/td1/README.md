@@ -22,7 +22,7 @@ En utilisant Gradle, exécuter le test du TD1
 
 ## Rôle des classes (Architecture DDD)
 
-Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Précisez le rôle (value, entity, aggregate) de chaque classe en vous aidant du tableau suivant.
+Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Précisez le rôle (value, entity, service, aggregate) de chaque classe en vous aidant du tableau suivant.
 
 | Classe de l'objet | Value ? | Entity ? | Service ? | Aggregate ? |
 | ------------------|---------|----------|-----------|-------------|
@@ -89,6 +89,10 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 * Utilisez **jps**, **jmap** et **jhat** pour compter combien d'objets sont créés lors de l'exécution du TD1.
 * Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence (et non pas 3000).
 * Dans le code, modifiez la valeur de **MAX** pour connaître le nombre maximal d'objets qu'il est possible de loger en mémoire avant de faire crasher la VM
+
+## Concevoir un service (optionnel)
+
+Ajoutez un service qui permet de chercher un contact dans votre liste à partir d'un nom ou d'un prénom (on entre une chaîne de charactères et on obtient les contacts dont les noms ou les prénoms ressemblent très fortement à cette chaîne de charactères).
 
 ## Concevoir un dépôt (optionnel)
 
