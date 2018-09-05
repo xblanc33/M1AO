@@ -6,7 +6,8 @@ Ce TD a pour objectif de :
 * Connaitre et exécuter Gradle
 * Mieux comprendre les différents types de classe
 * Compter le nombre d'objets présents dans une machine vituelle
-* Concevoir un dépôt
+* Concevoir un service (optionel)
+* Concevoir un dépôt (optionel)
 
 ## Javac & Java
 
