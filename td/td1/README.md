@@ -89,7 +89,8 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 * Modifier le code pour qu'il n'y ait qu'un seul objet pour la ville Talence (et non pas 3000).
 * Dans le code, modifiez la valeur de **MAX** pour connaître le nombre maximal d'objets qu'il est possible de loger en mémoire avant de faire crasher la VM
 
-## Concevoir un dépôt (niveau avancé)
+## Concevoir un dépôt (optionnel)
 
-Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France. 
-Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France. Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier.
+Un dépôt (repository) contient un ensemble de Value Object, d'Entity ou d'Aggregate. Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France.
+
+Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier. Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France.
