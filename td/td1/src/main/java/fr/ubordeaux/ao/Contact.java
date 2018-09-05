@@ -1,9 +1,12 @@
 package fr.ubordeaux.ao;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Contact {
+    private static int nextId=1;
+    private int id;
     private String firstName;
     private String secondName;
     private Address address;
@@ -12,31 +15,24 @@ public class Contact {
 
 
     public Contact(String firstName, String secondName, Address address) {
-        this.setFirstName(firstName);
-        this.setSecondName(secondName);
-        this.setAddress(address);
+        this.id = Contact.nextId++;
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.address = address;
         mails = new HashSet<Mail>();
         phones = new HashSet<PhoneNumber>();
     }
 
-    private void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public int id() {
+        return id;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    private void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
-
     public String getSecondName() {
         return secondName;
-    }
-
-    private void setAddress(Address address) {
-        this.address = address;
     }
 
     public void changeAddress(Address newAddress) {
@@ -75,5 +71,20 @@ public class Contact {
         return phonez;
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (! (other instanceof Contact)) return false;
+        Contact otherContact = (Contact) other;
+        return  this.id == otherContact.id();
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "contact "+id;
+    }
 }
