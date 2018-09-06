@@ -31,6 +31,6 @@ public class SearchEngine {
     public boolean filterIn(Contact contact, String name) {
         boolean firstName = contact.getFirstName().startsWith(name);
         boolean secondName = contact.getSecondName().startsWith(name);
-        return firstName && secondName;
+        return firstName || secondName;
     }
 }
