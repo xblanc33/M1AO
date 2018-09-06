@@ -6,7 +6,8 @@ Ce TD a pour objectif de :
 * Connaitre et exécuter Gradle
 * Mieux comprendre les différents types de classe
 * Compter le nombre d'objets présents dans une machine vituelle
-* Concevoir un dépôt
+* Concevoir un service (optionel)
+* Concevoir un dépôt (optionel)
 
 ## Javac & Java
 
@@ -30,16 +31,16 @@ En utilisant Gradle, exécuter le test du TD1
 
 ## Rôle des classes (Architecture DDD)
 
-Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Un contact a un nom, précisez le rôle (value, entity, aggregate, repository) de chaque classe en vous aidant du tableau suivant.
+Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Précisez le rôle (value, entity, service, aggregate) de chaque classe en vous aidant du tableau suivant.
 
-| Classe de l'objet | Value ? | Entity ? | Serivce ? | Aggregate ? | Repository ? |
-| ------------------|---------|----------|-----------|-------------|--------------|
-| Address           |    X    |          |           |             |              |
-| Contact           |         |          |           |      X      |              |
-| Contacts          |         |          |           |             |      X       |
-| Mail              |    X    |          |           |             |              |
-| PhoneNumber       |    X    |          |           |             |              |
-| Town              |    X    |          |           |             |              |
+| Classe de l'objet | Value ? | Entity ? | Service ? | Aggregate ? |
+| ------------------|---------|----------|-----------|-------------|
+| Address           |    X    |          |           |             |
+| Contact           |         |          |           |      X      |
+| Contacts          |         |          |           |             |
+| Mail              |    X    |          |           |             |
+| PhoneNumber       |    X    |          |           |             |
+| Town              |    X    |          |           |             |
 
 ## Objets et Machine Virtuelle
 
@@ -101,7 +102,13 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 
     Cet exercice a pour objectif de montrer que la conception s'intéresse aux objets (leurs relations, quand ils sont construits et détruits). C'est différent de l'algo qui s'intéresse à la résolution des problèmes. Un bon algo peut donner de mauvaises perfs avec une mauvaise conception. Un mauvais algo ne donnera jamais de bonnes perfs mais une bonne conception peut l'optimiser (cacher des résultats déjà calculés par exemple.
 
-## Concevoir un dépôt (niveau avancé)
+## Concevoir un service (optionnel)
+
+Ajoutez un service qui permet de chercher un contact dans votre liste à partir d'un nom ou d'un prénom (on entre une chaîne de charactères et on obtient les contacts dont les noms ou les prénoms ressemblent très fortement à cette chaîne de charactères).
+
+    Voir le code !
+
+## Concevoir un dépôt (optionnel)
 
 Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France. 
 Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France. Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier.
