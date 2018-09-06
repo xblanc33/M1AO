@@ -16,6 +16,7 @@ public class SearchEngine {
             if (contacts.size()==0) {
                 hasMore = false;
             } else {
+                start = start + STEP;
                 for (Contact contact : contacts) {
                     boolean filterIn = filterByName(contact, name);
                     if (filterIn) {
