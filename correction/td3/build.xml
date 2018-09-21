@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     21 sept. 2018
+     
+     compilation du td3
+ 	
+ 	utilisation: $ant                  
+     
+     Lionel                                                                
+     ====================================================================== -->
+<project name="td3" default="default">
+	<property name="classes" location="classes" />
+	<property name="sources" location="src/main/java" />
+	<property name="output" location="output" />
+
+	<description>
+            compilation du td3
+    </description>
+
+	<!-- ================================= 
+	          target: default              
+	         ================================= -->
+	<target name="default" depends="svg" description="lancer le programme">
+		
+		<java classname="fr.ubordeaux.ao.GenerateSVGSampleFile" classpath="${classes}" />
+
+	</target>
+
+	<!-- ================================= 
+          target: svg              
+         ================================= -->
+	<target name="svg" depends="" description="compilation des sources">
+		<mkdir dir="${classes}" />
+
+		<javac srcdir="${sources}" destdir="${classes}" classpath="${lib}" includeantruntime="false" debug="off" />
+
+	</target>
+
+
+</project>
