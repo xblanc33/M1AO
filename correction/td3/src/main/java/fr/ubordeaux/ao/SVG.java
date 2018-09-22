@@ -3,16 +3,19 @@ package fr.ubordeaux.ao;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class SVG {
     private int width;
-    private int heigth;
+    private int height;
 
     private Set<Form> forms;
 
-    public SVG(int width, int heigth) {
-        if (width==0 || heigth==0) throw new SVGException("SVG is too small");
+    public SVG(int width, int height) {
+        if (width==0 || height==0) throw new SVGException("SVG is too small");
         this.width = width;
-        this.heigth = heigth;
+        this.height = height;
         forms = new HashSet<Form>();
     }
 
@@ -24,13 +27,12 @@ public class SVG {
         forms.remove(form);
     }
 
-    public String toSVG() {
-        String svg;
-        svg = "<svg width=\""+width+"\" height=\""+heigth+"\">\n";
-        for (Form form : forms) {
-            svg = svg + "\t" + form.toSVG() + "\n";
-        }
-        svg = svg + "</svg>";
-        return svg;
-    }
+    	public void generateHTML(Element body) {
+		Element svg = new Element("svg");
+		svg.setAttribute(new Attribute("width", ""+width+""));
+		svg.setAttribute(new Attribute("height", ""+height+""));
+		for (Form form: forms)	
+            svg.addContent(form.createElement());
+        body.addContent(svg);
+	}
 }

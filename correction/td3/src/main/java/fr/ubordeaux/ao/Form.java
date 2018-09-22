@@ -1,5 +1,7 @@
 package fr.ubordeaux.ao;
 
+import org.jdom2.Element;
+
 public abstract class Form {
     private int x;
     private int y;
@@ -25,5 +27,6 @@ public abstract class Form {
         return this.y;
     }
     
-    public abstract String toSVG();
+    	public abstract Element createElement();
+    	
 }

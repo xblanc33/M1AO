@@ -1,5 +1,8 @@
 package fr.ubordeaux.ao;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class Line extends Form{
     private int x2;
     private int y2;
@@ -26,7 +29,13 @@ public class Line extends Form{
         return this.y2;
     }
     
-    public String toSVG() {
-        return "<line x1=\""+getX()+"\" y1=\""+getY()+"\" x2=\""+getX2()+"\" y2=\""+getY2()+"\"/>";
-    }
+	@Override
+	public Element createElement() {
+		Element line = new Element("line");
+		line.setAttribute(new Attribute("x1", ""+getX()+""));
+		line.setAttribute(new Attribute("y1", ""+getY()+""));
+		line.setAttribute(new Attribute("x2", ""+getX2()+""));
+		line.setAttribute(new Attribute("y2", ""+getY2()+""));
+		return line;
+	}
 }

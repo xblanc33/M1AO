@@ -1,5 +1,8 @@
 package fr.ubordeaux.ao;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class Ellipse extends Circle {
     private int radiusY;
 
@@ -16,9 +19,13 @@ public class Ellipse extends Circle {
         return radiusY;
     }
 
-    @Override
-    public String toSVG() {
-        return "<ellipse cx=\""+getX()+"\" cy=\""+getY()+"\" rx=\""+getRadius()+"\" ry=\""+getRadiusY()+"\" />";
-    }
+	public Element createElement() {
+		Element ellipse = new Element("ellipse");
+		ellipse.setAttribute(new Attribute("cx", ""+getX()+""));
+		ellipse.setAttribute(new Attribute("cy", ""+getY()+""));
+		ellipse.setAttribute(new Attribute("rx", ""+getRadius()+""));
+		ellipse.setAttribute(new Attribute("ry", ""+getRadiusY()+""));
+		return ellipse;
+	}
     
 }

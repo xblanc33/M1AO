@@ -1,5 +1,8 @@
 package fr.ubordeaux.ao;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class Rectangle extends Form {
     private int width;
     private int height;
@@ -26,8 +29,14 @@ public class Rectangle extends Form {
         return this.height;
     }
 
-    public String toSVG() {
-        return "<rect x=\""+getX()+"\" y=\""+getY()+"\" width=\""+getWidth()+"\" height=\""+getHeight()+"\"/>";
-    }
+	@Override
+	public Element createElement() {
+		Element rect = new Element("rect");
+		rect.setAttribute(new Attribute("x", ""+getX()+""));
+		rect.setAttribute(new Attribute("y", ""+getY()+""));
+		rect.setAttribute(new Attribute("width", ""+getWidth()+""));
+		rect.setAttribute(new Attribute("height", ""+getHeight()+""));
+		return rect;
+	}
 
 }

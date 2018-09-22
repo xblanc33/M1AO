@@ -1,5 +1,8 @@
 package fr.ubordeaux.ao;
 
+import org.jdom2.Attribute;
+import org.jdom2.Element;
+
 public class Circle extends Form {
     private int radius;
     
@@ -17,8 +20,12 @@ public class Circle extends Form {
         return radius;
     }
 
-    @Override
-    public String toSVG() {
-        return "<circle cx=\""+getX()+"\" cy=\""+getY()+"\" r=\""+getRadius()+"\"/>";
-    }
+	@Override
+	public Element createElement() {
+		Element circle = new Element("circle");
+		circle.setAttribute(new Attribute("cx", ""+getX()+""));
+		circle.setAttribute(new Attribute("cy", ""+getY()+""));
+		circle.setAttribute(new Attribute("r", ""+getRadius()+""));
+		return circle;
+	}
 }
