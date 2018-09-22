@@ -3,6 +3,7 @@ package fr.ubordeaux.ao;
 import org.jdom2.Attribute;
 import org.jdom2.Element;
 
+@SuppressWarnings("serial")
 public class Circle extends Form {
     private int radius;
     
@@ -21,11 +22,10 @@ public class Circle extends Form {
     }
 
 	@Override
-	public Element createElement() {
-		Element circle = new Element("circle");
-		circle.setAttribute(new Attribute("cx", ""+getX()+""));
-		circle.setAttribute(new Attribute("cy", ""+getY()+""));
-		circle.setAttribute(new Attribute("r", ""+getRadius()+""));
-		return circle;
+	public void setAttributes() {
+		this.setAttribute(new Attribute("type", "circle"));
+		this.setAttribute(new Attribute("cx", ""+getX()+""));
+		this.setAttribute(new Attribute("cy", ""+getY()+""));
+		this.setAttribute(new Attribute("r", ""+getRadius()+""));
 	}
 }
