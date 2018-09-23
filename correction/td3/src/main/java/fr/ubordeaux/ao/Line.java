@@ -1,7 +1,6 @@
 package fr.ubordeaux.ao;
 
 import org.jdom2.Attribute;
-import org.jdom2.Element;
 
 public class Line extends Form {
 	private int x2;
@@ -31,10 +30,10 @@ public class Line extends Form {
 
 	@Override
 	public void setAttributes() {
-		this.setAttribute(new Attribute("type", "line"));
-		this.setAttribute(new Attribute("x1", "" + getX() + ""));
-		this.setAttribute(new Attribute("y1", "" + getY() + ""));
-		this.setAttribute(new Attribute("x2", "" + getX2() + ""));
-		this.setAttribute(new Attribute("y2", "" + getY2() + ""));
+		getHtmlElement().setAttribute(new Attribute("type", "line"));
+		getHtmlElement().setAttribute(new Attribute("x1", "" + getX() + ""));
+		getHtmlElement().setAttribute(new Attribute("y1", "" + getY() + ""));
+		getHtmlElement().setAttribute(new Attribute("x2", "" + getX2() + ""));
+		getHtmlElement().setAttribute(new Attribute("y2", "" + getY2() + ""));
 	}
 }

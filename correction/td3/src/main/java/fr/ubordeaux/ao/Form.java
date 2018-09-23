@@ -2,13 +2,13 @@ package fr.ubordeaux.ao;
 
 import org.jdom2.Element;
 
-@SuppressWarnings("serial")
-public abstract class Form extends Element {
+public abstract class Form {
 	private int x;
 	private int y;
+	private Element htmlElement;
 
 	public Form(int x, int y) {
-		super("FORM");
+		this.htmlElement = new Element("form");
 		this.setX(x);
 		this.setY(y);
 	}
@@ -27,6 +27,10 @@ public abstract class Form extends Element {
 
 	public int getY() {
 		return this.y;
+	}
+
+	public Element getHtmlElement() {
+		return htmlElement;
 	}
 
 	public abstract void setAttributes();

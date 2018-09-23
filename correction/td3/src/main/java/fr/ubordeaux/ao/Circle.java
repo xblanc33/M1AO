@@ -1,9 +1,7 @@
 package fr.ubordeaux.ao;
 
 import org.jdom2.Attribute;
-import org.jdom2.Element;
 
-@SuppressWarnings("serial")
 public class Circle extends Form {
     private int radius;
     
@@ -23,9 +21,9 @@ public class Circle extends Form {
 
 	@Override
 	public void setAttributes() {
-		this.setAttribute(new Attribute("type", "circle"));
-		this.setAttribute(new Attribute("cx", ""+getX()+""));
-		this.setAttribute(new Attribute("cy", ""+getY()+""));
-		this.setAttribute(new Attribute("r", ""+getRadius()+""));
+		getHtmlElement().setAttribute(new Attribute("type", "circle"));
+		getHtmlElement().setAttribute(new Attribute("cx", ""+getX()+""));
+		getHtmlElement().setAttribute(new Attribute("cy", ""+getY()+""));
+		getHtmlElement().setAttribute(new Attribute("r", ""+getRadius()+""));
 	}
 }

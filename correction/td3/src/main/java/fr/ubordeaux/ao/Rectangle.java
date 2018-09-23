@@ -1,9 +1,7 @@
 package fr.ubordeaux.ao;
 
 import org.jdom2.Attribute;
-import org.jdom2.Element;
 
-@SuppressWarnings("serial")
 public class Rectangle extends Form {
 	private int width;
 	private int height;
@@ -32,11 +30,11 @@ public class Rectangle extends Form {
 
 	@Override
 	public void setAttributes() {
-		this.setAttribute(new Attribute("type", "rect"));
-		this.setAttribute(new Attribute("x", "" + getX() + ""));
-		this.setAttribute(new Attribute("y", "" + getY() + ""));
-		this.setAttribute(new Attribute("width", "" + getWidth() + ""));
-		this.setAttribute(new Attribute("height", "" + getHeight() + ""));
+		getHtmlElement().setAttribute(new Attribute("type", "rect"));
+		getHtmlElement().setAttribute(new Attribute("x", "" + getX() + ""));
+		getHtmlElement().setAttribute(new Attribute("y", "" + getY() + ""));
+		getHtmlElement().setAttribute(new Attribute("width", "" + getWidth() + ""));
+		getHtmlElement().setAttribute(new Attribute("height", "" + getHeight() + ""));
 	}
 
 }
