@@ -34,7 +34,7 @@ public class SVG {
 		svg.setAttribute(new Attribute("height", "" + height + ""));
 		for (Form form: forms) {
 			form.setAttributes();
-			svg.addContent(form);
+			svg.addContent(form.getHtmlElement());
 		}
 		body.addContent(svg);
 	}
