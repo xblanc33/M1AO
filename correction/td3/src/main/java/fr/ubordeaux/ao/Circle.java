@@ -21,7 +21,7 @@ public class Circle extends Form {
 
 	@Override
 	public void setAttributes() {
-		getHtmlElement().setAttribute(new Attribute("type", "circle"));
+		getHtmlElement().setName("circle");	
 		getHtmlElement().setAttribute(new Attribute("cx", ""+getX()+""));
 		getHtmlElement().setAttribute(new Attribute("cy", ""+getY()+""));
 		getHtmlElement().setAttribute(new Attribute("r", ""+getRadius()+""));

@@ -30,7 +30,7 @@ public class Line extends Form {
 
 	@Override
 	public void setAttributes() {
-		getHtmlElement().setAttribute(new Attribute("type", "line"));
+		getHtmlElement().setName("line");	
 		getHtmlElement().setAttribute(new Attribute("x1", "" + getX() + ""));
 		getHtmlElement().setAttribute(new Attribute("y1", "" + getY() + ""));
 		getHtmlElement().setAttribute(new Attribute("x2", "" + getX2() + ""));

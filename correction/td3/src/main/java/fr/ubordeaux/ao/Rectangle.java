@@ -30,7 +30,7 @@ public class Rectangle extends Form {
 
 	@Override
 	public void setAttributes() {
-		getHtmlElement().setAttribute(new Attribute("type", "rect"));
+		getHtmlElement().setName("rect");	
 		getHtmlElement().setAttribute(new Attribute("x", "" + getX() + ""));
 		getHtmlElement().setAttribute(new Attribute("y", "" + getY() + ""));
 		getHtmlElement().setAttribute(new Attribute("width", "" + getWidth() + ""));

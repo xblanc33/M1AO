@@ -19,7 +19,7 @@ public class Ellipse extends Circle {
 	}
 
 	public void setAttributes() {
-		getHtmlElement().setAttribute(new Attribute("type", "ellipse"));
+		getHtmlElement().setName("ellipse");	
 		getHtmlElement().setAttribute(new Attribute("cy", "" + getY() + ""));
 		getHtmlElement().setAttribute(new Attribute("rx", "" + getRadius() + ""));
 		getHtmlElement().setAttribute(new Attribute("ry", "" + getRadiusY() + ""));
