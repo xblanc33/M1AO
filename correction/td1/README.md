@@ -31,11 +31,13 @@ En utilisant Gradle, exécuter le test du TD1
 
 ## Rôle des classes (Architecture DDD)
 
-Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. 
+Regardez le code du TD1. Celui-ci représente une application de gestion de contacts.
 
 Identifiez pour chaque classe :
-* l'état des objets instances de la classe (les propriétés en précisant celles qui sont immuables)
-* les traitements des objets instances de la classes (les méthodes accéssibles en précisant celles qui changent l'état)
+* l'état des objets instances des classe (l'état est défini par les propriétés des classe).
+  * Précisez si l'état est immuable ou s'il peut changer dans le temps
+* les traitements des objets instances de la classes (ces traiteements sont définis par les méthodes accéssibles des classes)
+  * Précisez les traitement qui changent l'état, ceux qui ne changent pas l'état, ceux qui dépendent de l'état.
 
 Adress:
 * Etat
@@ -58,6 +60,21 @@ Contact
   * getFirstName : ne change pas l'état
   * changeAddress : change l'état
   * ...
+
+Pensez-vous qu'on puisse instancier deux objets décrivant la même ville (voir code suivant) ?
+
+```java
+Town town1 = new Town("Talence", 33400);
+Town town2 = new Town("Talence", 33400);
+```
+
+Que valent les égalités suivantes ?
+```java
+boolean eg1 = (town1 == town2);
+boolean eg2 = town1.equals(town2);
+```
+
+Voir TestTown.java
 
 ## Objets et Machine Virtuelle
 
@@ -125,9 +142,19 @@ Ajoutez un service qui permet de chercher un contact dans votre liste à partir 
 
     Voir le code !
 
+Précisez l'état des objets instance de cette classe.
+Serait-il intéressant d'avoir plusieurs instance de cette classe ?
+
+    L'état est vide. Les traitements sont ici sans état. Donc on peut avoir qu'un seul objet. Il ne sert à rien d'en avoir plusieurs.
+
 ## Concevoir un dépôt (optionnel)
 
 Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France. 
 Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France. Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier.
 
     Voir le code !
+
+Précisez l'état des objets instance de cette classe.
+Serait-il intéressant d'avoir plusieurs instance de cette classe ?
+
+    L'état n'est pas vide. Pour autant on peut se poser la question de d'avoir plusieurs objets qui jouent ce rôle de dépôt. D'un point de vue métier (sens de l'application), un seul objet serait absolument suffisant.

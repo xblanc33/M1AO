@@ -1,0 +1,84 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "ao",
+                "projectName": "ao",
+                "workingDirectory": "c:\\devs\\M1AO\\app",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "td1",
+                "projectName": "td1",
+                "workingDirectory": "c:\\devs\\M1AO\\td\\td1",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "td2",
+                "projectName": "td2",
+                "workingDirectory": "c:\\devs\\M1AO\\correction\\td2",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "td3",
+                "projectName": "td3",
+                "workingDirectory": "c:\\devs\\M1AO\\correction\\td3",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "ao",
+                "projectName": "ao",
+                "workingDirectory": "c:\\devs\\M1AO\\app",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "td1",
+                "projectName": "td1",
+                "workingDirectory": "c:\\devs\\M1AO\\td\\td1",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "td2",
+                "projectName": "td2",
+                "workingDirectory": "c:\\devs\\M1AO\\correction\\td2",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            },
+            {
+                "name": "td3",
+                "projectName": "td3",
+                "workingDirectory": "c:\\devs\\M1AO\\correction\\td3",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
