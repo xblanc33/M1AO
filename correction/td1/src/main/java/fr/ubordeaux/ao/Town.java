@@ -7,20 +7,12 @@ public class Town {
     private int zipcode;
 
     public Town(String name, int zipcode) {
-        this.setName(name);
-        this.setZipCode(zipcode);
-    }
-
-    private void setName(String name) {
         this.name = name;
+        this.zipcode = zipcode;
     }
 
     public String getName() {
         return name;
-    }
-
-    private void setZipCode(int zipcode) {
-        this.zipcode = zipcode;
     }
 
     public int getZipCode() {

@@ -5,18 +5,18 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestTowns {
+public class TestTownSet {
     private final int MAX = 36700;
 
     @Test
-    public void addAllTowns() {
-        Towns towns = new Towns();
+    public void addAllTown() {
+        TownSet townSet = new TownSet();
         TownFactory tf = new TownFactory();
         for (int i=0 ; i<MAX; i++) {
-            towns.addTown(tf.getNextTown());
+            townSet.addTown(tf.getNextTown());
         }
         //Curiously there are 2 duplicates in the file
-        assertEquals(MAX-2, towns.size());
+        assertEquals(MAX-2, townSet.size());
 
     }
 

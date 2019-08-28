@@ -88,10 +88,10 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 
 ## Concevoir un service (optionnel)
 
-Ajoutez un service qui permet de chercher un contact dans votre liste à partir d'un nom ou d'un prénom (on entre une chaîne de charactères et on obtient les contacts dont les noms ou les prénoms ressemblent très fortement à cette chaîne de charactères).
+Ajoutez une nouvelle classe (SearchEngine) qui propose des méthode permettant de chercher un contact dans votre liste à partir d'un nom ou d'un prénom (on entre une chaîne de charactères et on obtient les contacts dont les noms ou les prénoms ressemblent très fortement à cette chaîne de charactères).
 
 ## Concevoir un dépôt (optionnel)
 
-Un dépôt (repository) contient un ensemble de Value Object, d'Entity ou d'Aggregate. Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France.
+Ajouter une nouvelle classe (Towns.java) qui contient toutes les villes de France.
 
 Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier. Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France.

@@ -3,29 +3,29 @@ package fr.ubordeaux.ao;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Contacts {
-    private Set<Contact> contacts;
+public class ContactSet {
+    private Set<Contact> contactSet;
 
-    public Contacts() {
-        contacts = new HashSet<Contact>();
+    public ContactSet() {
+        contactSet = new HashSet<Contact>();
     }
 
     public void addContact(Contact newContact) {
-        contacts.add(newContact);
+        contactSet.add(newContact);
     }
 
     public void removeContact(Contact oldContact) {
-        contacts.remove(oldContact);
+        contactSet.remove(oldContact);
     }
 
     public int size() {
-        return contacts.size();
+        return contactSet.size();
     }
 
-    public Set<Contact> getContacts(int from, int to) {
+    public Set<Contact> getContactSet(int from, int to) {
         Set<Contact> result = new HashSet<Contact>();
         int i = 0;
-        for (Contact contact : contacts) {
+        for (Contact contact : contactSet) {
             if (i >= from) {
                 result.add(contact);
             }

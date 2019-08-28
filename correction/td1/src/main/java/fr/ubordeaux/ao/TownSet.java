@@ -3,10 +3,10 @@ package fr.ubordeaux.ao;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Towns {
+public class TownSet {
     private Set<Town> townSet;
 
-    public Towns() {
+    public TownSet() {
         townSet = new HashSet<Town>();
     }
 
@@ -14,7 +14,7 @@ public class Towns {
         townSet.add(town);
     }
 
-    public Set<Town> getTowns() {
+    public Set<Town> getTownSet() {
         Set<Town> result = new HashSet<Town>();
         result.addAll(townSet);
         return result;

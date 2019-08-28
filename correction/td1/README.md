@@ -47,13 +47,6 @@ Adress:
   * getStree : ne change pas l'état
   * getTown : ne change pas l'état
 
-SearchEngine
-* Etat
-  * 
-* Traitement
-  * searchByName : ne change pas l'état
-  * filterIn : ne change pas l'état
-
 Contact
 * Etat
   * firstName : immutable

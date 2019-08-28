@@ -8,29 +8,17 @@ public class Address {
     private Town town;
 
     public Address(int number, String street, Town town) {
-        this.setNumber(number);
-        this.setStreet(street);
-        this.setTown(town);
-    }
-
-    private void setNumber(int number) {
         this.number = number;
+        this.street = street;
+        this.town = town;
     }
 
     public int getNumber() {
         return number;
     }
 
-    private void setStreet(String street) {
-        this.street = street;
-    }
-
     public String getStreet() {
         return street;
-    }
-
-    private void setTown(Town town) {
-        this.town = town;
     }
 
     public Town getTown() {
@@ -41,9 +29,9 @@ public class Address {
     public boolean equals(Object other) {
         if (! (other instanceof Address)) return false;
         Address otherAddress = (Address) other;
-        boolean sameNumber = this.number == otherAddress.number;
-        boolean sameStreet = this.street.compareTo(otherAddress.street) == 0;
-        boolean sameTown = this.town.equals(otherAddress.town);
+        boolean sameNumber = this.number == otherAddress.getNumber();
+        boolean sameStreet = this.street.compareTo(otherAddress.getStreet()) == 0;
+        boolean sameTown = this.town.equals(otherAddress.getTown());
         return  sameNumber && sameStreet && sameTown;
     }
 
