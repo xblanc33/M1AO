@@ -9,12 +9,13 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 * Xavier Blanc (Chargé de cours)
 * Frédérique Carrere (Chargé de TD)
 * Lionel Clément (Chargé de TD)
-* Arthur Chevalier (Chargé de TD)
+* Olivier Baudon (Chargé de TD)
+* Mohamed Oumaziz (Chargé de TD)
 
-## Sources
+## Cours
 
-Tous les supports du cous se trouvent sur ce dépôt GitHub.
-Pour suivre les TD, vous devez cloner ce dépôt.
+[La structuration du cours et les notes de cours](./cours)
+
 
 ## Sujets des TDs
 
