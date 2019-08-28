@@ -10,7 +10,7 @@ apply plugin: 'java'
 group = 'fr.ubordeaux.ao'
 version = '1.0-SNAPSHOT'
 
-description = """TD2"""
+description = """TD1"""
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -23,6 +23,3 @@ repositories {
 dependencies {
   testCompile 'junit:junit:4.12'
 }
-
-apply plugin: 'application'
-mainClassName = "fr.ubordeaux.ao.GenerateSVGSampleFile"

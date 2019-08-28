@@ -7,9 +7,9 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 
-import fr.ubordeaux.ao.domain.model.Catalog;
-import fr.ubordeaux.ao.domain.model.Reference;
-import fr.ubordeaux.ao.domain.type.Price;
+import fr.ubordeaux.ao.domain.Catalog;
+import fr.ubordeaux.ao.domain.Reference;
+import fr.ubordeaux.ao.domain.Price;
 import fr.ubordeaux.ao.infrastructure.inmemory.CatalogImpl;
 
 public class TextualMenu {

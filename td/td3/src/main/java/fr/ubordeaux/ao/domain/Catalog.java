@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.domain.model;
+package fr.ubordeaux.ao.domain;
 
 import java.util.Set;
 

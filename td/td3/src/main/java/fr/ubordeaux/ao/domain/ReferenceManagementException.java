@@ -1,4 +1,4 @@
-package fr.ubordeaux.ao.domain.exception;
+package fr.ubordeaux.ao.domain;
 
 public class ReferenceManagementException extends RuntimeException {
     private static final long serialVersionUID = 1L;

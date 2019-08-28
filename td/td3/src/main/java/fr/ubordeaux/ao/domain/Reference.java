@@ -1,9 +1,6 @@
-package fr.ubordeaux.ao.domain.model;
+package fr.ubordeaux.ao.domain;
 
 import java.util.Objects;
-
-import fr.ubordeaux.ao.domain.exception.ReferenceManagementException;
-import fr.ubordeaux.ao.domain.type.Price;
 
 public class Reference {
     private String id;

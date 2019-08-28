@@ -1,8 +1,6 @@
-package fr.ubordeaux.ao.domain.type;
+package fr.ubordeaux.ao.domain;
 
 import java.util.Objects;
-
-import fr.ubordeaux.ao.domain.exception.ReferenceManagementException;
 
 public class Price {
     private int valueInEuroCents;
