@@ -3,32 +3,47 @@
 Ce TD a pour objectif de :
 
 * Coder une application en suivant l'achitecture hexagonale
-* Rendre indépendant l'insfrastructure
+* Créer les classes du domaine
 
 ## Consignes
 
 Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
 
-## Catalogue de Références, et stock de produits
+## Catalogue de Références, et Panier
 
-Dans ce TD vous allez développer le catalogue de références d'un magasin de eCommerce.
+Dans ce TD vous allez développer le catalogue de références ainsi que la gestion d'un panier d'un magasin de eCommerce .
 
 ## Couche domain
 
 La couche model contient les concepts métiers suivants:
 
-* Reference : Une référence produit (id, nom, description, prix). On considère que le prix d'une référence ne change pas. C'est le prix de base. Plusieurs promotions pourront être faites lors de la commande mais le prix ne change pas.
-* Catalog : le catalogue des références
+Reference : Une référence produit 
+* ref: le numéro unique de la référence (une chaîne de caractères constituée de 20 caractères alphanumérique)
+* nom: le nom court de la référence (20 caractères au max)
+* description: la description de la référence (200 caratères au max)
+* prix (entier positif) 
 
-## Couche infrastructure
+On considère qu'aucune propriété de la référence ne change avec le temps. le prix d'une référence ne change pas. C'est le prix de base. Plusieurs promotions pourront être faites sur le panier lors de la commande mais le prix d'une référence ne change pas.
 
-Cette couche se fera en mémoire. Elle contient donc les classes d'infrastructure permettant de gérer en mémoire vive le catalogue et le stock.
 
-## Couche UI
+Catalog : le catalogue des références
+* Un catalogue a un nom qui précise la catégorie du catalogue (ex: jouet, musique)
+* Un catalogue contient toutes les références qui correspondent à son type
+* Un catalogue peut contenir des catalogues. On considère alors que ce sont des sous-catégories
+* On peut ajouter une référence à un catalogue
+* On peut supprimer une référence d'un catalogue
+* On peut ajouter un catalogue dans un catalogue
 
-Cette couche se fera en ligne de commande. Elle proposera une interaction simple permettant à un utilisateur d'intéragir avec l'application (créer une référence, l'ajouter dans le catalogue, la supprimer du catalogue).
+Basket : le panier electronique
+* Un panier contient des lignes de commandes.
+  * Une ligne de commande cible une seule référence
+  * Une ligne de commande préciser une quantité (entier strictement positif)
+  * Une ligne de commande a un montant qui correspond au prix de la référence multiplié par la quantité
+* Un panier a un montant qui correspond à la somme des lignes de commandes
+* Un panier ne peut pas avoir des lignes de commande qui ciblent la même référence
+* On peut ajouter une référence avec une quantité à un panier
+* On peut supprimer une référence d'un panier
+* On peut valider un panier (il n'est alors plus possible de le modifier)
 
-## Couche Domain
-
-Si vous avez le temps, vous pouvez proposer un service métier : le moteur de recherche.
+Codez ces concepts en précisant leur pattern tactique du DDD.
 

@@ -1,30 +1,26 @@
-# TD3
-Ce TD a pour objectif de :
+# TD5
 
-* Mesurer l'importance de l'encapsulation
-* Mettre en pratique les notions le typage
+Ce TD reprend le code du TD4. Il a pour objectif de mettre en place un lien vers une base de données (système de fichier).
 
 ## Consignes
 
-Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
+Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle).
 
-Le code du TD2 est celui d'une application permettant à un particulier de faire une tenue de ses comptes banquaires. La classe **Account** représente un compte banquaire (entity). La classe **Transaction** représente une transaction banquaire (value).
+## Base de donnée / Sauvegarde Fichier
 
-## Notion de typage
+Vous allez devoir mettre en place une infrastructure qui sauvegarde les catalogues dans un fichier CSV.
 
-On veut améliorer l'application et surtout son typage.
+Pour se faire vous allez ajouter un nouveau package dans la couche infrastructure : le package persistence.csv
 
-* Changez le code pour que le type **date** d'une transaction ne soit pas une chaîne de charactères (String) mais une réelle Date (java.util.Date). De plus on veut que la date soit fixée au jour de la création d'une transaction.
-* Changez le code pour que le type d'un montant ne soit pas un double mais un entier positif (on considère que c'est la valeur en centime d'euros). On pourrait même lever une exception (IllegalArgumentException) lors de la création si le montant est égal à zéro.
+Vous devez dans un premier temps définir la structuration de votre fichier CSV qui sera la sauvegarde du catalog. Charge à vous de définir les colonnes.
 
-## Account et Transaction
+Vous allez ensuite construire une nouvelle implémentation de la classe Catalogue (CatalogImpl)
 
-* Quel est l'état de la classe Account (quelles propriétés peuvent changer) ? Coder la méthode commentée //TODO_1 de cette classe en vous assurant que l'état de la classe ne peut pas être changé à l'extérieur de la classe.
-* L'identifiant des objets Account est codé par la propriétée String id. De fait, pensez-vous que deux objets Account peuvent avoir le même id ? Si tel est le cas, comment s'assurer que cela n'arrivera pas ?
-* Coder les //TODO_2 de la classe Transaction. Pourquoi cette classe ne possède pas de méthodes publiques permettant de changer les valeurs des propriétés ?
-* Codez le //TODO_3 de la classe Account pour mettre à jours le solde (balance) du compte.
+* L'instantiation de ce Catalogue devra prendre en paramètre le nom d'un fichier de sauvegarde
+* L'appel à la méthode (add(Reference)) devra ajouter une nouvelle ligne dans votre fichier CSV
+* L'appel à la méthode (size()) devra compter le nombre de ligne de votre fichier.
+* L'appel à la méthode (getReference()) devra lire le fichier et construire le l'ensemble des réferences (Set<Reference>)
 
-## Notions avancées
+## Optimisation (Optionnel)
 
-* Dans la classe Account, la méthode addTransaction(Transaction transaction) peut-elle être changée par la méthode addTransaction(String titre, int montant) ? Quelle différence cela fait-il ?
-* Modifiez le code pour qu'il soit possible de supprimer une transaction d'un compte mais uniquement en donnant sa date, son titre et son montant.
+Vous pouvez améliorer votre conception en proposant une mémoire cache et/ou en ne sauvegardant que temporairement dans le fichier.
