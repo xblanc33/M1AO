@@ -6,20 +6,28 @@ Ce TD reprend le code du TD4. Il a pour objectif de mettre en place un lien vers
 
 Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle).
 
-## Base de donnée / Sauvegarde Fichier
+## Couche Infra
 
-Vous allez devoir mettre en place une infrastructure qui sauvegarde les catalogues dans un fichier CSV.
+Vous allez devoir mettre en place une infrastructure qui sauvegarde les catalogues et les panier :
+* en mémoire vive
+* dans un fichier JSON.
 
-Pour se faire vous allez ajouter un nouveau package dans la couche infrastructure : le package persistence.csv
+Pour se faire vous allez :
+* Définir un repository pour les paniers (BasketRepository) à l'aide d'une interface dans la couche domain
+* Définir un repository pour les catalogues. 
+  
+De plus vous allez ajouter deux nouveaux packages dans la couche infrastructure : `inmemory` et `json`
 
-Vous devez dans un premier temps définir la structuration de votre fichier CSV qui sera la sauvegarde du catalog. Charge à vous de définir les colonnes.
+## InMemory
 
-Vous allez ensuite construire une nouvelle implémentation de la classe Catalogue (CatalogImpl)
+Dans le package `inmemory` constuisez les classes d'implantation pour vos repository
 
-* L'instantiation de ce Catalogue devra prendre en paramètre le nom d'un fichier de sauvegarde
-* L'appel à la méthode (add(Reference)) devra ajouter une nouvelle ligne dans votre fichier CSV
-* L'appel à la méthode (size()) devra compter le nombre de ligne de votre fichier.
-* L'appel à la méthode (getReference()) devra lire le fichier et construire le l'ensemble des réferences (Set<Reference>)
+## CSV
+
+Vous devez dans un premier temps définir la structuration de vos fichiers JSON qui seront la sauvegarde des repository. 
+
+Dans le package `json` vous allez ensuite construire une nouvelle implémentation des repository.
+
 
 ## Optimisation (Optionnel)
 
