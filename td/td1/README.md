@@ -23,17 +23,12 @@ En utilisant Gradle, exécuter le test du TD1
 
 ## Rôle des classes (Architecture DDD)
 
-Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. Précisez le rôle (value, entity, service, aggregate) de chaque classe en vous aidant du tableau suivant.
+Regardez le code du TD1. Celui-ci représente une application de gestion de contacts. 
 
-| Classe de l'objet | Value ? | Entity ? | Service ? | Aggregate ? |
-| ------------------|---------|----------|-----------|-------------|
-| Address           |         |          |           |             |
-| Contact           |         |          |           |             |
-| Mail              |         |          |           |             |
-| PhoneNumber       |         |          |           |             |
-| Town              |         |          |           |             |
+Identifiez pour chaque classe :
+* l'état des objets instances de la classe (les propriétés en précisant celles qui sont immuables)
+* les traitements des objets instances de la classes (les méthodes accéssibles en précisant celles qui changent l'état)
 
-La classe Contacts contient un ensemble de contact, c'est un repository.
 
 ## Objets et Machine Virtuelle
 
