@@ -21,7 +21,7 @@ En utilisant Gradle, compiler le code du TD1
 
 En utilisant Gradle, exécuter le test du TD1
 
-## Rôle des classes (Architecture DDD)
+## Rôle des classes
 
 Regardez le code du TD1. Celui-ci représente une application de gestion de contacts.
 
@@ -104,8 +104,8 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
 
 Ajoutez une nouvelle classe (SearchEngine) qui propose des méthode permettant de chercher un contact dans votre liste à partir d'un nom ou d'un prénom (on entre une chaîne de charactères et on obtient les contacts dont les noms ou les prénoms ressemblent très fortement à cette chaîne de charactères).
 
-Précisez l'état des objets instance de cette classe.
-Serait-il intéressant d'avoir plusieurs instance de cette classe ?
+Précisez l'état des objets instances de cette classe.
+Serait-il intéressant d'avoir plusieurs instances de cette classe ?
 
 ## Concevoir un dépôt (optionnel)
 
