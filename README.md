@@ -7,10 +7,12 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 ## Intervenants
 
 * Xavier Blanc (Chargé de cours)
-* Frédérique Carrere (Chargé de TD)
-* Lionel Clément (Chargé de TD)
-* Olivier Baudon (Chargé de TD)
-* Mohamed Oumaziz (Chargé de TD)
+
+* Frédérique Carrere (Chargé de TD - Groupe1 - Jeudi de 14h00 à 16h00)
+* Olivier Baudon (Chargé de TD - Groupe2 - Mercredi de 8h00 à 10h00)
+* Mohamed Oumaziz (Chargé de TD - Groupe3 - Lundi de 16h15 à 18h15)
+* Lionel Clément (Chargé de TD  - Groupe4 - Mardi de 10h15 à 12h15)
+* Arthur Chevalier (Chargé de TD - Groupe5 - Mardi de 8h00 à 10h00)
 
 ## Cours
 
