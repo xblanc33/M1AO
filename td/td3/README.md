@@ -1,35 +1,32 @@
 # TD3
-
 Ce TD a pour objectif de :
 
-* Coder un test Unitaire
-* Réaliser les corrections proposées par un linter
+* Coder une délégation de classes
 
 ## Consignes
 
 Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
 
-## Test Unitaire
+## Point2D et ColoredPoint2D
 
-Vous allez changer l'interface Catalog et sa classe d'implantation CatalogImpl pour faire en sorte qu'un catalogue respecte les besoins suivants:
+Coder la classe **Point2D** qui représente les points 2D. Chaque point a deux coordonnées dans le plan (x,y) qui sont des entiers positifs. On considère que le point (0,0) est situé en haut à gauche de l'écran.
 
-* Un catalogue a un nom (composé uniquement de lettres minuscules, minimum 3 lettres maximum 10 lettres)
-* Un catalogue peut avoir plusieurs sous-catalogues
-* Les noms des catalogues frères (sous-catalogues d'un même catalogue) doivent avoir des noms différents
-* On peut obtenir la liste des références contenues directement par un catalogue (getOwnReferences) ou avoir les références contenues par un catalogue et toute sa descendance (getAllReferences)  
-  
-Tester Unitairement la classe Catalogue en veillant à ce que les besoins soient bien respectés.
+Coder la classe **ColoredPoint2D** qui représente les points 2D avec couleur (RGB) en utilisant l'héritage et la délégation. Pour chacune des deux approches précisez combien d'objets seront présent en mémoire pour avoir un point coloré et précisez pourquoi les appels aux méthodes sont plus lentes dans le cas de la délégation.
 
-## Linter
+## Benchmark d'algorithmes de tri
 
-Exécuter le linter Checkstyle
+On souhaite mesurer la rapidité d'algorithmes de tri. 
 
-    gradle checkstyleMain
+La classe **InsertTri** représente un algorithme de tri par insertion.
+Coder cette classe sachant que la signature de la méthode de tri est : __String[] sort(String[] unsorted)__
 
-Réalisez les recommandations qu'il vous propose pour la classe **Reference.java**. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
+La classe **SortBenchmark** représente le benchmark. Cette classe possède les méthodes suivantes:
+* addAlgorithm() qui permet d'ajouter un algorithme de tri au bencmark
+* bench() qui permet de lancer le benchmark
 
-Exécuter le linter SpotBugs
+Coder cette classe en précisant les types des méthodes et les propriétés nécessaires.
 
-    gradle spotbugsMain
+Coder un autre algorithme (BubleSort) pour pouvoir exécuter un benchmark.
 
-Réalisez les recommandations **Correctness Warnings** qu'il vous propose. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
+Pourquoi peut-on dire que **SortBenchmark** délègue le tri au algorithme. A quel pattern du GOF cela vous fait-il penser ?
+
