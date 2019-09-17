@@ -16,7 +16,7 @@ Le code du TD3 est une implantation partielle de [SVG](https://www.w3schools.com
     Le code donné en correction réduit au maximum la redondance. Du coup les noms donnés aux propriétés n'ont plus de sens. Par exemple X,Y correspond à la fois au centre du Cercle, au début de la ligne et au coin haut gauche du rectangle ...
     L'intérêt de la hierarchie vient ici de la méthode toSVG() mais aussi de pouvoir ajouter n'importe quelle forme au SVG. Idéalement une super classe (voir même une interface) serait déjà très bien. Pas la peine d'en rajouter.
 
-* Modifiez votre votre pour ajouter un moyen d'afficher à l'écran (ou même de sauvegarder dans un fichier) le format SVG correspondant.
+* Modifiez votre code pour ajouter un moyen d'afficher à l'écran (ou même de sauvegarder dans un fichier) le format SVG correspondant.
 
     Voir le code. La méthode toSVG prend tout son sens ici.
 
