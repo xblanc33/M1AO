@@ -1,4 +1,4 @@
-# TD4
+# TD5
 
 Ce TD a pour objectif de :
 
@@ -7,13 +7,9 @@ Ce TD a pour objectif de :
 
 ## Consignes
 
-Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle)
+Les modifications que vous devez apporter au code doivent être compilée (directement en utilisant javac ou gradle)
 
 ## Test Unitaire
-
-Le code fourni représente la gestion d'un catalogue. L'interface **Catalog** représente le catalogue qui contient les références. La classe **Reference** représente les références contenues dans le catalogue.
-La classe **CatalogImpl** implémente l'interface **Catalog** et permet de stocker le catalog en mémoire.
-
 
 Vous allez changer l'interface Catalog et sa classe d'implantation CatalogImpl pour faire en sorte qu'un catalogue respecte les besoins suivants:
 
@@ -24,6 +20,8 @@ Vous allez changer l'interface Catalog et sa classe d'implantation CatalogImpl p
   
 Tester Unitairement la classe Catalogue en veillant à ce que les besoins soient bien respectés.
 
+    Dans le code il y a maintenant un nouveau type (CatalogName) et son test unitaire associé qui tente de mettre la contrainte en défaut. Ensuite il y a un test unitaire sur InMemoryCatalog qui lui aussi tente de mettre la classe CatalogImpl en défaut. D'ailleurs si on enlève le commentaire, le test ne marche pas. Ce qui veut dire que la classe est mal codée ...
+
 ## Linter
 
 Exécuter le linter Checkstyle
@@ -32,8 +30,15 @@ Exécuter le linter Checkstyle
 
 Réalisez les recommandations qu'il vous propose pour la classe **Reference.java**. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
 
-Exécuter le linter SpotBugs
+    Voir fichier Reference.java pour les corrections.
+
+Exécuter le linter SpotBug
 
     gradle spotbugsMain
 
 Réalisez les recommandations **Correctness Warnings** qu'il vous propose. Pour lire les recommandations, il faut aller dans le répertoire **build/reports**
+
+    C'est le fichier CatalogImpl.java qui contient un erreur dans le contructeur. En effet on a créé un variable locale au constructeur **references**. Voir le code pour.
+
+
+

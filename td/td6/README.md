@@ -1,6 +1,6 @@
 # TD6
 
-Ce TD reprend le code du TD45. Il a pour objectif de mettre en place un lien vers une base de données (système de fichier).
+Ce TD reprend le code du TD5. Il a pour objectif de mettre en place un lien vers une base de données (système de fichier).
 
 ## Consignes
 
