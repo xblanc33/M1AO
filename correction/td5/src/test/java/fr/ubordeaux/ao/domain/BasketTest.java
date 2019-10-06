@@ -10,7 +10,7 @@ public class BasketTest {
     @Test
     public void testBasket() {
 
-        Basket basket = new Basket();
+        Basket basket = new Basket(1);//first basket for ever
 
         AlphabetWord bookId = new AlphabetWord("bookId");
         AlphabetWord book = new AlphabetWord("book");

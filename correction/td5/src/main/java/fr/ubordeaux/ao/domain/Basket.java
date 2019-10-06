@@ -3,11 +3,17 @@ package fr.ubordeaux.ao.domain;
 import java.util.Map;
 import java.util.HashMap;
 
+/**
+ * Aggregate
+ * 
+ **/
 public class Basket {
+    private int id;
     private Map<Reference, CommandLine> commandLineMap;
     private boolean isClosed;
 
-    public Basket() {
+    public Basket(int id) {
+        this.id = id;
         commandLineMap = new HashMap<Reference, CommandLine>();
         isClosed = false;
     }

@@ -1,5 +1,9 @@
 package fr.ubordeaux.ao.domain;
 
+/**
+ * Entity
+ * Id = A command line is identified by its reference (in a basket)
+ */
 public class CommandLine {
     private Reference reference;//id in basket
     private int quantity;
