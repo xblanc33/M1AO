@@ -2,8 +2,8 @@
 
 Ce TD a pour objectif de :
 
-* Coder une application en suivant l'achitecture hexagonale
-* Créer les classes du domaine
+* Coder une application en suivant les patterns tactiques du DDD
+* Notamment, il vous faudra créer les classes du domaine en respectant les patterns Value Object, Entity et Aggregate
 
 ## Consignes
 
@@ -25,14 +25,6 @@ Reference : Une référence produit
 
 On considère qu'aucune propriété de la référence ne change avec le temps. le prix d'une référence ne change pas. C'est le prix de base. Plusieurs promotions pourront être faites sur le panier lors de la commande mais le prix d'une référence ne change pas.
 
-
-Catalog : le catalogue des références
-* Un catalogue a un nom qui précise la catégorie du catalogue (ex: jouet, musique)
-* Un catalogue contient toutes les références qui correspondent à son type
-* Un catalogue peut contenir des catalogues. On considère alors que ce sont des sous-catégories
-* On peut ajouter une référence à un catalogue
-* On peut supprimer une référence d'un catalogue
-* On peut ajouter un catalogue dans un catalogue
 
 Basket : le panier electronique
 * Un panier contient des lignes de commandes.
