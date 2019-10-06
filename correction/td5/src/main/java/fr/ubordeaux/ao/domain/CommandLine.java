@@ -1,7 +1,7 @@
 package fr.ubordeaux.ao.domain;
 
 public class CommandLine {
-    private Reference reference;
+    private Reference reference;//id in basket
     private int quantity;
 
     public CommandLine(Reference reference, int quantity) {
@@ -23,7 +23,7 @@ public class CommandLine {
         return this.quantity;
     }
 
-    public Price price() {
+    public Price getPrice() {
         return new Price(this.quantity * reference.getPrice().getValue());
     }
 
