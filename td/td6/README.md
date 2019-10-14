@@ -15,18 +15,7 @@ Vous allez devoir mettre en place une infrastructure qui sauvegarde les paniers 
 Pour se faire vous allez :
 * Définir un repository pour les paniers (BasketRepository) à l'aide d'une interface dans la couche domain
   
-De plus vous allez ajouter deux nouveaux packages dans la couche infrastructure : `inmemory` et `json`
-
-## InMemory
-
-Dans le package `inmemory` constuisez les classes d'implantation pour vos repository
-
-## CSV
-
-Vous devez dans un premier temps définir la structuration de vos fichiers JSON qui seront la sauvegarde des repository. 
-
-Dans le package `json` vous allez ensuite construire une nouvelle implémentation des repository.
-
+De plus vous allez ajouter deux nouveaux implementations dans la couche infrastructure : `inmemory` et `json`
 
 ## Optimisation (Optionnel)
 
