@@ -4,15 +4,12 @@ package fr.ubordeaux.ao.domain;
  * Value Object
  */
 public class Reference {
-    AlphabetWord id;
+    int id;
     AlphabetWord name;
     String description;
     Price price;
 
-    public Reference(AlphabetWord id, AlphabetWord name, String description, Price price) {
-        if (id == null) {
-            throw new IllegalArgumentException();
-        }
+    public Reference(int id, AlphabetWord name, String description, Price price) {
         if (name == null) {
             throw new IllegalArgumentException();
         }
@@ -32,7 +29,7 @@ public class Reference {
         this.price = price;
     }
 
-    public AlphabetWord getId() {
+    public int getId() {
         return this.id;
     }
 
@@ -54,7 +51,7 @@ public class Reference {
         }
         if (other instanceof Reference) {
             Reference otherR = (Reference) other;
-            boolean sameId = id.equals(otherR.id);
+            boolean sameId = id == otherR.id;
             boolean sameName = name.equals(otherR.name);
             boolean sameDescription = description.equals(otherR.description);
             boolean samePrice = price.equals(otherR.price);

@@ -12,7 +12,7 @@ public class BasketTest {
 
         Basket basket = new Basket(1);//first basket for ever
 
-        AlphabetWord bookId = new AlphabetWord("bookId");
+        int bookId = 12345;
         AlphabetWord book = new AlphabetWord("book");
         Reference ref = new Reference(bookId, book, "good book", new Price(10));
 
@@ -21,7 +21,7 @@ public class BasketTest {
         basket.order(ref, 3);
         assertEquals(30, basket.getPrice().getValue());
 
-        AlphabetWord musicId = new AlphabetWord("musicId");
+        int musicId = 12346;
         AlphabetWord music = new AlphabetWord("music");
         Reference ref2 = new Reference(musicId, music, "good music", new Price(20));
 

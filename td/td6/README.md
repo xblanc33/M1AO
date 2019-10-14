@@ -8,13 +8,12 @@ Les modifications que vous devez apporter au code doivent être compilées (dire
 
 ## Couche Infra
 
-Vous allez devoir mettre en place une infrastructure qui sauvegarde les catalogues et les panier :
+Vous allez devoir mettre en place une infrastructure qui sauvegarde les paniers :
 * en mémoire vive
 * dans un fichier JSON.
 
 Pour se faire vous allez :
 * Définir un repository pour les paniers (BasketRepository) à l'aide d'une interface dans la couche domain
-* Définir un repository pour les catalogues. 
   
 De plus vous allez ajouter deux nouveaux packages dans la couche infrastructure : `inmemory` et `json`
 
