@@ -17,6 +17,10 @@ public class Basket {
         commandLineMap = new HashMap<Reference, CommandLine>();
         isClosed = false;
     }
+    
+    public int getId() {
+        return id;
+    }
 
     public void order(Reference reference, int quantity) {
         if (!isClosed) {
