@@ -25,4 +25,8 @@ public class Price {
             return false;
         }
     }
+
+    public int hashCode() {
+    	return Objects.hash(value);
+    }
 }
