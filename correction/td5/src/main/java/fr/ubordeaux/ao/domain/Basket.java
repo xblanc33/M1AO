@@ -1,7 +1,9 @@
 package fr.ubordeaux.ao.domain;
 
 import java.util.Map;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Aggregate
@@ -41,8 +43,20 @@ public class Basket {
         }
     }
 
+    public List<CommandLineDTO> getCommandLineList() {
+        List<CommandLineDTO> list = new ArrayList();
+        for (CommandLine commandLine : commandLineMap.values()) {
+            list.add(new CommandLineDTO(commandLine.getReference(), commandLine.getQuantity()));
+        }
+        return list;
+    }
+
     public void close() {
         isClosed = true;
+    }
+
+    public boolean isClose() {
+        return isClosed;
     }
 
     public Price getPrice() {

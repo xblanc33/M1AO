@@ -1,5 +1,7 @@
 package fr.ubordeaux.ao.domain;
 
+import java.util.Objects;
+
 public class Price {
     private int value;
 
