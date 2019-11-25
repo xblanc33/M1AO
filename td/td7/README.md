@@ -3,7 +3,8 @@
 Ce TD reprend le code du TD6. Il a pour objectif de construire la couche application en appliquant le pattern CQRS.
 
 En particulier, vous allez devoir :
-  
+
+* Définir le service de la couche application 
 * Coder des commandes
 * Coder des requêtes (optionnel)
 
@@ -11,11 +12,21 @@ En particulier, vous allez devoir :
 
 Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle).
 
-## Les commandes
-
-Construisez les classes nécessaires à la mise en place du pattern command en local :
+## Le Service de la couche application
 
 Créer le package application (au même niveau que domain). Dans ce package :
+
+* Construire la classe PanierService.
+* Proposez les méthodes (signature) de cette classe qui sont des services applicatifs (les paramètres sont soit des VO, soit des id)
+* Codez ces méthodes 
+
+## Les commandes
+
+L'objectif est d'améliorer la classe PanierService en appliquant l'approche CQRS
+
+* Pour chaque service de la classe PanierService distinguez les parties query (read dans le repository), des partie command (write dans le repository)
+
+Construisez les classes nécessaires à la mise en place du pattern command en local :
 
 * Construire la classe abstraite Command. Cette classe doit proposer une méthode abstraite execute()
 * Construire l'interface Handler qui réalisera l'exécution des Command lorsqu'on lui demandera via la méthode (handle()). Il faut donc ajouter la méthode handle() à cette interface.
