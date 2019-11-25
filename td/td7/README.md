@@ -1,6 +1,6 @@
-# TD6
+# TD7
 
-Ce TD reprend le code du TD5. Il a pour objectif de construire la couche application en appliquant le pattern CQRS.
+Ce TD reprend le code du TD6. Il a pour objectif de construire la couche application en appliquant le pattern CQRS.
 
 En particulier, vous allez devoir :
   
