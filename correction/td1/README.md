@@ -29,53 +29,6 @@ En utilisant Gradle, exécuter le test du TD1
 
     gradle test
 
-## Rôle des classes (Architecture DDD)
-
-Regardez le code du TD1. Celui-ci représente une application de gestion de contacts.
-
-Identifiez pour chaque classe :
-* l'état des objets instances des classe (l'état est défini par les propriétés des classe).
-  * Précisez si l'état est immuable ou s'il peut changer dans le temps
-* les traitements des objets instances de la classes (ces traiteements sont définis par les méthodes accéssibles des classes)
-  * Précisez les traitement qui changent l'état, ceux qui ne changent pas l'état, ceux qui dépendent de l'état.
-
-Adress:
-* Etat
-  * number : immutable
-  * street : immutable
-  * town immutable
-* Traitement
-  * getNumber : ne change pas l'état
-  * getStree : ne change pas l'état
-  * getTown : ne change pas l'état
-
-Contact
-* Etat
-  * firstName : immutable
-  * secondName : immutable
-  * address mutable
-  * mails : le contenu peut changer
-  * phones : le contenu peut changer
-* Traitement
-  * getFirstName : ne change pas l'état
-  * changeAddress : change l'état
-  * ...
-
-Pensez-vous qu'on puisse instancier deux objets décrivant la même ville (voir code suivant) ?
-
-```java
-Town town1 = new Town("Talence", 33400);
-Town town2 = new Town("Talence", 33400);
-```
-
-Que valent les égalités suivantes ?
-```java
-boolean eg1 = (town1 == town2);
-boolean eg2 = town1.equals(town2);
-```
-
-Voir TestTown.java
-
 ## Objets et Machine Virtuelle
 
 Vous allez utiliser les outils **jps**, **jmap** et **jhat** pour analyser la machine virtuelle Java et compter le nombre d'objets Java créés.
@@ -135,26 +88,3 @@ Avec un navigateur web (Chrome), il est possible d'ouvrir la page **http://local
     En suivant les instructions on peut voir que l'objet ville est construit 3000 fois. C'est parce qu'il est construite à chaque itération. Il suffit de sortir la construction de l'itération.
 
     Cet exercice a pour objectif de montrer que la conception s'intéresse aux objets (leurs relations, quand ils sont construits et détruits). C'est différent de l'algo qui s'intéresse à la résolution des problèmes. Un bon algo peut donner de mauvaises perfs avec une mauvaise conception. Un mauvais algo ne donnera jamais de bonnes perfs mais une bonne conception peut l'optimiser (cacher des résultats déjà calculés par exemple.
-
-## Concevoir un service (optionnel)
-
-Ajoutez un service qui permet de chercher un contact dans votre liste à partir d'un nom ou d'un prénom (on entre une chaîne de charactères et on obtient les contacts dont les noms ou les prénoms ressemblent très fortement à cette chaîne de charactères).
-
-    Voir le code !
-
-Précisez l'état des objets instance de cette classe.
-Serait-il intéressant d'avoir plusieurs instance de cette classe ?
-
-    L'état est vide. Les traitements sont ici sans état. Donc on peut avoir qu'un seul objet. Il ne sert à rien d'en avoir plusieurs.
-
-## Concevoir un dépôt (optionnel)
-
-Le fichier [villes_france.csv](villes_france.csv) contient la liste de toutes les villes de France. 
-Développez un nouveau dépôt (Towns.java) qui contient toutes les villes de France. Vous pouvez utiliser la classe TownFactory qui construit des Town en lisant dans le fichier.
-
-    Voir le code !
-
-Précisez l'état des objets instance de cette classe.
-Serait-il intéressant d'avoir plusieurs instance de cette classe ?
-
-    L'état n'est pas vide. Pour autant on peut se poser la question de d'avoir plusieurs objets qui jouent ce rôle de dépôt. D'un point de vue métier (sens de l'application), un seul objet serait absolument suffisant.
