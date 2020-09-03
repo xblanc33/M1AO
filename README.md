@@ -29,7 +29,6 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 * [TD6](td/td6/)
 * [TD7](td/td7/)
 * [TD8](td/td8/)
-* [TD9](td/td9/)
   
 ## Corrections des TDs
 
@@ -37,7 +36,7 @@ Même s'il exploite le langage Java, les concepts présentés sont valides pour 
 * [TD2](correction/td2/)
 * [TD3](correction/td3/)
 * [TD4](correction/td4/)
-* [TD5](correction/td5/)
+
 
 ## Une mise en oeuvre pédagogique des concepts du DDD
 
