@@ -3,7 +3,7 @@ apply plugin: 'java'
 group = 'fr.ubordeaux.ao'
 version = '1.0-SNAPSHOT'
 
-description = """TD5"""
+description = """TD4"""
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -15,19 +15,6 @@ repositories {
 
 dependencies {
   testCompile 'junit:junit:4.12'
-}
-
-apply plugin: 'checkstyle'
-checkstyle {
-    toolVersion "7.6.1"
-}
-
-apply plugin: 'findbugs'
-tasks.withType(FindBugs) {
-    reports {
-        xml.enabled false
-        html.enabled true
-    }
 }
 
 apply plugin: 'application'

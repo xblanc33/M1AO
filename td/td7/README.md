@@ -1,43 +1,30 @@
 # TD7
 
-Ce TD reprend le code du TD6. Il a pour objectif de construire la couche application en appliquant le pattern CQRS.
-
-En particulier, vous allez devoir :
-
-* Définir le service de la couche application 
-* Coder des commandes
-* Coder des requêtes (optionnel)
+Ce TD reprend le code du TD6. Il a pour objectif de mettre en place une couche UI Web.
 
 ## Consignes
 
 Les modifications que vous devez apporter au code doivent être compilées (directement en utilisant javac ou gradle).
 
-## Le Service de la couche application
+## Interface Textuelle
 
-Créer le package application (au même niveau que domain). Dans ce package :
+Le code du package ui (cf TD5) contient une interface utilisateur très limitée en mode ligne de commande.
 
-* Construire la classe PanierService.
-* Proposez les méthodes (signature) de cette classe qui sont des services applicatifs (les paramètres sont soit des VO, soit des id)
-* Codez ces méthodes 
+Complétez cette interface utilisateur et éxécutez la afin de vérifier qu'elle fonctionne.
 
-## Les commandes
+## Mode Socket
 
-L'objectif est d'améliorer la classe PanierService en appliquant l'approche CQRS
+Ajouter la classe SocketServerMain qui permet de construire un serveur de socket et qui connecte l'input et l'output de la socket à l'interface utilisateur.
 
-* Pour chaque service de la classe PanierService distinguez les parties query (read dans le repository), des partie command (write dans le repository)
+Vous pouvez vérifier que cela marche en utilisant l'outil **netcat**
 
-Construisez les classes nécessaires à la mise en place du pattern command en local :
+    nc localhost 8080
 
-* Construire la classe abstraite Command. Cette classe doit proposer une méthode abstraite execute()
-* Construire l'interface Handler qui réalisera l'exécution des Command lorsqu'on lui demandera via la méthode (handle()). Il faut donc ajouter la méthode handle() à cette interface.
-* Construire l'interface Gateway qui permettra d'ajouter des commandes (pushCommand()) et de gérer un ensemble de Handler (addCommandHandler())
-* Construire la commande concrète AddReference. La méthode execute() de cette commande consiste à ajotuer une commande dans le catalogue.
 
-Dans le package infrastructure :
+## Multi-thread (optionnel)
 
-* Coder l'implémentation de la classe Handler (HandlerImpl). Cette classe réalise la méthode handle() ce qui permet donc d'exécuter la commande (command.execute())
-* Coder l'implémentation de la classe Gateway (GatewayImpl). Cette classe réalise l'ajout des Handler (addCommandHandler()) dans une structure de données (Set ou List). Elle réalise aussi l'ajout d'une nouvelle commande, et appelle les handler pour exécuter les commandes ajoutées. Ici on considère que la Gateway appelle un handler (le choix du handler est fait aléatoirement) dès qu'une nouvelle commande est ajoutée.
+Lancez deux clients (deux netcat en parallèle) et vérifiez que le serveur reste bloqué sur un des clients.
 
-## Les query (optionnel)
+Modifiez l'architecture du serveur pour faire en sorte qu'il puisse supporter plusieurs Thread en parallèle et ainsi assurer plusieurs clients en parallèle.
 
-Ajouter une classe permettant de requêter les catalogues. En outre cette classe disposera de son propre cache. De plus, elle permettra à la couche ui d'accéder aux références par pages de 10, 20 ou 50 références.
+
