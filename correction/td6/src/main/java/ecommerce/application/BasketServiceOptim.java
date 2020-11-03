@@ -58,7 +58,7 @@ public class BasketServiceOptim {
     public Set<Product> getProductsInBasket(int basketId) {
         Basket basket = this.repository.findBasketById(basketId);
         Set<Product> products = new HashSet();
-        for (CommandLine cml  : basket.getCommandLines()) {
+        for (CommandLine cml  : basket.getCopyOfCommandLines()) {
             products.add(cml.getProduct());
         }
         return products;
@@ -66,7 +66,7 @@ public class BasketServiceOptim {
 
     public int getQuantityForProductInBasket(int basketId, Product product) {
         Basket basket = this.repository.findBasketById(basketId);
-        for (CommandLine cml  : basket.getCommandLines()) {
+        for (CommandLine cml  : basket.getCopyOfCommandLines()) {
             if (cml.getProduct().equals(product)) {
                 return cml.getQuantity();
             }

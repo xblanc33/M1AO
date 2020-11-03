@@ -47,7 +47,7 @@ public class Basket {
         }
     }
 
-    public Set<CommandLine> getCommandLines() {
+    public Set<CommandLine> getCopyOfCommandLines() {
         Set<CommandLine> copy = new HashSet();;
         for (CommandLine cml : this.commandLineByProduct.values()) {
             copy.add(new CommandLine(cml.getId(), cml.getProduct(), cml.getPrice()));
