@@ -13,6 +13,7 @@ public class AddBasketToRepositoryCommand extends Command {
     }
 
     public void execute() {
+        System.out.println("AddBasketToRepositoryCommand is executed");
         this.repository.addBasket(basket);
     }
 }
